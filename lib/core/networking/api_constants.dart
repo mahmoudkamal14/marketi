@@ -1,10 +1,21 @@
 class ApiConstants {
-  static const String apiBaseUrl =
-      "https://e-commerce-api-1812.onrender.com/api/v1/";
+  static const String baseUrl = "https://student.valuxapps.com/api/";
 
-  static const String login = "auth/login";
+  static const String login = "login";
 
-  static const String signup = "auth/signup";
+  static const String forgotPassword = "forgotPassword";
+
+  static const String register = "register";
+
+  static const String banners = "banners";
+
+  static const String allProducts = "allProducts";
+
+  static const String categoryProduct = "categoryProduct";
+
+  static const String cartProducts = "cartProducts";
+
+  static const String favoriteProducts = "favoriteProducts";
 
   static const String primaryKey = 'primaryKey';
 }

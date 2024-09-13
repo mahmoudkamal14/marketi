@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:marketi/core/database/cache_helper.dart';
+import 'package:marketi/core/cache/cache_helper.dart';
 import 'package:marketi/core/routes/app_router.dart';
 import 'package:marketi/core/routes/routes.dart';
 
@@ -14,10 +14,14 @@ class MarketiApp extends StatelessWidget {
   dynamic login = CacheHelper().getData(key: Routes.loginScreen);
   @override
   Widget build(BuildContext context) {
+    double height = MediaQuery.sizeOf(context).height;
+    double width = MediaQuery.sizeOf(context).width;
+
     return ScreenUtilInit(
-      designSize: const Size(375, 812),
+      designSize: Size(width, height),
       minTextAdapt: true,
       child: MaterialApp(
+        theme: ThemeData(useMaterial3: false),
         debugShowCheckedModeBanner: false,
         initialRoute: sharedStartApp(),
         onGenerateRoute: appRouter.generateRoute,
@@ -27,7 +31,7 @@ class MarketiApp extends StatelessWidget {
 
   String sharedStartApp() {
     if (login == true) {
-      return Routes.homeScreen;
+      return Routes.navBarLayout;
     } else if (onBoarding == true) {
       return Routes.loginScreen;
     } else {

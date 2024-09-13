@@ -17,3 +17,15 @@ AuthResponseModel _$AuthResponseModelFromJson(Map<String, dynamic> json) =>
       credit: (json['credit'] as num?)?.toInt(),
       token: json['token'] as String?,
     );
+
+Map<String, dynamic> _$AuthResponseModelToJson(AuthResponseModel instance) =>
+    <String, dynamic>{
+      'id': instance.id,
+      'name': instance.name,
+      'email': instance.email,
+      'phone': instance.phone,
+      'image': instance.image,
+      'points': instance.points,
+      'credit': instance.credit,
+      'token': instance.token,
+    };

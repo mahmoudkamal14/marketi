@@ -16,4 +16,6 @@ class Routes {
   static const navBarLayout = '/navBarLayout';
 
   static const homeScreen = '/homeScreen';
+
+  static const productDetailsScreen = '/productDetailsScreen';
 }

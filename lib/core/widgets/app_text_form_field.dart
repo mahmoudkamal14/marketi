@@ -16,6 +16,7 @@ class AppTextFormField extends StatelessWidget {
   final TextInputType textInputType;
   final TextEditingController? controller;
   final Function(String?) validator;
+  final Function(String? value)? onChanged;
 
   const AppTextFormField({
     super.key,
@@ -32,6 +33,7 @@ class AppTextFormField extends StatelessWidget {
     required this.textInputType,
     this.controller,
     required this.validator,
+    this.onChanged,
   });
 
   @override
@@ -39,6 +41,7 @@ class AppTextFormField extends StatelessWidget {
     return TextFormField(
       controller: controller,
       keyboardType: textInputType,
+      onChanged: onChanged,
       decoration: InputDecoration(
         isDense: true,
         contentPadding: contentPadding ??
@@ -75,7 +78,7 @@ class AppTextFormField extends StatelessWidget {
         ),
         hintText: hintText,
         hintStyle: hintTextStyle ??
-            AppStyles.style14Medium.copyWith(
+            AppStyles.style16Regular.copyWith(
               color: const Color(0xFF919AAB),
             ),
         suffixIcon: suffixIcon,

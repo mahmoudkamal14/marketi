@@ -10,7 +10,7 @@ class ListCategoryProduct extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       height: 240.h,
-      width: 100.w,
+      width: double.infinity,
       child: Expanded(
         child: ListView.separated(
           scrollDirection: Axis.horizontal,

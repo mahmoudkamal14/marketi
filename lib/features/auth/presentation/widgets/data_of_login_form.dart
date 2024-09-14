@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:marketi/core/function/validators.dart';
 import 'package:marketi/core/theme/spaces.dart';
 import 'package:marketi/core/theme/app_styles.dart';
 import 'package:marketi/core/widgets/app_text_button.dart';
@@ -25,7 +24,9 @@ class DataOfLoginForm extends StatelessWidget {
             controller: LoginCubit.get(context).emailController,
             prefixIcon: const Icon(Icons.email_outlined),
             validator: (value) {
-              emailValidator(value);
+              if (value!.isEmpty) {
+                return 'Please enter your email';
+              }
             },
           ),
           verticalSpace(14),
@@ -37,7 +38,9 @@ class DataOfLoginForm extends StatelessWidget {
             controller: LoginCubit.get(context).passwordController,
             prefixIcon: const Icon(Icons.lock_clock_outlined),
             validator: (value) {
-              passwordValidator(value);
+              if (value!.isEmpty) {
+                return 'Please enter your password';
+              }
             },
           ),
           verticalSpace(7),

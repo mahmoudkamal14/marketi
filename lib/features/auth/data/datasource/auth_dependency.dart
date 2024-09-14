@@ -1,5 +1,5 @@
 import 'package:dio/dio.dart';
-import 'package:get_it/get_it.dart';
+import 'package:marketi/core/di/dependency_injection.dart';
 import 'package:marketi/core/networking/dio_factory.dart';
 import 'package:marketi/features/auth/data/datasource/remote_auth_datasource.dart';
 import 'package:marketi/features/auth/data/repository/auth_repository.dart';
@@ -8,8 +8,6 @@ import 'package:marketi/features/auth/domain/usecases/login_with_email_password_
 import 'package:marketi/features/auth/domain/usecases/register_with_email_password_usecase.dart';
 import 'package:marketi/features/auth/presentation/logic/login/login_cubit.dart';
 import 'package:marketi/features/auth/presentation/logic/register/register_cubit.dart';
-
-final getIt = GetIt.instance;
 
 Future<void> authDependency() async {
   // Dio & Api Service

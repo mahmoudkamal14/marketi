@@ -21,7 +21,8 @@ mixin _$HomeState<T> {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(String message) error,
-    required TResult Function(List<BannersEntity> bannerSList) successGetBanner,
+    required TResult Function(BannerResponseModel? bannerSList)
+        successGetBanner,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -29,7 +30,7 @@ mixin _$HomeState<T> {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(String message)? error,
-    TResult? Function(List<BannersEntity> bannerSList)? successGetBanner,
+    TResult? Function(BannerResponseModel? bannerSList)? successGetBanner,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -37,7 +38,7 @@ mixin _$HomeState<T> {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(String message)? error,
-    TResult Function(List<BannersEntity> bannerSList)? successGetBanner,
+    TResult Function(BannerResponseModel? bannerSList)? successGetBanner,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -127,7 +128,8 @@ class _$InitialImpl<T> implements _Initial<T> {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(String message) error,
-    required TResult Function(List<BannersEntity> bannerSList) successGetBanner,
+    required TResult Function(BannerResponseModel? bannerSList)
+        successGetBanner,
   }) {
     return initial();
   }
@@ -138,7 +140,7 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(String message)? error,
-    TResult? Function(List<BannersEntity> bannerSList)? successGetBanner,
+    TResult? Function(BannerResponseModel? bannerSList)? successGetBanner,
   }) {
     return initial?.call();
   }
@@ -149,7 +151,7 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(String message)? error,
-    TResult Function(List<BannersEntity> bannerSList)? successGetBanner,
+    TResult Function(BannerResponseModel? bannerSList)? successGetBanner,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -241,7 +243,8 @@ class _$LoadingImpl<T> implements Loading<T> {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(String message) error,
-    required TResult Function(List<BannersEntity> bannerSList) successGetBanner,
+    required TResult Function(BannerResponseModel? bannerSList)
+        successGetBanner,
   }) {
     return loading();
   }
@@ -252,7 +255,7 @@ class _$LoadingImpl<T> implements Loading<T> {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(String message)? error,
-    TResult? Function(List<BannersEntity> bannerSList)? successGetBanner,
+    TResult? Function(BannerResponseModel? bannerSList)? successGetBanner,
   }) {
     return loading?.call();
   }
@@ -263,7 +266,7 @@ class _$LoadingImpl<T> implements Loading<T> {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(String message)? error,
-    TResult Function(List<BannersEntity> bannerSList)? successGetBanner,
+    TResult Function(BannerResponseModel? bannerSList)? successGetBanner,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -381,7 +384,8 @@ class _$ErrorImpl<T> implements Error<T> {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(String message) error,
-    required TResult Function(List<BannersEntity> bannerSList) successGetBanner,
+    required TResult Function(BannerResponseModel? bannerSList)
+        successGetBanner,
   }) {
     return error(message);
   }
@@ -392,7 +396,7 @@ class _$ErrorImpl<T> implements Error<T> {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(String message)? error,
-    TResult? Function(List<BannersEntity> bannerSList)? successGetBanner,
+    TResult? Function(BannerResponseModel? bannerSList)? successGetBanner,
   }) {
     return error?.call(message);
   }
@@ -403,7 +407,7 @@ class _$ErrorImpl<T> implements Error<T> {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(String message)? error,
-    TResult Function(List<BannersEntity> bannerSList)? successGetBanner,
+    TResult Function(BannerResponseModel? bannerSList)? successGetBanner,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -465,7 +469,7 @@ abstract class _$$SuccessGetBannerImplCopyWith<T, $Res> {
           $Res Function(_$SuccessGetBannerImpl<T>) then) =
       __$$SuccessGetBannerImplCopyWithImpl<T, $Res>;
   @useResult
-  $Res call({List<BannersEntity> bannerSList});
+  $Res call({BannerResponseModel? bannerSList});
 }
 
 /// @nodoc
@@ -479,13 +483,13 @@ class __$$SuccessGetBannerImplCopyWithImpl<T, $Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? bannerSList = null,
+    Object? bannerSList = freezed,
   }) {
     return _then(_$SuccessGetBannerImpl<T>(
-      null == bannerSList
-          ? _value._bannerSList
+      freezed == bannerSList
+          ? _value.bannerSList
           : bannerSList // ignore: cast_nullable_to_non_nullable
-              as List<BannersEntity>,
+              as BannerResponseModel?,
     ));
   }
 }
@@ -493,16 +497,10 @@ class __$$SuccessGetBannerImplCopyWithImpl<T, $Res>
 /// @nodoc
 
 class _$SuccessGetBannerImpl<T> implements SuccessGetBanner<T> {
-  const _$SuccessGetBannerImpl(final List<BannersEntity> bannerSList)
-      : _bannerSList = bannerSList;
+  const _$SuccessGetBannerImpl(this.bannerSList);
 
-  final List<BannersEntity> _bannerSList;
   @override
-  List<BannersEntity> get bannerSList {
-    if (_bannerSList is EqualUnmodifiableListView) return _bannerSList;
-    // ignore: implicit_dynamic_type
-    return EqualUnmodifiableListView(_bannerSList);
-  }
+  final BannerResponseModel? bannerSList;
 
   @override
   String toString() {
@@ -514,13 +512,12 @@ class _$SuccessGetBannerImpl<T> implements SuccessGetBanner<T> {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$SuccessGetBannerImpl<T> &&
-            const DeepCollectionEquality()
-                .equals(other._bannerSList, _bannerSList));
+            (identical(other.bannerSList, bannerSList) ||
+                other.bannerSList == bannerSList));
   }
 
   @override
-  int get hashCode => Object.hash(
-      runtimeType, const DeepCollectionEquality().hash(_bannerSList));
+  int get hashCode => Object.hash(runtimeType, bannerSList);
 
   @JsonKey(ignore: true)
   @override
@@ -535,7 +532,8 @@ class _$SuccessGetBannerImpl<T> implements SuccessGetBanner<T> {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(String message) error,
-    required TResult Function(List<BannersEntity> bannerSList) successGetBanner,
+    required TResult Function(BannerResponseModel? bannerSList)
+        successGetBanner,
   }) {
     return successGetBanner(bannerSList);
   }
@@ -546,7 +544,7 @@ class _$SuccessGetBannerImpl<T> implements SuccessGetBanner<T> {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(String message)? error,
-    TResult? Function(List<BannersEntity> bannerSList)? successGetBanner,
+    TResult? Function(BannerResponseModel? bannerSList)? successGetBanner,
   }) {
     return successGetBanner?.call(bannerSList);
   }
@@ -557,7 +555,7 @@ class _$SuccessGetBannerImpl<T> implements SuccessGetBanner<T> {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(String message)? error,
-    TResult Function(List<BannersEntity> bannerSList)? successGetBanner,
+    TResult Function(BannerResponseModel? bannerSList)? successGetBanner,
     required TResult orElse(),
   }) {
     if (successGetBanner != null) {
@@ -605,10 +603,10 @@ class _$SuccessGetBannerImpl<T> implements SuccessGetBanner<T> {
 }
 
 abstract class SuccessGetBanner<T> implements HomeState<T> {
-  const factory SuccessGetBanner(final List<BannersEntity> bannerSList) =
+  const factory SuccessGetBanner(final BannerResponseModel? bannerSList) =
       _$SuccessGetBannerImpl<T>;
 
-  List<BannersEntity> get bannerSList;
+  BannerResponseModel? get bannerSList;
   @JsonKey(ignore: true)
   _$$SuccessGetBannerImplCopyWith<T, _$SuccessGetBannerImpl<T>> get copyWith =>
       throw _privateConstructorUsedError;

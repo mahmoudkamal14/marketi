@@ -8,13 +8,14 @@ part of 'banner_response_model.dart';
 
 BannerResponseModel _$BannerResponseModelFromJson(Map<String, dynamic> json) =>
     BannerResponseModel(
+      status: json['status'] as bool?,
+      message: json['message'],
+      data: (json['data'] as List<dynamic>?)
+          ?.map((e) => DataBanner.fromJson(e as Map<String, dynamic>))
+          .toList(),
+    );
+
+DataBanner _$DataBannerFromJson(Map<String, dynamic> json) => DataBanner(
       id: (json['id'] as num?)?.toInt(),
       image: json['image'] as String?,
     );
-
-Map<String, dynamic> _$BannerResponseModelToJson(
-        BannerResponseModel instance) =>
-    <String, dynamic>{
-      'id': instance.id,
-      'image': instance.image,
-    };

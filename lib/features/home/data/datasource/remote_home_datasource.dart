@@ -7,7 +7,8 @@ part 'remote_home_datasource.g.dart';
 
 @RestApi(baseUrl: ApiConstants.baseUrl)
 abstract class RemoteHomeDatasource {
-  factory RemoteHomeDatasource(Dio dio, {String baseUrl}) = _RemoteHomeDatasource;
+  factory RemoteHomeDatasource(Dio dio, {String baseUrl}) =
+      _RemoteHomeDatasource;
 
   @GET(ApiConstants.banners)
   Future<BannerResponseModel> getBanners();

@@ -23,8 +23,6 @@ class AuthRepository extends BaseAuthRepository {
         ),
       );
 
-      print('Name => ${loginEntity.email}');
-
       return ApiResult.success(result);
     } catch (error) {
       return ApiResult.failure(error.toString());

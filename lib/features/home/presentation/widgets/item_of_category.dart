@@ -17,10 +17,14 @@ class ItemCategoryProduct extends StatelessWidget {
         //     MaterialPageRoute(builder: (_) => ProductDetails(model: model)));
       },
       child: Container(
+        height: 240.h,
+        width: 200.w,
         decoration: ShapeDecoration(
-            color: Colors.white,
-            shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(10))),
+          color: Colors.white,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(10),
+          ),
+        ),
         child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 4.w, vertical: 6.h),
           child: Column(

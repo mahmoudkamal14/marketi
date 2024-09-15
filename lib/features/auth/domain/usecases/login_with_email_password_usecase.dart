@@ -1,6 +1,6 @@
 import 'package:marketi/core/networking/api_result.dart';
-import 'package:marketi/features/auth/domain/entities/login_entity.dart';
-import 'package:marketi/features/auth/domain/entities/user_entity.dart';
+import 'package:marketi/features/auth/data/models/auth_response_model.dart';
+import 'package:marketi/features/auth/data/models/login_request_body.dart';
 import 'package:marketi/features/auth/domain/repository/base_auth_repository.dart';
 
 class LoginWithEmailPasswordUsecase {
@@ -8,7 +8,8 @@ class LoginWithEmailPasswordUsecase {
 
   LoginWithEmailPasswordUsecase(this._repository);
 
-  Future<ApiResult<UserEntity>> call(LoginEntity loginEntity) async {
-    return await _repository.loginWithEmailPassword(loginEntity);
+  Future<ApiResult<AuthResponseModel>> call(
+      LoginRequestBody loginRequestBody) async {
+    return await _repository.loginWithEmailPassword(loginRequestBody);
   }
 }

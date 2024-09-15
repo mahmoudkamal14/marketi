@@ -1,11 +1,12 @@
 import 'package:marketi/core/networking/api_result.dart';
-import 'package:marketi/features/auth/domain/entities/login_entity.dart';
-import 'package:marketi/features/auth/domain/entities/register_entity.dart';
-import 'package:marketi/features/auth/domain/entities/user_entity.dart';
+import 'package:marketi/features/auth/data/models/auth_response_model.dart';
+import 'package:marketi/features/auth/data/models/login_request_body.dart';
+import 'package:marketi/features/auth/data/models/register_request_body.dart';
 
 abstract class BaseAuthRepository {
-  Future<ApiResult<UserEntity>> loginWithEmailPassword(LoginEntity loginEntity);
+  Future<ApiResult<AuthResponseModel>> loginWithEmailPassword(
+      LoginRequestBody loginRequestBody);
 
-  Future<ApiResult<UserEntity>> registerWithEmailPassword(
-      RegisterEntity registerEntity);
+  Future<ApiResult<AuthResponseModel>> registerWithEmailPassword(
+      RegisterRequestBody registerRequestBody);
 }

@@ -21,7 +21,7 @@ mixin _$LoginState {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(String message) error,
-    required TResult Function(UserEntity userEntity) loginSuccess,
+    required TResult Function(AuthResponseModel authResponseModel) loginSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -29,7 +29,7 @@ mixin _$LoginState {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(String message)? error,
-    TResult? Function(UserEntity userEntity)? loginSuccess,
+    TResult? Function(AuthResponseModel authResponseModel)? loginSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -37,7 +37,7 @@ mixin _$LoginState {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(String message)? error,
-    TResult Function(UserEntity userEntity)? loginSuccess,
+    TResult Function(AuthResponseModel authResponseModel)? loginSuccess,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -127,7 +127,7 @@ class _$InitialImpl implements _Initial {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(String message) error,
-    required TResult Function(UserEntity userEntity) loginSuccess,
+    required TResult Function(AuthResponseModel authResponseModel) loginSuccess,
   }) {
     return initial();
   }
@@ -138,7 +138,7 @@ class _$InitialImpl implements _Initial {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(String message)? error,
-    TResult? Function(UserEntity userEntity)? loginSuccess,
+    TResult? Function(AuthResponseModel authResponseModel)? loginSuccess,
   }) {
     return initial?.call();
   }
@@ -149,7 +149,7 @@ class _$InitialImpl implements _Initial {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(String message)? error,
-    TResult Function(UserEntity userEntity)? loginSuccess,
+    TResult Function(AuthResponseModel authResponseModel)? loginSuccess,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -241,7 +241,7 @@ class _$LoadingImpl implements Loading {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(String message) error,
-    required TResult Function(UserEntity userEntity) loginSuccess,
+    required TResult Function(AuthResponseModel authResponseModel) loginSuccess,
   }) {
     return loading();
   }
@@ -252,7 +252,7 @@ class _$LoadingImpl implements Loading {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(String message)? error,
-    TResult? Function(UserEntity userEntity)? loginSuccess,
+    TResult? Function(AuthResponseModel authResponseModel)? loginSuccess,
   }) {
     return loading?.call();
   }
@@ -263,7 +263,7 @@ class _$LoadingImpl implements Loading {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(String message)? error,
-    TResult Function(UserEntity userEntity)? loginSuccess,
+    TResult Function(AuthResponseModel authResponseModel)? loginSuccess,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -381,7 +381,7 @@ class _$ErrorImpl implements Error {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(String message) error,
-    required TResult Function(UserEntity userEntity) loginSuccess,
+    required TResult Function(AuthResponseModel authResponseModel) loginSuccess,
   }) {
     return error(message);
   }
@@ -392,7 +392,7 @@ class _$ErrorImpl implements Error {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(String message)? error,
-    TResult? Function(UserEntity userEntity)? loginSuccess,
+    TResult? Function(AuthResponseModel authResponseModel)? loginSuccess,
   }) {
     return error?.call(message);
   }
@@ -403,7 +403,7 @@ class _$ErrorImpl implements Error {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(String message)? error,
-    TResult Function(UserEntity userEntity)? loginSuccess,
+    TResult Function(AuthResponseModel authResponseModel)? loginSuccess,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -465,7 +465,7 @@ abstract class _$$LoginSuccessImplCopyWith<$Res> {
           _$LoginSuccessImpl value, $Res Function(_$LoginSuccessImpl) then) =
       __$$LoginSuccessImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({UserEntity userEntity});
+  $Res call({AuthResponseModel authResponseModel});
 }
 
 /// @nodoc
@@ -479,13 +479,13 @@ class __$$LoginSuccessImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? userEntity = null,
+    Object? authResponseModel = null,
   }) {
     return _then(_$LoginSuccessImpl(
-      null == userEntity
-          ? _value.userEntity
-          : userEntity // ignore: cast_nullable_to_non_nullable
-              as UserEntity,
+      null == authResponseModel
+          ? _value.authResponseModel
+          : authResponseModel // ignore: cast_nullable_to_non_nullable
+              as AuthResponseModel,
     ));
   }
 }
@@ -493,14 +493,14 @@ class __$$LoginSuccessImplCopyWithImpl<$Res>
 /// @nodoc
 
 class _$LoginSuccessImpl implements LoginSuccess {
-  const _$LoginSuccessImpl(this.userEntity);
+  const _$LoginSuccessImpl(this.authResponseModel);
 
   @override
-  final UserEntity userEntity;
+  final AuthResponseModel authResponseModel;
 
   @override
   String toString() {
-    return 'LoginState.loginSuccess(userEntity: $userEntity)';
+    return 'LoginState.loginSuccess(authResponseModel: $authResponseModel)';
   }
 
   @override
@@ -508,12 +508,12 @@ class _$LoginSuccessImpl implements LoginSuccess {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$LoginSuccessImpl &&
-            (identical(other.userEntity, userEntity) ||
-                other.userEntity == userEntity));
+            (identical(other.authResponseModel, authResponseModel) ||
+                other.authResponseModel == authResponseModel));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, userEntity);
+  int get hashCode => Object.hash(runtimeType, authResponseModel);
 
   @JsonKey(ignore: true)
   @override
@@ -527,9 +527,9 @@ class _$LoginSuccessImpl implements LoginSuccess {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(String message) error,
-    required TResult Function(UserEntity userEntity) loginSuccess,
+    required TResult Function(AuthResponseModel authResponseModel) loginSuccess,
   }) {
-    return loginSuccess(userEntity);
+    return loginSuccess(authResponseModel);
   }
 
   @override
@@ -538,9 +538,9 @@ class _$LoginSuccessImpl implements LoginSuccess {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(String message)? error,
-    TResult? Function(UserEntity userEntity)? loginSuccess,
+    TResult? Function(AuthResponseModel authResponseModel)? loginSuccess,
   }) {
-    return loginSuccess?.call(userEntity);
+    return loginSuccess?.call(authResponseModel);
   }
 
   @override
@@ -549,11 +549,11 @@ class _$LoginSuccessImpl implements LoginSuccess {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(String message)? error,
-    TResult Function(UserEntity userEntity)? loginSuccess,
+    TResult Function(AuthResponseModel authResponseModel)? loginSuccess,
     required TResult orElse(),
   }) {
     if (loginSuccess != null) {
-      return loginSuccess(userEntity);
+      return loginSuccess(authResponseModel);
     }
     return orElse();
   }
@@ -597,9 +597,10 @@ class _$LoginSuccessImpl implements LoginSuccess {
 }
 
 abstract class LoginSuccess implements LoginState {
-  const factory LoginSuccess(final UserEntity userEntity) = _$LoginSuccessImpl;
+  const factory LoginSuccess(final AuthResponseModel authResponseModel) =
+      _$LoginSuccessImpl;
 
-  UserEntity get userEntity;
+  AuthResponseModel get authResponseModel;
   @JsonKey(ignore: true)
   _$$LoginSuccessImplCopyWith<_$LoginSuccessImpl> get copyWith =>
       throw _privateConstructorUsedError;

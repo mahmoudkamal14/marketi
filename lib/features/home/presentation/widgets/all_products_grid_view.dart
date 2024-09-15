@@ -9,32 +9,35 @@ class AllProductsGridView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(
-          'All Products',
-          textAlign: TextAlign.left,
-          style: AppStyles.style20SemiBold,
-        ),
-        verticalSpace(4),
-        SizedBox(
-          height: 888.h,
-          width: double.infinity,
-          child: GridView.builder(
-            physics: const ClampingScrollPhysics(),
-            reverse: true,
-            itemCount: 12,
-            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 2,
-              childAspectRatio: 164.w / 194.h,
-              crossAxisSpacing: 19.w,
-              mainAxisSpacing: 15.w,
-            ),
-            itemBuilder: (context, index) => const ItemCategoryProduct(),
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: 14.w),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            'All Products',
+            textAlign: TextAlign.left,
+            style: AppStyles.style20SemiBold,
           ),
-        ),
-      ],
+          verticalSpace(4),
+          SizedBox(
+            height: 888.h,
+            width: double.infinity,
+            child: GridView.builder(
+              reverse: true,
+              shrinkWrap: true,
+              itemCount: 20,
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2,
+                childAspectRatio: 164.w / 194.h,
+                crossAxisSpacing: 19.w,
+                mainAxisSpacing: 15.w,
+              ),
+              itemBuilder: (context, index) => const ItemCategoryProduct(),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }

@@ -1,5 +1,5 @@
 import 'package:freezed_annotation/freezed_annotation.dart';
-import 'package:marketi/features/auth/domain/entities/user_entity.dart';
+import 'package:marketi/features/auth/data/models/auth_response_model.dart';
 
 part 'login_state.freezed.dart';
 
@@ -8,5 +8,6 @@ class LoginState with _$LoginState {
   const factory LoginState.initial() = _Initial;
   const factory LoginState.loading() = Loading;
   const factory LoginState.error({required String message}) = Error;
-  const factory LoginState.loginSuccess(UserEntity userEntity) = LoginSuccess;
+  const factory LoginState.loginSuccess(AuthResponseModel authResponseModel) =
+      LoginSuccess;
 }

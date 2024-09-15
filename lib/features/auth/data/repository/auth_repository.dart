@@ -1,10 +1,8 @@
 import 'package:marketi/core/networking/api_result.dart';
 import 'package:marketi/features/auth/data/datasource/remote_auth_datasource.dart';
+import 'package:marketi/features/auth/data/models/auth_response_model.dart';
 import 'package:marketi/features/auth/data/models/login_request_body.dart';
 import 'package:marketi/features/auth/data/models/register_request_body.dart';
-import 'package:marketi/features/auth/domain/entities/login_entity.dart';
-import 'package:marketi/features/auth/domain/entities/register_entity.dart';
-import 'package:marketi/features/auth/domain/entities/user_entity.dart';
 import 'package:marketi/features/auth/domain/repository/base_auth_repository.dart';
 
 class AuthRepository extends BaseAuthRepository {
@@ -13,15 +11,10 @@ class AuthRepository extends BaseAuthRepository {
   AuthRepository(this._datasource);
 
   @override
-  Future<ApiResult<UserEntity>> loginWithEmailPassword(
-      LoginEntity loginEntity) async {
+  Future<ApiResult<AuthResponseModel>> loginWithEmailPassword(
+      LoginRequestBody loginRequestBody) async {
     try {
-      final result = await _datasource.loginWithEmailPassword(
-        LoginRequestBody(
-          email: loginEntity.email,
-          password: loginEntity.password,
-        ),
-      );
+      final result = await _datasource.loginWithEmailPassword(loginRequestBody);
 
       return ApiResult.success(result);
     } catch (error) {
@@ -30,10 +23,10 @@ class AuthRepository extends BaseAuthRepository {
   }
 
   @override
-  Future<ApiResult<UserEntity>> registerWithEmailPassword(
-      RegisterEntity registerEntity) async {
-    final result = await _datasource
-        .registerWithEmailPassword(registerEntity as RegisterRequestBody);
+  Future<ApiResult<AuthResponseModel>> registerWithEmailPassword(
+      RegisterRequestBody registerRequestBody) async {
+    final result =
+        await _datasource.registerWithEmailPassword(registerRequestBody);
     try {
       return ApiResult.success(result);
     } catch (error) {

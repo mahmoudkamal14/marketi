@@ -21,8 +21,14 @@ mixin _$HomeState<T> {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(String message) error,
-    required TResult Function(BannerResponseModel? bannerSList)
+    required TResult Function(BannerResponseModel? bannerResponseModel)
         successGetBanner,
+    required TResult Function(CategoriesResponseModel? categoriesResponseModel)
+        successGetCategories,
+    required TResult Function(ProductResponseModel? productResponseModel)
+        successGetAllProducts,
+    required TResult Function(ProductResponseModel? productResponseModel)
+        successGetCategoryProduct,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -30,7 +36,14 @@ mixin _$HomeState<T> {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(String message)? error,
-    TResult? Function(BannerResponseModel? bannerSList)? successGetBanner,
+    TResult? Function(BannerResponseModel? bannerResponseModel)?
+        successGetBanner,
+    TResult? Function(CategoriesResponseModel? categoriesResponseModel)?
+        successGetCategories,
+    TResult? Function(ProductResponseModel? productResponseModel)?
+        successGetAllProducts,
+    TResult? Function(ProductResponseModel? productResponseModel)?
+        successGetCategoryProduct,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -38,7 +51,14 @@ mixin _$HomeState<T> {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(String message)? error,
-    TResult Function(BannerResponseModel? bannerSList)? successGetBanner,
+    TResult Function(BannerResponseModel? bannerResponseModel)?
+        successGetBanner,
+    TResult Function(CategoriesResponseModel? categoriesResponseModel)?
+        successGetCategories,
+    TResult Function(ProductResponseModel? productResponseModel)?
+        successGetAllProducts,
+    TResult Function(ProductResponseModel? productResponseModel)?
+        successGetCategoryProduct,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -48,6 +68,12 @@ mixin _$HomeState<T> {
     required TResult Function(Loading<T> value) loading,
     required TResult Function(Error<T> value) error,
     required TResult Function(SuccessGetBanner<T> value) successGetBanner,
+    required TResult Function(SuccessGetCategories<T> value)
+        successGetCategories,
+    required TResult Function(SuccessGetAllProducts<T> value)
+        successGetAllProducts,
+    required TResult Function(SuccessGetCategoryProduct<T> value)
+        successGetCategoryProduct,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -56,6 +82,10 @@ mixin _$HomeState<T> {
     TResult? Function(Loading<T> value)? loading,
     TResult? Function(Error<T> value)? error,
     TResult? Function(SuccessGetBanner<T> value)? successGetBanner,
+    TResult? Function(SuccessGetCategories<T> value)? successGetCategories,
+    TResult? Function(SuccessGetAllProducts<T> value)? successGetAllProducts,
+    TResult? Function(SuccessGetCategoryProduct<T> value)?
+        successGetCategoryProduct,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -64,6 +94,10 @@ mixin _$HomeState<T> {
     TResult Function(Loading<T> value)? loading,
     TResult Function(Error<T> value)? error,
     TResult Function(SuccessGetBanner<T> value)? successGetBanner,
+    TResult Function(SuccessGetCategories<T> value)? successGetCategories,
+    TResult Function(SuccessGetAllProducts<T> value)? successGetAllProducts,
+    TResult Function(SuccessGetCategoryProduct<T> value)?
+        successGetCategoryProduct,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -128,8 +162,14 @@ class _$InitialImpl<T> implements _Initial<T> {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(String message) error,
-    required TResult Function(BannerResponseModel? bannerSList)
+    required TResult Function(BannerResponseModel? bannerResponseModel)
         successGetBanner,
+    required TResult Function(CategoriesResponseModel? categoriesResponseModel)
+        successGetCategories,
+    required TResult Function(ProductResponseModel? productResponseModel)
+        successGetAllProducts,
+    required TResult Function(ProductResponseModel? productResponseModel)
+        successGetCategoryProduct,
   }) {
     return initial();
   }
@@ -140,7 +180,14 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(String message)? error,
-    TResult? Function(BannerResponseModel? bannerSList)? successGetBanner,
+    TResult? Function(BannerResponseModel? bannerResponseModel)?
+        successGetBanner,
+    TResult? Function(CategoriesResponseModel? categoriesResponseModel)?
+        successGetCategories,
+    TResult? Function(ProductResponseModel? productResponseModel)?
+        successGetAllProducts,
+    TResult? Function(ProductResponseModel? productResponseModel)?
+        successGetCategoryProduct,
   }) {
     return initial?.call();
   }
@@ -151,7 +198,14 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(String message)? error,
-    TResult Function(BannerResponseModel? bannerSList)? successGetBanner,
+    TResult Function(BannerResponseModel? bannerResponseModel)?
+        successGetBanner,
+    TResult Function(CategoriesResponseModel? categoriesResponseModel)?
+        successGetCategories,
+    TResult Function(ProductResponseModel? productResponseModel)?
+        successGetAllProducts,
+    TResult Function(ProductResponseModel? productResponseModel)?
+        successGetCategoryProduct,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -167,6 +221,12 @@ class _$InitialImpl<T> implements _Initial<T> {
     required TResult Function(Loading<T> value) loading,
     required TResult Function(Error<T> value) error,
     required TResult Function(SuccessGetBanner<T> value) successGetBanner,
+    required TResult Function(SuccessGetCategories<T> value)
+        successGetCategories,
+    required TResult Function(SuccessGetAllProducts<T> value)
+        successGetAllProducts,
+    required TResult Function(SuccessGetCategoryProduct<T> value)
+        successGetCategoryProduct,
   }) {
     return initial(this);
   }
@@ -178,6 +238,10 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult? Function(Loading<T> value)? loading,
     TResult? Function(Error<T> value)? error,
     TResult? Function(SuccessGetBanner<T> value)? successGetBanner,
+    TResult? Function(SuccessGetCategories<T> value)? successGetCategories,
+    TResult? Function(SuccessGetAllProducts<T> value)? successGetAllProducts,
+    TResult? Function(SuccessGetCategoryProduct<T> value)?
+        successGetCategoryProduct,
   }) {
     return initial?.call(this);
   }
@@ -189,6 +253,10 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult Function(Loading<T> value)? loading,
     TResult Function(Error<T> value)? error,
     TResult Function(SuccessGetBanner<T> value)? successGetBanner,
+    TResult Function(SuccessGetCategories<T> value)? successGetCategories,
+    TResult Function(SuccessGetAllProducts<T> value)? successGetAllProducts,
+    TResult Function(SuccessGetCategoryProduct<T> value)?
+        successGetCategoryProduct,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -243,8 +311,14 @@ class _$LoadingImpl<T> implements Loading<T> {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(String message) error,
-    required TResult Function(BannerResponseModel? bannerSList)
+    required TResult Function(BannerResponseModel? bannerResponseModel)
         successGetBanner,
+    required TResult Function(CategoriesResponseModel? categoriesResponseModel)
+        successGetCategories,
+    required TResult Function(ProductResponseModel? productResponseModel)
+        successGetAllProducts,
+    required TResult Function(ProductResponseModel? productResponseModel)
+        successGetCategoryProduct,
   }) {
     return loading();
   }
@@ -255,7 +329,14 @@ class _$LoadingImpl<T> implements Loading<T> {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(String message)? error,
-    TResult? Function(BannerResponseModel? bannerSList)? successGetBanner,
+    TResult? Function(BannerResponseModel? bannerResponseModel)?
+        successGetBanner,
+    TResult? Function(CategoriesResponseModel? categoriesResponseModel)?
+        successGetCategories,
+    TResult? Function(ProductResponseModel? productResponseModel)?
+        successGetAllProducts,
+    TResult? Function(ProductResponseModel? productResponseModel)?
+        successGetCategoryProduct,
   }) {
     return loading?.call();
   }
@@ -266,7 +347,14 @@ class _$LoadingImpl<T> implements Loading<T> {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(String message)? error,
-    TResult Function(BannerResponseModel? bannerSList)? successGetBanner,
+    TResult Function(BannerResponseModel? bannerResponseModel)?
+        successGetBanner,
+    TResult Function(CategoriesResponseModel? categoriesResponseModel)?
+        successGetCategories,
+    TResult Function(ProductResponseModel? productResponseModel)?
+        successGetAllProducts,
+    TResult Function(ProductResponseModel? productResponseModel)?
+        successGetCategoryProduct,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -282,6 +370,12 @@ class _$LoadingImpl<T> implements Loading<T> {
     required TResult Function(Loading<T> value) loading,
     required TResult Function(Error<T> value) error,
     required TResult Function(SuccessGetBanner<T> value) successGetBanner,
+    required TResult Function(SuccessGetCategories<T> value)
+        successGetCategories,
+    required TResult Function(SuccessGetAllProducts<T> value)
+        successGetAllProducts,
+    required TResult Function(SuccessGetCategoryProduct<T> value)
+        successGetCategoryProduct,
   }) {
     return loading(this);
   }
@@ -293,6 +387,10 @@ class _$LoadingImpl<T> implements Loading<T> {
     TResult? Function(Loading<T> value)? loading,
     TResult? Function(Error<T> value)? error,
     TResult? Function(SuccessGetBanner<T> value)? successGetBanner,
+    TResult? Function(SuccessGetCategories<T> value)? successGetCategories,
+    TResult? Function(SuccessGetAllProducts<T> value)? successGetAllProducts,
+    TResult? Function(SuccessGetCategoryProduct<T> value)?
+        successGetCategoryProduct,
   }) {
     return loading?.call(this);
   }
@@ -304,6 +402,10 @@ class _$LoadingImpl<T> implements Loading<T> {
     TResult Function(Loading<T> value)? loading,
     TResult Function(Error<T> value)? error,
     TResult Function(SuccessGetBanner<T> value)? successGetBanner,
+    TResult Function(SuccessGetCategories<T> value)? successGetCategories,
+    TResult Function(SuccessGetAllProducts<T> value)? successGetAllProducts,
+    TResult Function(SuccessGetCategoryProduct<T> value)?
+        successGetCategoryProduct,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -384,8 +486,14 @@ class _$ErrorImpl<T> implements Error<T> {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(String message) error,
-    required TResult Function(BannerResponseModel? bannerSList)
+    required TResult Function(BannerResponseModel? bannerResponseModel)
         successGetBanner,
+    required TResult Function(CategoriesResponseModel? categoriesResponseModel)
+        successGetCategories,
+    required TResult Function(ProductResponseModel? productResponseModel)
+        successGetAllProducts,
+    required TResult Function(ProductResponseModel? productResponseModel)
+        successGetCategoryProduct,
   }) {
     return error(message);
   }
@@ -396,7 +504,14 @@ class _$ErrorImpl<T> implements Error<T> {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(String message)? error,
-    TResult? Function(BannerResponseModel? bannerSList)? successGetBanner,
+    TResult? Function(BannerResponseModel? bannerResponseModel)?
+        successGetBanner,
+    TResult? Function(CategoriesResponseModel? categoriesResponseModel)?
+        successGetCategories,
+    TResult? Function(ProductResponseModel? productResponseModel)?
+        successGetAllProducts,
+    TResult? Function(ProductResponseModel? productResponseModel)?
+        successGetCategoryProduct,
   }) {
     return error?.call(message);
   }
@@ -407,7 +522,14 @@ class _$ErrorImpl<T> implements Error<T> {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(String message)? error,
-    TResult Function(BannerResponseModel? bannerSList)? successGetBanner,
+    TResult Function(BannerResponseModel? bannerResponseModel)?
+        successGetBanner,
+    TResult Function(CategoriesResponseModel? categoriesResponseModel)?
+        successGetCategories,
+    TResult Function(ProductResponseModel? productResponseModel)?
+        successGetAllProducts,
+    TResult Function(ProductResponseModel? productResponseModel)?
+        successGetCategoryProduct,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -423,6 +545,12 @@ class _$ErrorImpl<T> implements Error<T> {
     required TResult Function(Loading<T> value) loading,
     required TResult Function(Error<T> value) error,
     required TResult Function(SuccessGetBanner<T> value) successGetBanner,
+    required TResult Function(SuccessGetCategories<T> value)
+        successGetCategories,
+    required TResult Function(SuccessGetAllProducts<T> value)
+        successGetAllProducts,
+    required TResult Function(SuccessGetCategoryProduct<T> value)
+        successGetCategoryProduct,
   }) {
     return error(this);
   }
@@ -434,6 +562,10 @@ class _$ErrorImpl<T> implements Error<T> {
     TResult? Function(Loading<T> value)? loading,
     TResult? Function(Error<T> value)? error,
     TResult? Function(SuccessGetBanner<T> value)? successGetBanner,
+    TResult? Function(SuccessGetCategories<T> value)? successGetCategories,
+    TResult? Function(SuccessGetAllProducts<T> value)? successGetAllProducts,
+    TResult? Function(SuccessGetCategoryProduct<T> value)?
+        successGetCategoryProduct,
   }) {
     return error?.call(this);
   }
@@ -445,6 +577,10 @@ class _$ErrorImpl<T> implements Error<T> {
     TResult Function(Loading<T> value)? loading,
     TResult Function(Error<T> value)? error,
     TResult Function(SuccessGetBanner<T> value)? successGetBanner,
+    TResult Function(SuccessGetCategories<T> value)? successGetCategories,
+    TResult Function(SuccessGetAllProducts<T> value)? successGetAllProducts,
+    TResult Function(SuccessGetCategoryProduct<T> value)?
+        successGetCategoryProduct,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -469,7 +605,7 @@ abstract class _$$SuccessGetBannerImplCopyWith<T, $Res> {
           $Res Function(_$SuccessGetBannerImpl<T>) then) =
       __$$SuccessGetBannerImplCopyWithImpl<T, $Res>;
   @useResult
-  $Res call({BannerResponseModel? bannerSList});
+  $Res call({BannerResponseModel? bannerResponseModel});
 }
 
 /// @nodoc
@@ -483,12 +619,12 @@ class __$$SuccessGetBannerImplCopyWithImpl<T, $Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? bannerSList = freezed,
+    Object? bannerResponseModel = freezed,
   }) {
     return _then(_$SuccessGetBannerImpl<T>(
-      freezed == bannerSList
-          ? _value.bannerSList
-          : bannerSList // ignore: cast_nullable_to_non_nullable
+      freezed == bannerResponseModel
+          ? _value.bannerResponseModel
+          : bannerResponseModel // ignore: cast_nullable_to_non_nullable
               as BannerResponseModel?,
     ));
   }
@@ -497,14 +633,14 @@ class __$$SuccessGetBannerImplCopyWithImpl<T, $Res>
 /// @nodoc
 
 class _$SuccessGetBannerImpl<T> implements SuccessGetBanner<T> {
-  const _$SuccessGetBannerImpl(this.bannerSList);
+  const _$SuccessGetBannerImpl(this.bannerResponseModel);
 
   @override
-  final BannerResponseModel? bannerSList;
+  final BannerResponseModel? bannerResponseModel;
 
   @override
   String toString() {
-    return 'HomeState<$T>.successGetBanner(bannerSList: $bannerSList)';
+    return 'HomeState<$T>.successGetBanner(bannerResponseModel: $bannerResponseModel)';
   }
 
   @override
@@ -512,12 +648,12 @@ class _$SuccessGetBannerImpl<T> implements SuccessGetBanner<T> {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$SuccessGetBannerImpl<T> &&
-            (identical(other.bannerSList, bannerSList) ||
-                other.bannerSList == bannerSList));
+            (identical(other.bannerResponseModel, bannerResponseModel) ||
+                other.bannerResponseModel == bannerResponseModel));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, bannerSList);
+  int get hashCode => Object.hash(runtimeType, bannerResponseModel);
 
   @JsonKey(ignore: true)
   @override
@@ -532,10 +668,16 @@ class _$SuccessGetBannerImpl<T> implements SuccessGetBanner<T> {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(String message) error,
-    required TResult Function(BannerResponseModel? bannerSList)
+    required TResult Function(BannerResponseModel? bannerResponseModel)
         successGetBanner,
+    required TResult Function(CategoriesResponseModel? categoriesResponseModel)
+        successGetCategories,
+    required TResult Function(ProductResponseModel? productResponseModel)
+        successGetAllProducts,
+    required TResult Function(ProductResponseModel? productResponseModel)
+        successGetCategoryProduct,
   }) {
-    return successGetBanner(bannerSList);
+    return successGetBanner(bannerResponseModel);
   }
 
   @override
@@ -544,9 +686,16 @@ class _$SuccessGetBannerImpl<T> implements SuccessGetBanner<T> {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(String message)? error,
-    TResult? Function(BannerResponseModel? bannerSList)? successGetBanner,
+    TResult? Function(BannerResponseModel? bannerResponseModel)?
+        successGetBanner,
+    TResult? Function(CategoriesResponseModel? categoriesResponseModel)?
+        successGetCategories,
+    TResult? Function(ProductResponseModel? productResponseModel)?
+        successGetAllProducts,
+    TResult? Function(ProductResponseModel? productResponseModel)?
+        successGetCategoryProduct,
   }) {
-    return successGetBanner?.call(bannerSList);
+    return successGetBanner?.call(bannerResponseModel);
   }
 
   @override
@@ -555,11 +704,18 @@ class _$SuccessGetBannerImpl<T> implements SuccessGetBanner<T> {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(String message)? error,
-    TResult Function(BannerResponseModel? bannerSList)? successGetBanner,
+    TResult Function(BannerResponseModel? bannerResponseModel)?
+        successGetBanner,
+    TResult Function(CategoriesResponseModel? categoriesResponseModel)?
+        successGetCategories,
+    TResult Function(ProductResponseModel? productResponseModel)?
+        successGetAllProducts,
+    TResult Function(ProductResponseModel? productResponseModel)?
+        successGetCategoryProduct,
     required TResult orElse(),
   }) {
     if (successGetBanner != null) {
-      return successGetBanner(bannerSList);
+      return successGetBanner(bannerResponseModel);
     }
     return orElse();
   }
@@ -571,6 +727,12 @@ class _$SuccessGetBannerImpl<T> implements SuccessGetBanner<T> {
     required TResult Function(Loading<T> value) loading,
     required TResult Function(Error<T> value) error,
     required TResult Function(SuccessGetBanner<T> value) successGetBanner,
+    required TResult Function(SuccessGetCategories<T> value)
+        successGetCategories,
+    required TResult Function(SuccessGetAllProducts<T> value)
+        successGetAllProducts,
+    required TResult Function(SuccessGetCategoryProduct<T> value)
+        successGetCategoryProduct,
   }) {
     return successGetBanner(this);
   }
@@ -582,6 +744,10 @@ class _$SuccessGetBannerImpl<T> implements SuccessGetBanner<T> {
     TResult? Function(Loading<T> value)? loading,
     TResult? Function(Error<T> value)? error,
     TResult? Function(SuccessGetBanner<T> value)? successGetBanner,
+    TResult? Function(SuccessGetCategories<T> value)? successGetCategories,
+    TResult? Function(SuccessGetAllProducts<T> value)? successGetAllProducts,
+    TResult? Function(SuccessGetCategoryProduct<T> value)?
+        successGetCategoryProduct,
   }) {
     return successGetBanner?.call(this);
   }
@@ -593,6 +759,10 @@ class _$SuccessGetBannerImpl<T> implements SuccessGetBanner<T> {
     TResult Function(Loading<T> value)? loading,
     TResult Function(Error<T> value)? error,
     TResult Function(SuccessGetBanner<T> value)? successGetBanner,
+    TResult Function(SuccessGetCategories<T> value)? successGetCategories,
+    TResult Function(SuccessGetAllProducts<T> value)? successGetAllProducts,
+    TResult Function(SuccessGetCategoryProduct<T> value)?
+        successGetCategoryProduct,
     required TResult orElse(),
   }) {
     if (successGetBanner != null) {
@@ -603,11 +773,573 @@ class _$SuccessGetBannerImpl<T> implements SuccessGetBanner<T> {
 }
 
 abstract class SuccessGetBanner<T> implements HomeState<T> {
-  const factory SuccessGetBanner(final BannerResponseModel? bannerSList) =
+  const factory SuccessGetBanner(
+          final BannerResponseModel? bannerResponseModel) =
       _$SuccessGetBannerImpl<T>;
 
-  BannerResponseModel? get bannerSList;
+  BannerResponseModel? get bannerResponseModel;
   @JsonKey(ignore: true)
   _$$SuccessGetBannerImplCopyWith<T, _$SuccessGetBannerImpl<T>> get copyWith =>
       throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$SuccessGetCategoriesImplCopyWith<T, $Res> {
+  factory _$$SuccessGetCategoriesImplCopyWith(
+          _$SuccessGetCategoriesImpl<T> value,
+          $Res Function(_$SuccessGetCategoriesImpl<T>) then) =
+      __$$SuccessGetCategoriesImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({CategoriesResponseModel? categoriesResponseModel});
+}
+
+/// @nodoc
+class __$$SuccessGetCategoriesImplCopyWithImpl<T, $Res>
+    extends _$HomeStateCopyWithImpl<T, $Res, _$SuccessGetCategoriesImpl<T>>
+    implements _$$SuccessGetCategoriesImplCopyWith<T, $Res> {
+  __$$SuccessGetCategoriesImplCopyWithImpl(_$SuccessGetCategoriesImpl<T> _value,
+      $Res Function(_$SuccessGetCategoriesImpl<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? categoriesResponseModel = freezed,
+  }) {
+    return _then(_$SuccessGetCategoriesImpl<T>(
+      freezed == categoriesResponseModel
+          ? _value.categoriesResponseModel
+          : categoriesResponseModel // ignore: cast_nullable_to_non_nullable
+              as CategoriesResponseModel?,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$SuccessGetCategoriesImpl<T> implements SuccessGetCategories<T> {
+  const _$SuccessGetCategoriesImpl(this.categoriesResponseModel);
+
+  @override
+  final CategoriesResponseModel? categoriesResponseModel;
+
+  @override
+  String toString() {
+    return 'HomeState<$T>.successGetCategories(categoriesResponseModel: $categoriesResponseModel)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SuccessGetCategoriesImpl<T> &&
+            (identical(
+                    other.categoriesResponseModel, categoriesResponseModel) ||
+                other.categoriesResponseModel == categoriesResponseModel));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, categoriesResponseModel);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SuccessGetCategoriesImplCopyWith<T, _$SuccessGetCategoriesImpl<T>>
+      get copyWith => __$$SuccessGetCategoriesImplCopyWithImpl<T,
+          _$SuccessGetCategoriesImpl<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(String message) error,
+    required TResult Function(BannerResponseModel? bannerResponseModel)
+        successGetBanner,
+    required TResult Function(CategoriesResponseModel? categoriesResponseModel)
+        successGetCategories,
+    required TResult Function(ProductResponseModel? productResponseModel)
+        successGetAllProducts,
+    required TResult Function(ProductResponseModel? productResponseModel)
+        successGetCategoryProduct,
+  }) {
+    return successGetCategories(categoriesResponseModel);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(String message)? error,
+    TResult? Function(BannerResponseModel? bannerResponseModel)?
+        successGetBanner,
+    TResult? Function(CategoriesResponseModel? categoriesResponseModel)?
+        successGetCategories,
+    TResult? Function(ProductResponseModel? productResponseModel)?
+        successGetAllProducts,
+    TResult? Function(ProductResponseModel? productResponseModel)?
+        successGetCategoryProduct,
+  }) {
+    return successGetCategories?.call(categoriesResponseModel);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(String message)? error,
+    TResult Function(BannerResponseModel? bannerResponseModel)?
+        successGetBanner,
+    TResult Function(CategoriesResponseModel? categoriesResponseModel)?
+        successGetCategories,
+    TResult Function(ProductResponseModel? productResponseModel)?
+        successGetAllProducts,
+    TResult Function(ProductResponseModel? productResponseModel)?
+        successGetCategoryProduct,
+    required TResult orElse(),
+  }) {
+    if (successGetCategories != null) {
+      return successGetCategories(categoriesResponseModel);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(Loading<T> value) loading,
+    required TResult Function(Error<T> value) error,
+    required TResult Function(SuccessGetBanner<T> value) successGetBanner,
+    required TResult Function(SuccessGetCategories<T> value)
+        successGetCategories,
+    required TResult Function(SuccessGetAllProducts<T> value)
+        successGetAllProducts,
+    required TResult Function(SuccessGetCategoryProduct<T> value)
+        successGetCategoryProduct,
+  }) {
+    return successGetCategories(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(Loading<T> value)? loading,
+    TResult? Function(Error<T> value)? error,
+    TResult? Function(SuccessGetBanner<T> value)? successGetBanner,
+    TResult? Function(SuccessGetCategories<T> value)? successGetCategories,
+    TResult? Function(SuccessGetAllProducts<T> value)? successGetAllProducts,
+    TResult? Function(SuccessGetCategoryProduct<T> value)?
+        successGetCategoryProduct,
+  }) {
+    return successGetCategories?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(Loading<T> value)? loading,
+    TResult Function(Error<T> value)? error,
+    TResult Function(SuccessGetBanner<T> value)? successGetBanner,
+    TResult Function(SuccessGetCategories<T> value)? successGetCategories,
+    TResult Function(SuccessGetAllProducts<T> value)? successGetAllProducts,
+    TResult Function(SuccessGetCategoryProduct<T> value)?
+        successGetCategoryProduct,
+    required TResult orElse(),
+  }) {
+    if (successGetCategories != null) {
+      return successGetCategories(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SuccessGetCategories<T> implements HomeState<T> {
+  const factory SuccessGetCategories(
+          final CategoriesResponseModel? categoriesResponseModel) =
+      _$SuccessGetCategoriesImpl<T>;
+
+  CategoriesResponseModel? get categoriesResponseModel;
+  @JsonKey(ignore: true)
+  _$$SuccessGetCategoriesImplCopyWith<T, _$SuccessGetCategoriesImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$SuccessGetAllProductsImplCopyWith<T, $Res> {
+  factory _$$SuccessGetAllProductsImplCopyWith(
+          _$SuccessGetAllProductsImpl<T> value,
+          $Res Function(_$SuccessGetAllProductsImpl<T>) then) =
+      __$$SuccessGetAllProductsImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({ProductResponseModel? productResponseModel});
+}
+
+/// @nodoc
+class __$$SuccessGetAllProductsImplCopyWithImpl<T, $Res>
+    extends _$HomeStateCopyWithImpl<T, $Res, _$SuccessGetAllProductsImpl<T>>
+    implements _$$SuccessGetAllProductsImplCopyWith<T, $Res> {
+  __$$SuccessGetAllProductsImplCopyWithImpl(
+      _$SuccessGetAllProductsImpl<T> _value,
+      $Res Function(_$SuccessGetAllProductsImpl<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? productResponseModel = freezed,
+  }) {
+    return _then(_$SuccessGetAllProductsImpl<T>(
+      freezed == productResponseModel
+          ? _value.productResponseModel
+          : productResponseModel // ignore: cast_nullable_to_non_nullable
+              as ProductResponseModel?,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$SuccessGetAllProductsImpl<T> implements SuccessGetAllProducts<T> {
+  const _$SuccessGetAllProductsImpl(this.productResponseModel);
+
+  @override
+  final ProductResponseModel? productResponseModel;
+
+  @override
+  String toString() {
+    return 'HomeState<$T>.successGetAllProducts(productResponseModel: $productResponseModel)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SuccessGetAllProductsImpl<T> &&
+            (identical(other.productResponseModel, productResponseModel) ||
+                other.productResponseModel == productResponseModel));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, productResponseModel);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SuccessGetAllProductsImplCopyWith<T, _$SuccessGetAllProductsImpl<T>>
+      get copyWith => __$$SuccessGetAllProductsImplCopyWithImpl<T,
+          _$SuccessGetAllProductsImpl<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(String message) error,
+    required TResult Function(BannerResponseModel? bannerResponseModel)
+        successGetBanner,
+    required TResult Function(CategoriesResponseModel? categoriesResponseModel)
+        successGetCategories,
+    required TResult Function(ProductResponseModel? productResponseModel)
+        successGetAllProducts,
+    required TResult Function(ProductResponseModel? productResponseModel)
+        successGetCategoryProduct,
+  }) {
+    return successGetAllProducts(productResponseModel);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(String message)? error,
+    TResult? Function(BannerResponseModel? bannerResponseModel)?
+        successGetBanner,
+    TResult? Function(CategoriesResponseModel? categoriesResponseModel)?
+        successGetCategories,
+    TResult? Function(ProductResponseModel? productResponseModel)?
+        successGetAllProducts,
+    TResult? Function(ProductResponseModel? productResponseModel)?
+        successGetCategoryProduct,
+  }) {
+    return successGetAllProducts?.call(productResponseModel);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(String message)? error,
+    TResult Function(BannerResponseModel? bannerResponseModel)?
+        successGetBanner,
+    TResult Function(CategoriesResponseModel? categoriesResponseModel)?
+        successGetCategories,
+    TResult Function(ProductResponseModel? productResponseModel)?
+        successGetAllProducts,
+    TResult Function(ProductResponseModel? productResponseModel)?
+        successGetCategoryProduct,
+    required TResult orElse(),
+  }) {
+    if (successGetAllProducts != null) {
+      return successGetAllProducts(productResponseModel);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(Loading<T> value) loading,
+    required TResult Function(Error<T> value) error,
+    required TResult Function(SuccessGetBanner<T> value) successGetBanner,
+    required TResult Function(SuccessGetCategories<T> value)
+        successGetCategories,
+    required TResult Function(SuccessGetAllProducts<T> value)
+        successGetAllProducts,
+    required TResult Function(SuccessGetCategoryProduct<T> value)
+        successGetCategoryProduct,
+  }) {
+    return successGetAllProducts(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(Loading<T> value)? loading,
+    TResult? Function(Error<T> value)? error,
+    TResult? Function(SuccessGetBanner<T> value)? successGetBanner,
+    TResult? Function(SuccessGetCategories<T> value)? successGetCategories,
+    TResult? Function(SuccessGetAllProducts<T> value)? successGetAllProducts,
+    TResult? Function(SuccessGetCategoryProduct<T> value)?
+        successGetCategoryProduct,
+  }) {
+    return successGetAllProducts?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(Loading<T> value)? loading,
+    TResult Function(Error<T> value)? error,
+    TResult Function(SuccessGetBanner<T> value)? successGetBanner,
+    TResult Function(SuccessGetCategories<T> value)? successGetCategories,
+    TResult Function(SuccessGetAllProducts<T> value)? successGetAllProducts,
+    TResult Function(SuccessGetCategoryProduct<T> value)?
+        successGetCategoryProduct,
+    required TResult orElse(),
+  }) {
+    if (successGetAllProducts != null) {
+      return successGetAllProducts(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SuccessGetAllProducts<T> implements HomeState<T> {
+  const factory SuccessGetAllProducts(
+          final ProductResponseModel? productResponseModel) =
+      _$SuccessGetAllProductsImpl<T>;
+
+  ProductResponseModel? get productResponseModel;
+  @JsonKey(ignore: true)
+  _$$SuccessGetAllProductsImplCopyWith<T, _$SuccessGetAllProductsImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$SuccessGetCategoryProductImplCopyWith<T, $Res> {
+  factory _$$SuccessGetCategoryProductImplCopyWith(
+          _$SuccessGetCategoryProductImpl<T> value,
+          $Res Function(_$SuccessGetCategoryProductImpl<T>) then) =
+      __$$SuccessGetCategoryProductImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({ProductResponseModel? productResponseModel});
+}
+
+/// @nodoc
+class __$$SuccessGetCategoryProductImplCopyWithImpl<T, $Res>
+    extends _$HomeStateCopyWithImpl<T, $Res, _$SuccessGetCategoryProductImpl<T>>
+    implements _$$SuccessGetCategoryProductImplCopyWith<T, $Res> {
+  __$$SuccessGetCategoryProductImplCopyWithImpl(
+      _$SuccessGetCategoryProductImpl<T> _value,
+      $Res Function(_$SuccessGetCategoryProductImpl<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? productResponseModel = freezed,
+  }) {
+    return _then(_$SuccessGetCategoryProductImpl<T>(
+      freezed == productResponseModel
+          ? _value.productResponseModel
+          : productResponseModel // ignore: cast_nullable_to_non_nullable
+              as ProductResponseModel?,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$SuccessGetCategoryProductImpl<T>
+    implements SuccessGetCategoryProduct<T> {
+  const _$SuccessGetCategoryProductImpl(this.productResponseModel);
+
+  @override
+  final ProductResponseModel? productResponseModel;
+
+  @override
+  String toString() {
+    return 'HomeState<$T>.successGetCategoryProduct(productResponseModel: $productResponseModel)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SuccessGetCategoryProductImpl<T> &&
+            (identical(other.productResponseModel, productResponseModel) ||
+                other.productResponseModel == productResponseModel));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, productResponseModel);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SuccessGetCategoryProductImplCopyWith<T,
+          _$SuccessGetCategoryProductImpl<T>>
+      get copyWith => __$$SuccessGetCategoryProductImplCopyWithImpl<T,
+          _$SuccessGetCategoryProductImpl<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(String message) error,
+    required TResult Function(BannerResponseModel? bannerResponseModel)
+        successGetBanner,
+    required TResult Function(CategoriesResponseModel? categoriesResponseModel)
+        successGetCategories,
+    required TResult Function(ProductResponseModel? productResponseModel)
+        successGetAllProducts,
+    required TResult Function(ProductResponseModel? productResponseModel)
+        successGetCategoryProduct,
+  }) {
+    return successGetCategoryProduct(productResponseModel);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(String message)? error,
+    TResult? Function(BannerResponseModel? bannerResponseModel)?
+        successGetBanner,
+    TResult? Function(CategoriesResponseModel? categoriesResponseModel)?
+        successGetCategories,
+    TResult? Function(ProductResponseModel? productResponseModel)?
+        successGetAllProducts,
+    TResult? Function(ProductResponseModel? productResponseModel)?
+        successGetCategoryProduct,
+  }) {
+    return successGetCategoryProduct?.call(productResponseModel);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(String message)? error,
+    TResult Function(BannerResponseModel? bannerResponseModel)?
+        successGetBanner,
+    TResult Function(CategoriesResponseModel? categoriesResponseModel)?
+        successGetCategories,
+    TResult Function(ProductResponseModel? productResponseModel)?
+        successGetAllProducts,
+    TResult Function(ProductResponseModel? productResponseModel)?
+        successGetCategoryProduct,
+    required TResult orElse(),
+  }) {
+    if (successGetCategoryProduct != null) {
+      return successGetCategoryProduct(productResponseModel);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(Loading<T> value) loading,
+    required TResult Function(Error<T> value) error,
+    required TResult Function(SuccessGetBanner<T> value) successGetBanner,
+    required TResult Function(SuccessGetCategories<T> value)
+        successGetCategories,
+    required TResult Function(SuccessGetAllProducts<T> value)
+        successGetAllProducts,
+    required TResult Function(SuccessGetCategoryProduct<T> value)
+        successGetCategoryProduct,
+  }) {
+    return successGetCategoryProduct(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(Loading<T> value)? loading,
+    TResult? Function(Error<T> value)? error,
+    TResult? Function(SuccessGetBanner<T> value)? successGetBanner,
+    TResult? Function(SuccessGetCategories<T> value)? successGetCategories,
+    TResult? Function(SuccessGetAllProducts<T> value)? successGetAllProducts,
+    TResult? Function(SuccessGetCategoryProduct<T> value)?
+        successGetCategoryProduct,
+  }) {
+    return successGetCategoryProduct?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(Loading<T> value)? loading,
+    TResult Function(Error<T> value)? error,
+    TResult Function(SuccessGetBanner<T> value)? successGetBanner,
+    TResult Function(SuccessGetCategories<T> value)? successGetCategories,
+    TResult Function(SuccessGetAllProducts<T> value)? successGetAllProducts,
+    TResult Function(SuccessGetCategoryProduct<T> value)?
+        successGetCategoryProduct,
+    required TResult orElse(),
+  }) {
+    if (successGetCategoryProduct != null) {
+      return successGetCategoryProduct(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SuccessGetCategoryProduct<T> implements HomeState<T> {
+  const factory SuccessGetCategoryProduct(
+          final ProductResponseModel? productResponseModel) =
+      _$SuccessGetCategoryProductImpl<T>;
+
+  ProductResponseModel? get productResponseModel;
+  @JsonKey(ignore: true)
+  _$$SuccessGetCategoryProductImplCopyWith<T,
+          _$SuccessGetCategoryProductImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
 }

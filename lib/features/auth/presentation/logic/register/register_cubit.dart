@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:marketi/features/auth/domain/entities/register_entity.dart';
-import 'package:marketi/features/auth/domain/entities/user_entity.dart';
+import 'package:marketi/features/auth/data/models/auth_response_model.dart';
+import 'package:marketi/features/auth/data/models/register_request_body.dart';
 import 'package:marketi/features/auth/domain/usecases/register_with_email_password_usecase.dart';
 import 'package:marketi/features/auth/presentation/logic/register/register_state.dart';
 
@@ -18,12 +18,12 @@ class RegisterCubit extends Cubit<RegisterState> {
   TextEditingController nameController = TextEditingController();
   TextEditingController phoneController = TextEditingController();
 
-  UserEntity? userEntity;
+  AuthResponseModel? userModel;
 
   void emitRegisterStates() async {
     emit(const RegisterState.loading());
     final response = await _emailPasswordUsecase.call(
-      RegisterEntity(
+      RegisterRequestBody(
         email: emailController.text,
         password: passwordController.text,
         name: nameController.text,
@@ -33,7 +33,7 @@ class RegisterCubit extends Cubit<RegisterState> {
     );
     response.when(
       success: (data) {
-        userEntity = data;
+        userModel = data;
 
         emit(RegisterState.registerSuccess(data));
       },

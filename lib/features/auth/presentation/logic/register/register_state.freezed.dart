@@ -21,7 +21,7 @@ mixin _$RegisterState {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(String message) error,
-    required TResult Function(UserEntity userEntity) registerSuccess,
+    required TResult Function(AuthResponseModel userEntity) registerSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -29,7 +29,7 @@ mixin _$RegisterState {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(String message)? error,
-    TResult? Function(UserEntity userEntity)? registerSuccess,
+    TResult? Function(AuthResponseModel userEntity)? registerSuccess,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -37,7 +37,7 @@ mixin _$RegisterState {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(String message)? error,
-    TResult Function(UserEntity userEntity)? registerSuccess,
+    TResult Function(AuthResponseModel userEntity)? registerSuccess,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -127,7 +127,7 @@ class _$InitialImpl implements _Initial {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(String message) error,
-    required TResult Function(UserEntity userEntity) registerSuccess,
+    required TResult Function(AuthResponseModel userEntity) registerSuccess,
   }) {
     return initial();
   }
@@ -138,7 +138,7 @@ class _$InitialImpl implements _Initial {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(String message)? error,
-    TResult? Function(UserEntity userEntity)? registerSuccess,
+    TResult? Function(AuthResponseModel userEntity)? registerSuccess,
   }) {
     return initial?.call();
   }
@@ -149,7 +149,7 @@ class _$InitialImpl implements _Initial {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(String message)? error,
-    TResult Function(UserEntity userEntity)? registerSuccess,
+    TResult Function(AuthResponseModel userEntity)? registerSuccess,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -241,7 +241,7 @@ class _$LoadingImpl implements Loading {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(String message) error,
-    required TResult Function(UserEntity userEntity) registerSuccess,
+    required TResult Function(AuthResponseModel userEntity) registerSuccess,
   }) {
     return loading();
   }
@@ -252,7 +252,7 @@ class _$LoadingImpl implements Loading {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(String message)? error,
-    TResult? Function(UserEntity userEntity)? registerSuccess,
+    TResult? Function(AuthResponseModel userEntity)? registerSuccess,
   }) {
     return loading?.call();
   }
@@ -263,7 +263,7 @@ class _$LoadingImpl implements Loading {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(String message)? error,
-    TResult Function(UserEntity userEntity)? registerSuccess,
+    TResult Function(AuthResponseModel userEntity)? registerSuccess,
     required TResult orElse(),
   }) {
     if (loading != null) {
@@ -381,7 +381,7 @@ class _$ErrorImpl implements Error {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(String message) error,
-    required TResult Function(UserEntity userEntity) registerSuccess,
+    required TResult Function(AuthResponseModel userEntity) registerSuccess,
   }) {
     return error(message);
   }
@@ -392,7 +392,7 @@ class _$ErrorImpl implements Error {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(String message)? error,
-    TResult? Function(UserEntity userEntity)? registerSuccess,
+    TResult? Function(AuthResponseModel userEntity)? registerSuccess,
   }) {
     return error?.call(message);
   }
@@ -403,7 +403,7 @@ class _$ErrorImpl implements Error {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(String message)? error,
-    TResult Function(UserEntity userEntity)? registerSuccess,
+    TResult Function(AuthResponseModel userEntity)? registerSuccess,
     required TResult orElse(),
   }) {
     if (error != null) {
@@ -465,7 +465,7 @@ abstract class _$$RegisterSuccessImplCopyWith<$Res> {
           $Res Function(_$RegisterSuccessImpl) then) =
       __$$RegisterSuccessImplCopyWithImpl<$Res>;
   @useResult
-  $Res call({UserEntity userEntity});
+  $Res call({AuthResponseModel userEntity});
 }
 
 /// @nodoc
@@ -485,7 +485,7 @@ class __$$RegisterSuccessImplCopyWithImpl<$Res>
       null == userEntity
           ? _value.userEntity
           : userEntity // ignore: cast_nullable_to_non_nullable
-              as UserEntity,
+              as AuthResponseModel,
     ));
   }
 }
@@ -496,7 +496,7 @@ class _$RegisterSuccessImpl implements RegisterSuccess {
   const _$RegisterSuccessImpl(this.userEntity);
 
   @override
-  final UserEntity userEntity;
+  final AuthResponseModel userEntity;
 
   @override
   String toString() {
@@ -528,7 +528,7 @@ class _$RegisterSuccessImpl implements RegisterSuccess {
     required TResult Function() initial,
     required TResult Function() loading,
     required TResult Function(String message) error,
-    required TResult Function(UserEntity userEntity) registerSuccess,
+    required TResult Function(AuthResponseModel userEntity) registerSuccess,
   }) {
     return registerSuccess(userEntity);
   }
@@ -539,7 +539,7 @@ class _$RegisterSuccessImpl implements RegisterSuccess {
     TResult? Function()? initial,
     TResult? Function()? loading,
     TResult? Function(String message)? error,
-    TResult? Function(UserEntity userEntity)? registerSuccess,
+    TResult? Function(AuthResponseModel userEntity)? registerSuccess,
   }) {
     return registerSuccess?.call(userEntity);
   }
@@ -550,7 +550,7 @@ class _$RegisterSuccessImpl implements RegisterSuccess {
     TResult Function()? initial,
     TResult Function()? loading,
     TResult Function(String message)? error,
-    TResult Function(UserEntity userEntity)? registerSuccess,
+    TResult Function(AuthResponseModel userEntity)? registerSuccess,
     required TResult orElse(),
   }) {
     if (registerSuccess != null) {
@@ -598,10 +598,10 @@ class _$RegisterSuccessImpl implements RegisterSuccess {
 }
 
 abstract class RegisterSuccess implements RegisterState {
-  const factory RegisterSuccess(final UserEntity userEntity) =
+  const factory RegisterSuccess(final AuthResponseModel userEntity) =
       _$RegisterSuccessImpl;
 
-  UserEntity get userEntity;
+  AuthResponseModel get userEntity;
   @JsonKey(ignore: true)
   _$$RegisterSuccessImplCopyWith<_$RegisterSuccessImpl> get copyWith =>
       throw _privateConstructorUsedError;

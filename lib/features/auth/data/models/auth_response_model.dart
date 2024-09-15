@@ -1,19 +1,27 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:marketi/features/auth/domain/entities/user_entity.dart';
 
 part 'auth_response_model.g.dart';
 
-@JsonSerializable()
-class AuthResponseModel extends UserEntity {
+@JsonSerializable(createToJson: false)
+class AuthResponseModel {
+  final int? id;
+  final String? name;
+  final String? email;
+  final String? phone;
+  final String? image;
+  final int? points;
+  final int? credit;
+  final String? token;
+
   AuthResponseModel({
-    required super.id,
-    required super.name,
-    required super.email,
-    required super.phone,
-    required super.image,
-    required super.points,
-    required super.credit,
-    required super.token,
+    required this.id,
+    required this.name,
+    required this.email,
+    required this.phone,
+    required this.image,
+    required this.points,
+    required this.credit,
+    required this.token,
   });
 
   factory AuthResponseModel.fromJson(Map<String, dynamic> json) =>

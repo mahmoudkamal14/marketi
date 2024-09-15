@@ -1,21 +1,23 @@
 class ApiConstants {
   static const String baseUrl = "https://student.valuxapps.com/api/";
 
+  // Registeration
+
   static const String login = "login";
 
   static const String forgotPassword = "forgotPassword";
 
   static const String register = "register";
 
+  // Home
+
   static const String banners = "banners";
 
-  static const String allProducts = "allProducts";
+  static const String allProducts = "products";
 
-  static const String categoryProduct = "categoryProduct";
+  static const String categories = "categories";
 
-  static const String cartProducts = "cartProducts";
-
-  static const String favoriteProducts = "favoriteProducts";
+  static const String categoryProduct = "categories/";
 
   static const String primaryKey = 'primaryKey';
 }

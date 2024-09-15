@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:marketi/features/auth/data/models/auth_response_model.dart';
-import 'package:marketi/features/auth/domain/entities/login_entity.dart';
+import 'package:marketi/features/auth/data/models/login_request_body.dart';
 import 'package:marketi/features/auth/domain/usecases/login_with_email_password_usecase.dart';
 
 import 'login_state.dart';
@@ -21,7 +21,7 @@ class LoginCubit extends Cubit<LoginState> {
   void emitLoginStates() async {
     emit(const LoginState.loading());
     final response = await _emailPasswordUsecase.call(
-      LoginEntity(
+      LoginRequestBody(
         email: emailController.text,
         password: passwordController.text,
       ),

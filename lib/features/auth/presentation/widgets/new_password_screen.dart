@@ -20,9 +20,7 @@ class NewPasswordScreen extends StatelessWidget {
           children: [
             Row(
               children: [
-                const IconNavigatePop(
-                  pop: '',
-                ),
+                const IconNavigatePop(),
                 horizontalSpace(8),
                 Text('Create New Password', style: AppStyles.style16Medium),
               ],

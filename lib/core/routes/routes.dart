@@ -17,5 +17,7 @@ class Routes {
 
   static const homeScreen = '/homeScreen';
 
+  static const categoryProductsScreen = '/categoryProductsScreen';
+
   static const productDetailsScreen = '/productDetailsScreen';
 }

@@ -4,6 +4,7 @@ import 'package:marketi/core/di/dependency_injection.dart';
 import 'package:marketi/core/function/build_animate_page_route.dart';
 import 'package:marketi/core/routes/routes.dart';
 import 'package:marketi/features/auth/presentation/logic/login/login_cubit.dart';
+import 'package:marketi/features/home/presentation/Screens/category_products_screen.dart';
 import 'package:marketi/features/home/presentation/Screens/home_screen.dart';
 import 'package:marketi/features/home/presentation/Screens/nav_bar_layout.dart';
 import 'package:marketi/features/auth/presentation/screens/login_screen.dart';
@@ -61,10 +62,18 @@ class AppRouter {
 
       case Routes.navBarLayout:
         return fadePageRoute(
-          BlocProvider(
-            create: (context) => getIt<HomeCubit>()
-              ..emitStatesBanners()
-              ..bannerList,
+          MultiBlocProvider(
+            providers: [
+              BlocProvider(
+                create: (context) => getIt<LoginCubit>()..userModel,
+              ),
+              BlocProvider(
+                create: (context) => getIt<HomeCubit>()
+                  ..emitStatesBanners()
+                  ..emitStatesCategories()
+                  ..emitStatesAllProducts(),
+              )
+            ],
             child: const NavBarLayout(),
           ),
         );
@@ -72,14 +81,18 @@ class AppRouter {
       case Routes.homeScreen:
         return fadePageRoute(
           BlocProvider(
-            create: (context) => getIt<HomeCubit>()
-              ..emitStatesBanners()
-              ..bannerList,
+            create: (context) => getIt<HomeCubit>(),
             child: const HomeScreen(),
           ),
         );
 
-      default:
+      case Routes.categoryProductsScreen:
+        return fadePageRoute(
+          BlocProvider(
+            create: (context) => getIt<HomeCubit>(),
+            child: const CategoryProductsScreen(),
+          ),
+        );
     }
 
     return null;

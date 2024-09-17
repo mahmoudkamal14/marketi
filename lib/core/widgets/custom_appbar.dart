@@ -21,9 +21,7 @@ class CustomAppBar extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          IconNavigatePop(
-            pop: pop,
-          ),
+          const IconNavigatePop(),
           Text(title, style: AppStyles.style20SemiBold),
           Padding(
             padding: const EdgeInsets.only(right: 14),

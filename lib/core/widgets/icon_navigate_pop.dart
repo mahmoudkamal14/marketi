@@ -1,20 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:marketi/core/routes/extentions.dart';
-import 'package:marketi/core/routes/routes.dart';
 
 class IconNavigatePop extends StatelessWidget {
-  const IconNavigatePop({
-    super.key,
-    required this.pop,
-  });
-
-  final String pop;
+  const IconNavigatePop({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.only(left: 14),
+      padding: const EdgeInsets.only(right: 14),
       child: Container(
         width: 48.w,
         height: 48.h,
@@ -27,9 +21,7 @@ class IconNavigatePop extends StatelessWidget {
         ),
         child: IconButton(
           onPressed: () {
-            pop == 'home'
-                ? context.navigateToReplacement(Routes.navBarLayout)
-                : context.pop();
+            context.pop();
           },
           icon: const Icon(Icons.arrow_back_ios_new),
         ),

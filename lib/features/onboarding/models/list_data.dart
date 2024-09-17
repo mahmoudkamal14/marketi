@@ -3,23 +3,23 @@ import 'package:marketi/features/onboarding/models/onboarding_model.dart';
 List<OnBoardingModel> onBoardingList = [
   OnBoardingModel(
     image: 'assets/images/onBoarding/Illustration_Onboarding_1.svg',
-    title: 'Welcom to Marketi',
+    title: 'مرحباً بكم في ماركتي',
     body:
-        'Discover a world of endless possibilities and shop from the comfort of your fingertips Browse through a wide range of products, from fashion and electronics to home.',
-    textButton: 'Next',
+        'اكتشف عالمًا لا نهاية له من الاحتمالات وتسوق من راحة أطراف أصابعك. تصفح مجموعة واسعة من المنتجات، من الأزياء والإلكترونيات إلى المنزل.',
+    textButton: 'التالي',
   ),
   OnBoardingModel(
     image: 'assets/images/onBoarding/Illustration_Onboarding_2.svg',
-    title: 'Easy to Buy',
+    title: 'سهولة الشراء',
     body:
-        'Find the perfect item that suits your style and needs With secure payment options and fast delivery, shopping has never been easier.',
-    textButton: 'Next',
+        'ابحث عن المنتج المثالي الذي يناسب أسلوبك واحتياجاتك مع خيارات الدفع الآمنة والتسليم السريع، لم يكن التسوق أسهل من أي وقت مضى.',
+    textButton: 'التالي',
   ),
   OnBoardingModel(
     image: 'assets/images/onBoarding/Illustration_Onboarding_3.svg',
-    title: 'Wonderful User Experience',
+    title: 'تجربة مستخدم رائعة',
     body:
-        'Start exploring now and experience the convenience of online shopping at its best.',
-    textButton: 'Get Start',
+        'ابدأ بالاستكشاف الآن واستمتع براحة التسوق عبر الإنترنت في أفضل حالاتها.',
+    textButton: 'ابدأ',
   ),
 ];

@@ -15,9 +15,7 @@ class AppBarProfile extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          const IconNavigatePop(
-            pop: 'home',
-          ),
+          const IconNavigatePop(),
           Text('My Profile', style: AppStyles.style20SemiBold),
           Padding(
             padding: const EdgeInsets.only(right: 14),

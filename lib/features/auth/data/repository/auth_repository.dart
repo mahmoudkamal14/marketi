@@ -16,6 +16,8 @@ class AuthRepository extends BaseAuthRepository {
     try {
       final result = await _datasource.loginWithEmailPassword(loginRequestBody);
 
+      print('User Name => ${result.data!.name}');
+
       return ApiResult.success(result);
     } catch (error) {
       return ApiResult.failure(error.toString());

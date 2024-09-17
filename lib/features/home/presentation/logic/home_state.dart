@@ -9,19 +9,45 @@ part 'home_state.freezed.dart';
 class HomeState<T> with _$HomeState {
   const factory HomeState.initial() = _Initial;
 
-  const factory HomeState.loading() = Loading;
+  // Banners
 
-  const factory HomeState.error({required String message}) = Error;
+  const factory HomeState.getBannerLoading() = GetBannerLoading;
 
-  const factory HomeState.successGetBanner(
-      BannerResponseModel? bannerResponseModel) = SuccessGetBanner;
+  const factory HomeState.getBannerSuccess(List<DataBanner>? bannerList) =
+      GetBannerSuccess;
 
-  const factory HomeState.successGetCategories(
-      CategoriesResponseModel? categoriesResponseModel) = SuccessGetCategories;
+  const factory HomeState.getBannerError({required String message}) =
+      GetBannerError;
 
-  const factory HomeState.successGetAllProducts(
-      ProductResponseModel? productResponseModel) = SuccessGetAllProducts;
+  // Categories
 
-  const factory HomeState.successGetCategoryProduct(
-      ProductResponseModel? productResponseModel) = SuccessGetCategoryProduct;
+  const factory HomeState.getCategoriesLoading() = GetCategoriesLoading;
+
+  const factory HomeState.getCategoriesSuccess(
+      List<CategoriesDataList>? categoriesDataList) = GetCategoriesSuccess;
+
+  const factory HomeState.getCategoriesError({required String message}) =
+      GetCategoriesError;
+
+  // All Products
+
+  const factory HomeState.getAllProductsLoading() = GetAllProductsLoading;
+
+  const factory HomeState.getAllProductsSuccess(
+      List<ProductDetailsModel>? allProductsList) = GetAllProductsSuccess;
+
+  const factory HomeState.getAllProductsError({required String message}) =
+      GetAllProductsError;
+
+  // Category Product
+
+  const factory HomeState.getCategoryProductLoading() =
+      GetCategoryProductLoading;
+
+  const factory HomeState.getCategoryProductSuccess(
+          List<ProductDetailsModel>? categoryProductList) =
+      GetCategoryProductSuccess;
+
+  const factory HomeState.getCategoryProductError({required String message}) =
+      GetCategoryProductError;
 }

@@ -2,18 +2,27 @@ import 'package:json_annotation/json_annotation.dart';
 
 part 'auth_response_model.g.dart';
 
-@JsonSerializable(createToJson: false)
+@JsonSerializable()
 class AuthResponseModel {
-  final int? id;
-  final String? name;
-  final String? email;
-  final String? phone;
-  final String? image;
-  final int? points;
-  final int? credit;
-  final String? token;
-
   AuthResponseModel({
+    required this.status,
+    required this.message,
+    required this.data,
+  });
+
+  final bool? status;
+  final String? message;
+  final UseDataModel? data;
+
+  factory AuthResponseModel.fromJson(Map<String, dynamic> json) =>
+      _$AuthResponseModelFromJson(json);
+
+  Map<String, dynamic> toJson() => _$AuthResponseModelToJson(this);
+}
+
+@JsonSerializable()
+class UseDataModel {
+  UseDataModel({
     required this.id,
     required this.name,
     required this.email,
@@ -24,6 +33,17 @@ class AuthResponseModel {
     required this.token,
   });
 
-  factory AuthResponseModel.fromJson(Map<String, dynamic> json) =>
-      _$AuthResponseModelFromJson(json);
+  final int? id;
+  final String? name;
+  final String? email;
+  final String? phone;
+  final String? image;
+  final int? points;
+  final int? credit;
+  final String? token;
+
+  factory UseDataModel.fromJson(Map<String, dynamic> json) =>
+      _$UseDataModelFromJson(json);
+
+  Map<String, dynamic> toJson() => _$UseDataModelToJson(this);
 }

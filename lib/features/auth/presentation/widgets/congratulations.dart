@@ -19,9 +19,7 @@ class Congratulations extends StatelessWidget {
           children: [
             const Row(
               children: [
-                IconNavigatePop(
-                  pop: '',
-                ),
+                IconNavigatePop(),
               ],
             ),
             verticalSpace(57),

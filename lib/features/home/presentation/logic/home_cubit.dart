@@ -29,65 +29,65 @@ class HomeCubit extends Cubit<HomeState> {
   List<ProductDetailsModel>? categoryProductsList = [];
 
   void emitStatesBanners() async {
-    emit(const HomeState.loading());
+    emit(const HomeState.getBannerLoading());
     final response = await _bannersUsecase.call();
 
     response.when(
       success: (data) {
         bannerList = data.data!;
 
-        emit(HomeState.successGetBanner(data));
+        emit(HomeState.getBannerSuccess(bannerList));
       },
       failure: (message) {
-        emit(HomeState.error(message: message));
+        emit(HomeState.getBannerError(message: message));
       },
     );
   }
 
   void emitStatesCategories() async {
-    emit(const HomeState.loading());
+    emit(const HomeState.getCategoriesLoading());
     final response = await _categoriesUsecase.call();
 
     response.when(
       success: (data) {
         categoriesList = data.data!.data;
 
-        emit(HomeState.successGetCategories(data));
+        emit(HomeState.getCategoriesSuccess(categoriesList));
       },
       failure: (message) {
-        emit(HomeState.error(message: message));
+        emit(HomeState.getCategoriesError(message: message));
       },
     );
   }
 
   void emitStatesAllProducts() async {
-    emit(const HomeState.loading());
+    emit(const HomeState.getAllProductsLoading());
     final response = await _allProductsUsecase.call();
 
     response.when(
       success: (data) {
         allProductsList = data.data!.data;
 
-        emit(HomeState.successGetAllProducts(data));
+        emit(HomeState.getAllProductsSuccess(allProductsList));
       },
       failure: (message) {
-        emit(HomeState.error(message: message));
+        emit(HomeState.getAllProductsError(message: message));
       },
     );
   }
 
-  void emitStatesCategoryProducts() async {
-    emit(const HomeState.loading());
-    final response = await _categoryProductsUsecase.call();
+  void emitStatesCategoryProducts(int id) async {
+    emit(const HomeState.getCategoryProductLoading());
+    final response = await _categoryProductsUsecase.call(id);
 
     response.when(
       success: (data) {
         categoryProductsList = data.data!.data;
 
-        emit(HomeState.successGetCategoryProduct(data));
+        emit(HomeState.getCategoryProductSuccess(categoryProductsList));
       },
       failure: (message) {
-        emit(HomeState.error(message: message));
+        emit(HomeState.getCategoryProductError(message: message));
       },
     );
   }

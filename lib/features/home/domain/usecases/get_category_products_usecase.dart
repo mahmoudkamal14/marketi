@@ -7,7 +7,7 @@ class GetCategoryProductsUsecase {
 
   GetCategoryProductsUsecase(this._repository);
 
-  Future<ApiResult<ProductResponseModel>> call() async {
-    return await _repository.getCategoryProducts();
+  Future<ApiResult<ProductResponseModel>> call(int id) async {
+    return await _repository.getCategoryById(id);
   }
 }

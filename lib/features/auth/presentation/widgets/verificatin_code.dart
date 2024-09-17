@@ -17,9 +17,7 @@ class VerificationCode extends StatelessWidget {
           children: [
             Row(
               children: [
-                const IconNavigatePop(
-                  pop: '',
-                ),
+                const IconNavigatePop(),
                 horizontalSpace(8),
                 Text('Verification Code', style: AppStyles.style16Medium),
               ],

@@ -32,9 +32,9 @@ class HomeRepository extends BaseHomeRepository {
   }
 
   @override
-  Future<ApiResult<ProductResponseModel>> getCategoryProducts() async {
+  Future<ApiResult<ProductResponseModel>> getCategoryById(int id) async {
     try {
-      final result = await _datasource.getCategoryProducts();
+      final result = await _datasource.getCategoryById(id);
 
       return ApiResult.success(result);
     } catch (message) {

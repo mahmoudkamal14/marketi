@@ -12,69 +12,71 @@ class ResetPasswordScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SafeArea(
-        child: SingleChildScrollView(
-          padding: const EdgeInsets.symmetric(vertical: 30),
-          child: Form(
-            child: Column(
-              children: [
-                Row(
-                  children: [
-                    const IconNavigatePop(
-                      pop: '',
-                    ),
-                    horizontalSpace(8),
-                    Text('Forgot Password', style: AppStyles.style16Medium),
-                  ],
-                ),
-                verticalSpace(57),
-                Column(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Image.asset(
-                        'assets/images/Illustration_Forgot_Password_With_Email.png'),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 22),
-                      child: Text(
-                        'Please enter your email address to\nreceive a verification code',
-                        textAlign: TextAlign.center,
-                        style: AppStyles.style16Medium,
+    return Directionality(
+      textDirection: TextDirection.rtl,
+      child: Scaffold(
+        body: SafeArea(
+          child: SingleChildScrollView(
+            padding: const EdgeInsets.symmetric(vertical: 30),
+            child: Form(
+              child: Column(
+                children: [
+                  Row(
+                    children: [
+                      const IconNavigatePop(),
+                      horizontalSpace(8),
+                      Text('Forgot Password', style: AppStyles.style16Medium),
+                    ],
+                  ),
+                  verticalSpace(57),
+                  Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Image.asset(
+                          'assets/images/Illustration_Forgot_Password_With_Email.png'),
+                      Padding(
+                        padding: const EdgeInsets.symmetric(vertical: 22),
+                        child: Text(
+                          'Please enter your email address to\nreceive a verification code',
+                          textAlign: TextAlign.center,
+                          style: AppStyles.style16Medium,
+                        ),
                       ),
-                    ),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 16),
-                      child: Column(
-                        children: [
-                          Align(
-                            alignment: Alignment.topLeft,
-                            child:
-                                Text('Email', style: AppStyles.style14Medium),
-                          ),
-                          verticalSpace(4),
-                          AppTextFormField(
-                            hintText: 'You@gmail.com',
-                            textInputType: TextInputType.emailAddress,
-                            prefixIcon: const Icon(Icons.email_outlined),
-                            validator: (p0) {
-                              if (p0!.isEmpty) {
-                                return 'Email must not be empty';
-                              }
-                            },
-                          ),
-                          verticalSpace(22),
-                          AppTextButton(
-                            textButton: 'Send Code',
-                            onPressed: () {
-                              context.navigateTo(Routes.verificationCodeScreen);
-                            },
-                          ),
-                        ],
+                      Padding(
+                        padding: const EdgeInsets.symmetric(horizontal: 16),
+                        child: Column(
+                          children: [
+                            Align(
+                              alignment: Alignment.topLeft,
+                              child:
+                                  Text('Email', style: AppStyles.style14Medium),
+                            ),
+                            verticalSpace(4),
+                            AppTextFormField(
+                              hintText: 'You@gmail.com',
+                              textInputType: TextInputType.emailAddress,
+                              prefixIcon: const Icon(Icons.email_outlined),
+                              validator: (p0) {
+                                if (p0!.isEmpty) {
+                                  return 'Email must not be empty';
+                                }
+                              },
+                            ),
+                            verticalSpace(22),
+                            AppTextButton(
+                              textButton: 'Send Code',
+                              onPressed: () {
+                                context
+                                    .navigateTo(Routes.verificationCodeScreen);
+                              },
+                            ),
+                          ],
+                        ),
                       ),
-                    ),
-                  ],
-                ),
-              ],
+                    ],
+                  ),
+                ],
+              ),
             ),
           ),
         ),

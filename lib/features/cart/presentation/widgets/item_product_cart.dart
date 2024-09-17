@@ -4,7 +4,7 @@ import 'package:marketi/core/theme/app_styles.dart';
 import 'package:marketi/features/cart/data/models/item_product_cart_model.dart';
 import 'package:marketi/features/cart/presentation/widgets/name_and_like_product.dart';
 import 'package:marketi/features/cart/presentation/widgets/price_and_rate_product.dart';
-import 'package:marketi/features/home/presentation/widgets/product_details.dart';
+import 'package:marketi/features/home/presentation/widgets/product%20details/product_details.dart';
 
 class ItemProductCart extends StatelessWidget {
   const ItemProductCart({super.key, required this.model});

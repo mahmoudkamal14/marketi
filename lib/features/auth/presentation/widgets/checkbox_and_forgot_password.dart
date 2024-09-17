@@ -17,7 +17,7 @@ class CheckBoxForgotPassword extends StatelessWidget {
           onChanged: (value) {},
         ),
         Text(
-          'Remember Me',
+          'تذكرني',
           style: AppStyles.style12Regular.copyWith(
             color: const Color(0xFF51526B),
           ),
@@ -28,7 +28,7 @@ class CheckBoxForgotPassword extends StatelessWidget {
             context.navigateTo(Routes.resetPasswordScreen);
           },
           child: Text(
-            'Forgot Password?',
+            'نسيت كلمة المرور',
             style: AppStyles.style12Medium.copyWith(
               color: const Color(0xFF3F80FF),
             ),

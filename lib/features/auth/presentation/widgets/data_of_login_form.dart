@@ -16,7 +16,7 @@ class DataOfLoginForm extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text('Email', style: AppStyles.style14Medium),
+          Text('البريد إلكتروني', style: AppStyles.style14Medium),
           verticalSpace(4),
           AppTextFormField(
             hintText: 'You@gmail.com',
@@ -30,7 +30,7 @@ class DataOfLoginForm extends StatelessWidget {
             },
           ),
           verticalSpace(14),
-          Text('Password', style: AppStyles.style14Medium),
+          Text('كلمة المرور', style: AppStyles.style14Medium),
           verticalSpace(4),
           AppTextFormField(
             hintText: '*********',
@@ -47,7 +47,7 @@ class DataOfLoginForm extends StatelessWidget {
           const CheckBoxForgotPassword(),
           verticalSpace(14),
           AppTextButton(
-            textButton: 'Login',
+            textButton: 'تسجيل الدخول',
             onPressed: () {
               validateThenNavigate(context);
             },

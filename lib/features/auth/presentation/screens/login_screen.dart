@@ -11,30 +11,33 @@ class LoginScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return LoginBlocListener(
-      child: Scaffold(
-        body: SafeArea(
-          child: SingleChildScrollView(
-            physics: const BouncingScrollPhysics(),
-            child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 40.h),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  animationFadeInRight(
-                    700,
-                    Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Image.asset('assets/icons/Logo_Log_In.png'),
-                      ],
+    return Directionality(
+      textDirection: TextDirection.rtl,
+      child: LoginBlocListener(
+        child: Scaffold(
+          body: SafeArea(
+            child: SingleChildScrollView(
+              physics: const BouncingScrollPhysics(),
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 40.h),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    animationFadeInRight(
+                      700,
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Image.asset('assets/icons/Logo_Log_In.png'),
+                        ],
+                      ),
                     ),
-                  ),
-                  verticalSpace(32),
-                  const DataOfLoginForm(),
-                  verticalSpace(14),
-                  const AreYouNewInMarketi(),
-                ],
+                    verticalSpace(32),
+                    const DataOfLoginForm(),
+                    verticalSpace(14),
+                    const AreYouNewInMarketi(),
+                  ],
+                ),
               ),
             ),
           ),

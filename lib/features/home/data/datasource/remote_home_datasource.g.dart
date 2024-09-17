@@ -123,7 +123,7 @@ class _RemoteHomeDatasource implements RemoteHomeDatasource {
   }
 
   @override
-  Future<ProductResponseModel> getCategoryProducts() async {
+  Future<ProductResponseModel> getCategoryById(int id) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{};
@@ -135,7 +135,7 @@ class _RemoteHomeDatasource implements RemoteHomeDatasource {
     )
         .compose(
           _dio.options,
-          'categories/',
+          'categories/${id}',
           queryParameters: queryParameters,
           data: _data,
         )

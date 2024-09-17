@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:marketi/core/theme/spaces.dart';
 import 'package:marketi/core/widgets/search_bar.dart';
 import 'package:marketi/features/home/presentation/logic/home_cubit.dart';
 import 'package:marketi/features/home/presentation/logic/home_state.dart';
-import 'package:marketi/features/home/presentation/widgets/all_products_grid_view.dart';
+import 'package:marketi/features/home/presentation/widgets/banners/banner_bloc_builder.dart';
 import 'package:marketi/features/home/presentation/widgets/appbar_home.dart';
-import 'package:marketi/features/home/presentation/widgets/banners_list_view.dart';
+import 'package:marketi/features/home/presentation/widgets/categories/categories_bloc_builder.dart';
+import 'package:marketi/features/home/presentation/widgets/products/products_bloc_builder.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -17,19 +19,17 @@ class HomeScreen extends StatelessWidget {
       builder: (context, state) {
         return Scaffold(
           body: SafeArea(
-            child: SingleChildScrollView(
-              child: Column(
-                children: [
-                  const AppBarHome(),
-                  const AppSearchBar(),
-                  const BannersListView(),
-                  verticalSpace(30),
-                  const AllProductsGridView(),
-                  verticalSpace(4),
-                  // Padding(
-                  //   padding: EdgeInsets.symmetric(horizontal: 14.w),
-                  //   child: const AllProductsGridView(),
-                  // ),
+            child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: 14.w),
+              child: CustomScrollView(
+                slivers: [
+                  const SliverToBoxAdapter(child: AppBarHome()),
+                  const SliverToBoxAdapter(child: AppSearchBar()),
+                  const SliverToBoxAdapter(child: BannerBlocBuilder()),
+                  SliverToBoxAdapter(child: verticalSpace(12)),
+                  const SliverToBoxAdapter(child: CategoriesBlocBuilder()),
+                  SliverToBoxAdapter(child: verticalSpace(30)),
+                  const SliverToBoxAdapter(child: ProductsBlocBuilder()),
                 ],
               ),
             ),

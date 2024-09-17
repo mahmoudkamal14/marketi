@@ -17,13 +17,16 @@ class _NavBarLayoutState extends State<NavBarLayout> {
   int currentIndex = 0;
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: screens[currentIndex],
-      bottomNavigationBar: Container(
-        decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(15),
+    return Directionality(
+      textDirection: TextDirection.rtl,
+      child: Scaffold(
+        body: screens[currentIndex],
+        bottomNavigationBar: Container(
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(15),
+          ),
+          child: bottomNavBar(),
         ),
-        child: bottomNavBar(),
       ),
     );
   }
@@ -59,10 +62,11 @@ class _NavBarLayoutState extends State<NavBarLayout> {
   ];
 
   List<BottomNavigationBarItem> bottomNavigationBar = [
-    const BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
     const BottomNavigationBarItem(
-        icon: Icon(Icons.favorite), label: 'Faviorte'),
-    const BottomNavigationBarItem(icon: Icon(IconlyBold.buy), label: 'Cart'),
-    const BottomNavigationBarItem(icon: Icon(Icons.menu), label: 'Menu'),
+        icon: Icon(Icons.home), label: 'الصفحة الرئيسية'),
+    const BottomNavigationBarItem(icon: Icon(Icons.favorite), label: 'المفضلة'),
+    const BottomNavigationBarItem(icon: Icon(IconlyBold.buy), label: 'السلة'),
+    const BottomNavigationBarItem(
+        icon: Icon(Icons.person_2_outlined), label: 'الملف الشخصي'),
   ];
 }

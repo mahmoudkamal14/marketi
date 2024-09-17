@@ -20,11 +20,14 @@ class MarketiApp extends StatelessWidget {
     return ScreenUtilInit(
       designSize: Size(width, height),
       minTextAdapt: true,
-      child: MaterialApp(
-        theme: ThemeData(useMaterial3: false),
-        debugShowCheckedModeBanner: false,
-        initialRoute: sharedStartApp(),
-        onGenerateRoute: appRouter.generateRoute,
+      child: Directionality(
+        textDirection: TextDirection.rtl,
+        child: MaterialApp(
+          theme: ThemeData(useMaterial3: false),
+          debugShowCheckedModeBanner: false,
+          initialRoute: sharedStartApp(),
+          onGenerateRoute: appRouter.generateRoute,
+        ),
       ),
     );
   }

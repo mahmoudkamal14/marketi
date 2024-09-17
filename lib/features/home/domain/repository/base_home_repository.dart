@@ -6,6 +6,6 @@ import 'package:marketi/features/home/data/models/product_response_model.dart';
 abstract class BaseHomeRepository {
   Future<ApiResult<BannerResponseModel>> getBanners();
   Future<ApiResult<CategoriesResponseModel>> getCategories();
-  Future<ApiResult<ProductResponseModel>> getCategoryProducts();
+  Future<ApiResult<ProductResponseModel>> getCategoryById(int id);
   Future<ApiResult<ProductResponseModel>> getAllProducts();
 }

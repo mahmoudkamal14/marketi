@@ -11,10 +11,13 @@ class OnBoardingScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return PageView.builder(
-      itemBuilder: (context, index) => BuildItemOnBoarding(index: index),
-      itemCount: onBoardingList.length,
-      controller: onBoardingController,
+    return Directionality(
+      textDirection: TextDirection.rtl,
+      child: PageView.builder(
+        itemBuilder: (context, index) => BuildItemOnBoarding(index: index),
+        itemCount: onBoardingList.length,
+        controller: onBoardingController,
+      ),
     );
   }
 }

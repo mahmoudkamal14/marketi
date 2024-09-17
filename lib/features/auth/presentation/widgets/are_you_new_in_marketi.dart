@@ -18,7 +18,7 @@ class AreYouNewInMarketi extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              'Or Continue With',
+              'أو تابع مع',
               style: AppStyles.style12Regular.copyWith(
                 color: const Color(0xFF51526B),
               ),
@@ -30,7 +30,7 @@ class AreYouNewInMarketi extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text(
-              'Are you new in Marketi',
+              'هل أنت جديد في تطبيق ماركتي؟',
               style: AppStyles.style16Medium.copyWith(
                 color: const Color(0xFF51526B),
               ),
@@ -41,7 +41,7 @@ class AreYouNewInMarketi extends StatelessWidget {
                 context.navigateTo(Routes.signupScreen);
               },
               child: Text(
-                'register?',
+                'إنشاء حساب',
                 style: AppStyles.style16Medium.copyWith(
                   color: const Color(0xFF3F80FF),
                 ),

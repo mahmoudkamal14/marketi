@@ -21,6 +21,6 @@ abstract class RemoteHomeDatasource {
   @GET(ApiConstants.allProducts)
   Future<ProductResponseModel> getAllProducts();
 
-  @GET(ApiConstants.categoryProduct)
-  Future<ProductResponseModel> getCategoryProducts();
+  @GET("${ApiConstants.categoryProduct}/{id}")
+  Future<ProductResponseModel> getCategoryById(@Path("id") int id);
 }

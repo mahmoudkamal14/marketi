@@ -8,6 +8,7 @@ import 'package:marketi/features/home/domain/usecases/get_all_products_usecase.d
 import 'package:marketi/features/home/domain/usecases/get_banners_usecase.dart';
 import 'package:marketi/features/home/domain/usecases/get_categories_usecase.dart';
 import 'package:marketi/features/home/domain/usecases/get_category_products_usecase.dart';
+import 'package:marketi/features/home/domain/usecases/search_for_product_usecase.dart';
 import 'package:marketi/features/home/presentation/logic/home_cubit.dart';
 
 Future<void> homeDependency() async {
@@ -35,9 +36,12 @@ Future<void> homeDependency() async {
   getIt.registerLazySingleton<GetCategoryProductsUsecase>(
     () => GetCategoryProductsUsecase(getIt()),
   );
+  getIt.registerLazySingleton<SearchForProductUsecase>(
+    () => SearchForProductUsecase(getIt()),
+  );
 
   /// LOGIC
 
-  getIt.registerLazySingleton<HomeCubit>(
-      () => HomeCubit(getIt(), getIt(), getIt(), getIt()));
+  getIt.registerFactory<HomeCubit>(
+      () => HomeCubit(getIt(), getIt(), getIt(), getIt(), getIt()));
 }

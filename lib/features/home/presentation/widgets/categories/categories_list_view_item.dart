@@ -17,9 +17,8 @@ class CategoriesListViewItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        HomeCubit.get(context).emitStatesCategoryProducts(model.id!);
-
         context.navigateTo(Routes.categoryProductsScreen);
+        HomeCubit.get(context).emitStatesCategoryProducts(model.id!);
       },
       child: Container(
         width: 160.w,

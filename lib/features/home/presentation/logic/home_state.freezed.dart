@@ -34,6 +34,10 @@ mixin _$HomeState<T> {
     required TResult Function(List<ProductDetailsModel>? categoryProductList)
         getCategoryProductSuccess,
     required TResult Function(String message) getCategoryProductError,
+    required TResult Function() searchForProductLoading,
+    required TResult Function(List<ProductDetailsModel>? allProductsList)
+        searchForProductSuccess,
+    required TResult Function(String message) searchForProductError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -54,6 +58,10 @@ mixin _$HomeState<T> {
     TResult? Function(List<ProductDetailsModel>? categoryProductList)?
         getCategoryProductSuccess,
     TResult? Function(String message)? getCategoryProductError,
+    TResult? Function()? searchForProductLoading,
+    TResult? Function(List<ProductDetailsModel>? allProductsList)?
+        searchForProductSuccess,
+    TResult? Function(String message)? searchForProductError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -74,6 +82,10 @@ mixin _$HomeState<T> {
     TResult Function(List<ProductDetailsModel>? categoryProductList)?
         getCategoryProductSuccess,
     TResult Function(String message)? getCategoryProductError,
+    TResult Function()? searchForProductLoading,
+    TResult Function(List<ProductDetailsModel>? allProductsList)?
+        searchForProductSuccess,
+    TResult Function(String message)? searchForProductError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -99,6 +111,12 @@ mixin _$HomeState<T> {
         getCategoryProductSuccess,
     required TResult Function(GetCategoryProductError<T> value)
         getCategoryProductError,
+    required TResult Function(SearchForProductLoading<T> value)
+        searchForProductLoading,
+    required TResult Function(SearchForProductSuccess<T> value)
+        searchForProductSuccess,
+    required TResult Function(SearchForProductError<T> value)
+        searchForProductError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -119,6 +137,11 @@ mixin _$HomeState<T> {
         getCategoryProductSuccess,
     TResult? Function(GetCategoryProductError<T> value)?
         getCategoryProductError,
+    TResult? Function(SearchForProductLoading<T> value)?
+        searchForProductLoading,
+    TResult? Function(SearchForProductSuccess<T> value)?
+        searchForProductSuccess,
+    TResult? Function(SearchForProductError<T> value)? searchForProductError,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
@@ -138,6 +161,9 @@ mixin _$HomeState<T> {
     TResult Function(GetCategoryProductSuccess<T> value)?
         getCategoryProductSuccess,
     TResult Function(GetCategoryProductError<T> value)? getCategoryProductError,
+    TResult Function(SearchForProductLoading<T> value)? searchForProductLoading,
+    TResult Function(SearchForProductSuccess<T> value)? searchForProductSuccess,
+    TResult Function(SearchForProductError<T> value)? searchForProductError,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -215,6 +241,10 @@ class _$InitialImpl<T> implements _Initial<T> {
     required TResult Function(List<ProductDetailsModel>? categoryProductList)
         getCategoryProductSuccess,
     required TResult Function(String message) getCategoryProductError,
+    required TResult Function() searchForProductLoading,
+    required TResult Function(List<ProductDetailsModel>? allProductsList)
+        searchForProductSuccess,
+    required TResult Function(String message) searchForProductError,
   }) {
     return initial();
   }
@@ -238,6 +268,10 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult? Function(List<ProductDetailsModel>? categoryProductList)?
         getCategoryProductSuccess,
     TResult? Function(String message)? getCategoryProductError,
+    TResult? Function()? searchForProductLoading,
+    TResult? Function(List<ProductDetailsModel>? allProductsList)?
+        searchForProductSuccess,
+    TResult? Function(String message)? searchForProductError,
   }) {
     return initial?.call();
   }
@@ -261,6 +295,10 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult Function(List<ProductDetailsModel>? categoryProductList)?
         getCategoryProductSuccess,
     TResult Function(String message)? getCategoryProductError,
+    TResult Function()? searchForProductLoading,
+    TResult Function(List<ProductDetailsModel>? allProductsList)?
+        searchForProductSuccess,
+    TResult Function(String message)? searchForProductError,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -292,6 +330,12 @@ class _$InitialImpl<T> implements _Initial<T> {
         getCategoryProductSuccess,
     required TResult Function(GetCategoryProductError<T> value)
         getCategoryProductError,
+    required TResult Function(SearchForProductLoading<T> value)
+        searchForProductLoading,
+    required TResult Function(SearchForProductSuccess<T> value)
+        searchForProductSuccess,
+    required TResult Function(SearchForProductError<T> value)
+        searchForProductError,
   }) {
     return initial(this);
   }
@@ -315,6 +359,11 @@ class _$InitialImpl<T> implements _Initial<T> {
         getCategoryProductSuccess,
     TResult? Function(GetCategoryProductError<T> value)?
         getCategoryProductError,
+    TResult? Function(SearchForProductLoading<T> value)?
+        searchForProductLoading,
+    TResult? Function(SearchForProductSuccess<T> value)?
+        searchForProductSuccess,
+    TResult? Function(SearchForProductError<T> value)? searchForProductError,
   }) {
     return initial?.call(this);
   }
@@ -337,6 +386,9 @@ class _$InitialImpl<T> implements _Initial<T> {
     TResult Function(GetCategoryProductSuccess<T> value)?
         getCategoryProductSuccess,
     TResult Function(GetCategoryProductError<T> value)? getCategoryProductError,
+    TResult Function(SearchForProductLoading<T> value)? searchForProductLoading,
+    TResult Function(SearchForProductSuccess<T> value)? searchForProductSuccess,
+    TResult Function(SearchForProductError<T> value)? searchForProductError,
     required TResult orElse(),
   }) {
     if (initial != null) {
@@ -405,6 +457,10 @@ class _$GetBannerLoadingImpl<T> implements GetBannerLoading<T> {
     required TResult Function(List<ProductDetailsModel>? categoryProductList)
         getCategoryProductSuccess,
     required TResult Function(String message) getCategoryProductError,
+    required TResult Function() searchForProductLoading,
+    required TResult Function(List<ProductDetailsModel>? allProductsList)
+        searchForProductSuccess,
+    required TResult Function(String message) searchForProductError,
   }) {
     return getBannerLoading();
   }
@@ -428,6 +484,10 @@ class _$GetBannerLoadingImpl<T> implements GetBannerLoading<T> {
     TResult? Function(List<ProductDetailsModel>? categoryProductList)?
         getCategoryProductSuccess,
     TResult? Function(String message)? getCategoryProductError,
+    TResult? Function()? searchForProductLoading,
+    TResult? Function(List<ProductDetailsModel>? allProductsList)?
+        searchForProductSuccess,
+    TResult? Function(String message)? searchForProductError,
   }) {
     return getBannerLoading?.call();
   }
@@ -451,6 +511,10 @@ class _$GetBannerLoadingImpl<T> implements GetBannerLoading<T> {
     TResult Function(List<ProductDetailsModel>? categoryProductList)?
         getCategoryProductSuccess,
     TResult Function(String message)? getCategoryProductError,
+    TResult Function()? searchForProductLoading,
+    TResult Function(List<ProductDetailsModel>? allProductsList)?
+        searchForProductSuccess,
+    TResult Function(String message)? searchForProductError,
     required TResult orElse(),
   }) {
     if (getBannerLoading != null) {
@@ -482,6 +546,12 @@ class _$GetBannerLoadingImpl<T> implements GetBannerLoading<T> {
         getCategoryProductSuccess,
     required TResult Function(GetCategoryProductError<T> value)
         getCategoryProductError,
+    required TResult Function(SearchForProductLoading<T> value)
+        searchForProductLoading,
+    required TResult Function(SearchForProductSuccess<T> value)
+        searchForProductSuccess,
+    required TResult Function(SearchForProductError<T> value)
+        searchForProductError,
   }) {
     return getBannerLoading(this);
   }
@@ -505,6 +575,11 @@ class _$GetBannerLoadingImpl<T> implements GetBannerLoading<T> {
         getCategoryProductSuccess,
     TResult? Function(GetCategoryProductError<T> value)?
         getCategoryProductError,
+    TResult? Function(SearchForProductLoading<T> value)?
+        searchForProductLoading,
+    TResult? Function(SearchForProductSuccess<T> value)?
+        searchForProductSuccess,
+    TResult? Function(SearchForProductError<T> value)? searchForProductError,
   }) {
     return getBannerLoading?.call(this);
   }
@@ -527,6 +602,9 @@ class _$GetBannerLoadingImpl<T> implements GetBannerLoading<T> {
     TResult Function(GetCategoryProductSuccess<T> value)?
         getCategoryProductSuccess,
     TResult Function(GetCategoryProductError<T> value)? getCategoryProductError,
+    TResult Function(SearchForProductLoading<T> value)? searchForProductLoading,
+    TResult Function(SearchForProductSuccess<T> value)? searchForProductSuccess,
+    TResult Function(SearchForProductError<T> value)? searchForProductError,
     required TResult orElse(),
   }) {
     if (getBannerLoading != null) {
@@ -631,6 +709,10 @@ class _$GetBannerSuccessImpl<T> implements GetBannerSuccess<T> {
     required TResult Function(List<ProductDetailsModel>? categoryProductList)
         getCategoryProductSuccess,
     required TResult Function(String message) getCategoryProductError,
+    required TResult Function() searchForProductLoading,
+    required TResult Function(List<ProductDetailsModel>? allProductsList)
+        searchForProductSuccess,
+    required TResult Function(String message) searchForProductError,
   }) {
     return getBannerSuccess(bannerList);
   }
@@ -654,6 +736,10 @@ class _$GetBannerSuccessImpl<T> implements GetBannerSuccess<T> {
     TResult? Function(List<ProductDetailsModel>? categoryProductList)?
         getCategoryProductSuccess,
     TResult? Function(String message)? getCategoryProductError,
+    TResult? Function()? searchForProductLoading,
+    TResult? Function(List<ProductDetailsModel>? allProductsList)?
+        searchForProductSuccess,
+    TResult? Function(String message)? searchForProductError,
   }) {
     return getBannerSuccess?.call(bannerList);
   }
@@ -677,6 +763,10 @@ class _$GetBannerSuccessImpl<T> implements GetBannerSuccess<T> {
     TResult Function(List<ProductDetailsModel>? categoryProductList)?
         getCategoryProductSuccess,
     TResult Function(String message)? getCategoryProductError,
+    TResult Function()? searchForProductLoading,
+    TResult Function(List<ProductDetailsModel>? allProductsList)?
+        searchForProductSuccess,
+    TResult Function(String message)? searchForProductError,
     required TResult orElse(),
   }) {
     if (getBannerSuccess != null) {
@@ -708,6 +798,12 @@ class _$GetBannerSuccessImpl<T> implements GetBannerSuccess<T> {
         getCategoryProductSuccess,
     required TResult Function(GetCategoryProductError<T> value)
         getCategoryProductError,
+    required TResult Function(SearchForProductLoading<T> value)
+        searchForProductLoading,
+    required TResult Function(SearchForProductSuccess<T> value)
+        searchForProductSuccess,
+    required TResult Function(SearchForProductError<T> value)
+        searchForProductError,
   }) {
     return getBannerSuccess(this);
   }
@@ -731,6 +827,11 @@ class _$GetBannerSuccessImpl<T> implements GetBannerSuccess<T> {
         getCategoryProductSuccess,
     TResult? Function(GetCategoryProductError<T> value)?
         getCategoryProductError,
+    TResult? Function(SearchForProductLoading<T> value)?
+        searchForProductLoading,
+    TResult? Function(SearchForProductSuccess<T> value)?
+        searchForProductSuccess,
+    TResult? Function(SearchForProductError<T> value)? searchForProductError,
   }) {
     return getBannerSuccess?.call(this);
   }
@@ -753,6 +854,9 @@ class _$GetBannerSuccessImpl<T> implements GetBannerSuccess<T> {
     TResult Function(GetCategoryProductSuccess<T> value)?
         getCategoryProductSuccess,
     TResult Function(GetCategoryProductError<T> value)? getCategoryProductError,
+    TResult Function(SearchForProductLoading<T> value)? searchForProductLoading,
+    TResult Function(SearchForProductSuccess<T> value)? searchForProductSuccess,
+    TResult Function(SearchForProductError<T> value)? searchForProductError,
     required TResult orElse(),
   }) {
     if (getBannerSuccess != null) {
@@ -853,6 +957,10 @@ class _$GetBannerErrorImpl<T> implements GetBannerError<T> {
     required TResult Function(List<ProductDetailsModel>? categoryProductList)
         getCategoryProductSuccess,
     required TResult Function(String message) getCategoryProductError,
+    required TResult Function() searchForProductLoading,
+    required TResult Function(List<ProductDetailsModel>? allProductsList)
+        searchForProductSuccess,
+    required TResult Function(String message) searchForProductError,
   }) {
     return getBannerError(message);
   }
@@ -876,6 +984,10 @@ class _$GetBannerErrorImpl<T> implements GetBannerError<T> {
     TResult? Function(List<ProductDetailsModel>? categoryProductList)?
         getCategoryProductSuccess,
     TResult? Function(String message)? getCategoryProductError,
+    TResult? Function()? searchForProductLoading,
+    TResult? Function(List<ProductDetailsModel>? allProductsList)?
+        searchForProductSuccess,
+    TResult? Function(String message)? searchForProductError,
   }) {
     return getBannerError?.call(message);
   }
@@ -899,6 +1011,10 @@ class _$GetBannerErrorImpl<T> implements GetBannerError<T> {
     TResult Function(List<ProductDetailsModel>? categoryProductList)?
         getCategoryProductSuccess,
     TResult Function(String message)? getCategoryProductError,
+    TResult Function()? searchForProductLoading,
+    TResult Function(List<ProductDetailsModel>? allProductsList)?
+        searchForProductSuccess,
+    TResult Function(String message)? searchForProductError,
     required TResult orElse(),
   }) {
     if (getBannerError != null) {
@@ -930,6 +1046,12 @@ class _$GetBannerErrorImpl<T> implements GetBannerError<T> {
         getCategoryProductSuccess,
     required TResult Function(GetCategoryProductError<T> value)
         getCategoryProductError,
+    required TResult Function(SearchForProductLoading<T> value)
+        searchForProductLoading,
+    required TResult Function(SearchForProductSuccess<T> value)
+        searchForProductSuccess,
+    required TResult Function(SearchForProductError<T> value)
+        searchForProductError,
   }) {
     return getBannerError(this);
   }
@@ -953,6 +1075,11 @@ class _$GetBannerErrorImpl<T> implements GetBannerError<T> {
         getCategoryProductSuccess,
     TResult? Function(GetCategoryProductError<T> value)?
         getCategoryProductError,
+    TResult? Function(SearchForProductLoading<T> value)?
+        searchForProductLoading,
+    TResult? Function(SearchForProductSuccess<T> value)?
+        searchForProductSuccess,
+    TResult? Function(SearchForProductError<T> value)? searchForProductError,
   }) {
     return getBannerError?.call(this);
   }
@@ -975,6 +1102,9 @@ class _$GetBannerErrorImpl<T> implements GetBannerError<T> {
     TResult Function(GetCategoryProductSuccess<T> value)?
         getCategoryProductSuccess,
     TResult Function(GetCategoryProductError<T> value)? getCategoryProductError,
+    TResult Function(SearchForProductLoading<T> value)? searchForProductLoading,
+    TResult Function(SearchForProductSuccess<T> value)? searchForProductSuccess,
+    TResult Function(SearchForProductError<T> value)? searchForProductError,
     required TResult orElse(),
   }) {
     if (getBannerError != null) {
@@ -1050,6 +1180,10 @@ class _$GetCategoriesLoadingImpl<T> implements GetCategoriesLoading<T> {
     required TResult Function(List<ProductDetailsModel>? categoryProductList)
         getCategoryProductSuccess,
     required TResult Function(String message) getCategoryProductError,
+    required TResult Function() searchForProductLoading,
+    required TResult Function(List<ProductDetailsModel>? allProductsList)
+        searchForProductSuccess,
+    required TResult Function(String message) searchForProductError,
   }) {
     return getCategoriesLoading();
   }
@@ -1073,6 +1207,10 @@ class _$GetCategoriesLoadingImpl<T> implements GetCategoriesLoading<T> {
     TResult? Function(List<ProductDetailsModel>? categoryProductList)?
         getCategoryProductSuccess,
     TResult? Function(String message)? getCategoryProductError,
+    TResult? Function()? searchForProductLoading,
+    TResult? Function(List<ProductDetailsModel>? allProductsList)?
+        searchForProductSuccess,
+    TResult? Function(String message)? searchForProductError,
   }) {
     return getCategoriesLoading?.call();
   }
@@ -1096,6 +1234,10 @@ class _$GetCategoriesLoadingImpl<T> implements GetCategoriesLoading<T> {
     TResult Function(List<ProductDetailsModel>? categoryProductList)?
         getCategoryProductSuccess,
     TResult Function(String message)? getCategoryProductError,
+    TResult Function()? searchForProductLoading,
+    TResult Function(List<ProductDetailsModel>? allProductsList)?
+        searchForProductSuccess,
+    TResult Function(String message)? searchForProductError,
     required TResult orElse(),
   }) {
     if (getCategoriesLoading != null) {
@@ -1127,6 +1269,12 @@ class _$GetCategoriesLoadingImpl<T> implements GetCategoriesLoading<T> {
         getCategoryProductSuccess,
     required TResult Function(GetCategoryProductError<T> value)
         getCategoryProductError,
+    required TResult Function(SearchForProductLoading<T> value)
+        searchForProductLoading,
+    required TResult Function(SearchForProductSuccess<T> value)
+        searchForProductSuccess,
+    required TResult Function(SearchForProductError<T> value)
+        searchForProductError,
   }) {
     return getCategoriesLoading(this);
   }
@@ -1150,6 +1298,11 @@ class _$GetCategoriesLoadingImpl<T> implements GetCategoriesLoading<T> {
         getCategoryProductSuccess,
     TResult? Function(GetCategoryProductError<T> value)?
         getCategoryProductError,
+    TResult? Function(SearchForProductLoading<T> value)?
+        searchForProductLoading,
+    TResult? Function(SearchForProductSuccess<T> value)?
+        searchForProductSuccess,
+    TResult? Function(SearchForProductError<T> value)? searchForProductError,
   }) {
     return getCategoriesLoading?.call(this);
   }
@@ -1172,6 +1325,9 @@ class _$GetCategoriesLoadingImpl<T> implements GetCategoriesLoading<T> {
     TResult Function(GetCategoryProductSuccess<T> value)?
         getCategoryProductSuccess,
     TResult Function(GetCategoryProductError<T> value)? getCategoryProductError,
+    TResult Function(SearchForProductLoading<T> value)? searchForProductLoading,
+    TResult Function(SearchForProductSuccess<T> value)? searchForProductSuccess,
+    TResult Function(SearchForProductError<T> value)? searchForProductError,
     required TResult orElse(),
   }) {
     if (getCategoriesLoading != null) {
@@ -1279,6 +1435,10 @@ class _$GetCategoriesSuccessImpl<T> implements GetCategoriesSuccess<T> {
     required TResult Function(List<ProductDetailsModel>? categoryProductList)
         getCategoryProductSuccess,
     required TResult Function(String message) getCategoryProductError,
+    required TResult Function() searchForProductLoading,
+    required TResult Function(List<ProductDetailsModel>? allProductsList)
+        searchForProductSuccess,
+    required TResult Function(String message) searchForProductError,
   }) {
     return getCategoriesSuccess(categoriesDataList);
   }
@@ -1302,6 +1462,10 @@ class _$GetCategoriesSuccessImpl<T> implements GetCategoriesSuccess<T> {
     TResult? Function(List<ProductDetailsModel>? categoryProductList)?
         getCategoryProductSuccess,
     TResult? Function(String message)? getCategoryProductError,
+    TResult? Function()? searchForProductLoading,
+    TResult? Function(List<ProductDetailsModel>? allProductsList)?
+        searchForProductSuccess,
+    TResult? Function(String message)? searchForProductError,
   }) {
     return getCategoriesSuccess?.call(categoriesDataList);
   }
@@ -1325,6 +1489,10 @@ class _$GetCategoriesSuccessImpl<T> implements GetCategoriesSuccess<T> {
     TResult Function(List<ProductDetailsModel>? categoryProductList)?
         getCategoryProductSuccess,
     TResult Function(String message)? getCategoryProductError,
+    TResult Function()? searchForProductLoading,
+    TResult Function(List<ProductDetailsModel>? allProductsList)?
+        searchForProductSuccess,
+    TResult Function(String message)? searchForProductError,
     required TResult orElse(),
   }) {
     if (getCategoriesSuccess != null) {
@@ -1356,6 +1524,12 @@ class _$GetCategoriesSuccessImpl<T> implements GetCategoriesSuccess<T> {
         getCategoryProductSuccess,
     required TResult Function(GetCategoryProductError<T> value)
         getCategoryProductError,
+    required TResult Function(SearchForProductLoading<T> value)
+        searchForProductLoading,
+    required TResult Function(SearchForProductSuccess<T> value)
+        searchForProductSuccess,
+    required TResult Function(SearchForProductError<T> value)
+        searchForProductError,
   }) {
     return getCategoriesSuccess(this);
   }
@@ -1379,6 +1553,11 @@ class _$GetCategoriesSuccessImpl<T> implements GetCategoriesSuccess<T> {
         getCategoryProductSuccess,
     TResult? Function(GetCategoryProductError<T> value)?
         getCategoryProductError,
+    TResult? Function(SearchForProductLoading<T> value)?
+        searchForProductLoading,
+    TResult? Function(SearchForProductSuccess<T> value)?
+        searchForProductSuccess,
+    TResult? Function(SearchForProductError<T> value)? searchForProductError,
   }) {
     return getCategoriesSuccess?.call(this);
   }
@@ -1401,6 +1580,9 @@ class _$GetCategoriesSuccessImpl<T> implements GetCategoriesSuccess<T> {
     TResult Function(GetCategoryProductSuccess<T> value)?
         getCategoryProductSuccess,
     TResult Function(GetCategoryProductError<T> value)? getCategoryProductError,
+    TResult Function(SearchForProductLoading<T> value)? searchForProductLoading,
+    TResult Function(SearchForProductSuccess<T> value)? searchForProductSuccess,
+    TResult Function(SearchForProductError<T> value)? searchForProductError,
     required TResult orElse(),
   }) {
     if (getCategoriesSuccess != null) {
@@ -1502,6 +1684,10 @@ class _$GetCategoriesErrorImpl<T> implements GetCategoriesError<T> {
     required TResult Function(List<ProductDetailsModel>? categoryProductList)
         getCategoryProductSuccess,
     required TResult Function(String message) getCategoryProductError,
+    required TResult Function() searchForProductLoading,
+    required TResult Function(List<ProductDetailsModel>? allProductsList)
+        searchForProductSuccess,
+    required TResult Function(String message) searchForProductError,
   }) {
     return getCategoriesError(message);
   }
@@ -1525,6 +1711,10 @@ class _$GetCategoriesErrorImpl<T> implements GetCategoriesError<T> {
     TResult? Function(List<ProductDetailsModel>? categoryProductList)?
         getCategoryProductSuccess,
     TResult? Function(String message)? getCategoryProductError,
+    TResult? Function()? searchForProductLoading,
+    TResult? Function(List<ProductDetailsModel>? allProductsList)?
+        searchForProductSuccess,
+    TResult? Function(String message)? searchForProductError,
   }) {
     return getCategoriesError?.call(message);
   }
@@ -1548,6 +1738,10 @@ class _$GetCategoriesErrorImpl<T> implements GetCategoriesError<T> {
     TResult Function(List<ProductDetailsModel>? categoryProductList)?
         getCategoryProductSuccess,
     TResult Function(String message)? getCategoryProductError,
+    TResult Function()? searchForProductLoading,
+    TResult Function(List<ProductDetailsModel>? allProductsList)?
+        searchForProductSuccess,
+    TResult Function(String message)? searchForProductError,
     required TResult orElse(),
   }) {
     if (getCategoriesError != null) {
@@ -1579,6 +1773,12 @@ class _$GetCategoriesErrorImpl<T> implements GetCategoriesError<T> {
         getCategoryProductSuccess,
     required TResult Function(GetCategoryProductError<T> value)
         getCategoryProductError,
+    required TResult Function(SearchForProductLoading<T> value)
+        searchForProductLoading,
+    required TResult Function(SearchForProductSuccess<T> value)
+        searchForProductSuccess,
+    required TResult Function(SearchForProductError<T> value)
+        searchForProductError,
   }) {
     return getCategoriesError(this);
   }
@@ -1602,6 +1802,11 @@ class _$GetCategoriesErrorImpl<T> implements GetCategoriesError<T> {
         getCategoryProductSuccess,
     TResult? Function(GetCategoryProductError<T> value)?
         getCategoryProductError,
+    TResult? Function(SearchForProductLoading<T> value)?
+        searchForProductLoading,
+    TResult? Function(SearchForProductSuccess<T> value)?
+        searchForProductSuccess,
+    TResult? Function(SearchForProductError<T> value)? searchForProductError,
   }) {
     return getCategoriesError?.call(this);
   }
@@ -1624,6 +1829,9 @@ class _$GetCategoriesErrorImpl<T> implements GetCategoriesError<T> {
     TResult Function(GetCategoryProductSuccess<T> value)?
         getCategoryProductSuccess,
     TResult Function(GetCategoryProductError<T> value)? getCategoryProductError,
+    TResult Function(SearchForProductLoading<T> value)? searchForProductLoading,
+    TResult Function(SearchForProductSuccess<T> value)? searchForProductSuccess,
+    TResult Function(SearchForProductError<T> value)? searchForProductError,
     required TResult orElse(),
   }) {
     if (getCategoriesError != null) {
@@ -1700,6 +1908,10 @@ class _$GetAllProductsLoadingImpl<T> implements GetAllProductsLoading<T> {
     required TResult Function(List<ProductDetailsModel>? categoryProductList)
         getCategoryProductSuccess,
     required TResult Function(String message) getCategoryProductError,
+    required TResult Function() searchForProductLoading,
+    required TResult Function(List<ProductDetailsModel>? allProductsList)
+        searchForProductSuccess,
+    required TResult Function(String message) searchForProductError,
   }) {
     return getAllProductsLoading();
   }
@@ -1723,6 +1935,10 @@ class _$GetAllProductsLoadingImpl<T> implements GetAllProductsLoading<T> {
     TResult? Function(List<ProductDetailsModel>? categoryProductList)?
         getCategoryProductSuccess,
     TResult? Function(String message)? getCategoryProductError,
+    TResult? Function()? searchForProductLoading,
+    TResult? Function(List<ProductDetailsModel>? allProductsList)?
+        searchForProductSuccess,
+    TResult? Function(String message)? searchForProductError,
   }) {
     return getAllProductsLoading?.call();
   }
@@ -1746,6 +1962,10 @@ class _$GetAllProductsLoadingImpl<T> implements GetAllProductsLoading<T> {
     TResult Function(List<ProductDetailsModel>? categoryProductList)?
         getCategoryProductSuccess,
     TResult Function(String message)? getCategoryProductError,
+    TResult Function()? searchForProductLoading,
+    TResult Function(List<ProductDetailsModel>? allProductsList)?
+        searchForProductSuccess,
+    TResult Function(String message)? searchForProductError,
     required TResult orElse(),
   }) {
     if (getAllProductsLoading != null) {
@@ -1777,6 +1997,12 @@ class _$GetAllProductsLoadingImpl<T> implements GetAllProductsLoading<T> {
         getCategoryProductSuccess,
     required TResult Function(GetCategoryProductError<T> value)
         getCategoryProductError,
+    required TResult Function(SearchForProductLoading<T> value)
+        searchForProductLoading,
+    required TResult Function(SearchForProductSuccess<T> value)
+        searchForProductSuccess,
+    required TResult Function(SearchForProductError<T> value)
+        searchForProductError,
   }) {
     return getAllProductsLoading(this);
   }
@@ -1800,6 +2026,11 @@ class _$GetAllProductsLoadingImpl<T> implements GetAllProductsLoading<T> {
         getCategoryProductSuccess,
     TResult? Function(GetCategoryProductError<T> value)?
         getCategoryProductError,
+    TResult? Function(SearchForProductLoading<T> value)?
+        searchForProductLoading,
+    TResult? Function(SearchForProductSuccess<T> value)?
+        searchForProductSuccess,
+    TResult? Function(SearchForProductError<T> value)? searchForProductError,
   }) {
     return getAllProductsLoading?.call(this);
   }
@@ -1822,6 +2053,9 @@ class _$GetAllProductsLoadingImpl<T> implements GetAllProductsLoading<T> {
     TResult Function(GetCategoryProductSuccess<T> value)?
         getCategoryProductSuccess,
     TResult Function(GetCategoryProductError<T> value)? getCategoryProductError,
+    TResult Function(SearchForProductLoading<T> value)? searchForProductLoading,
+    TResult Function(SearchForProductSuccess<T> value)? searchForProductSuccess,
+    TResult Function(SearchForProductError<T> value)? searchForProductError,
     required TResult orElse(),
   }) {
     if (getAllProductsLoading != null) {
@@ -1929,6 +2163,10 @@ class _$GetAllProductsSuccessImpl<T> implements GetAllProductsSuccess<T> {
     required TResult Function(List<ProductDetailsModel>? categoryProductList)
         getCategoryProductSuccess,
     required TResult Function(String message) getCategoryProductError,
+    required TResult Function() searchForProductLoading,
+    required TResult Function(List<ProductDetailsModel>? allProductsList)
+        searchForProductSuccess,
+    required TResult Function(String message) searchForProductError,
   }) {
     return getAllProductsSuccess(allProductsList);
   }
@@ -1952,6 +2190,10 @@ class _$GetAllProductsSuccessImpl<T> implements GetAllProductsSuccess<T> {
     TResult? Function(List<ProductDetailsModel>? categoryProductList)?
         getCategoryProductSuccess,
     TResult? Function(String message)? getCategoryProductError,
+    TResult? Function()? searchForProductLoading,
+    TResult? Function(List<ProductDetailsModel>? allProductsList)?
+        searchForProductSuccess,
+    TResult? Function(String message)? searchForProductError,
   }) {
     return getAllProductsSuccess?.call(allProductsList);
   }
@@ -1975,6 +2217,10 @@ class _$GetAllProductsSuccessImpl<T> implements GetAllProductsSuccess<T> {
     TResult Function(List<ProductDetailsModel>? categoryProductList)?
         getCategoryProductSuccess,
     TResult Function(String message)? getCategoryProductError,
+    TResult Function()? searchForProductLoading,
+    TResult Function(List<ProductDetailsModel>? allProductsList)?
+        searchForProductSuccess,
+    TResult Function(String message)? searchForProductError,
     required TResult orElse(),
   }) {
     if (getAllProductsSuccess != null) {
@@ -2006,6 +2252,12 @@ class _$GetAllProductsSuccessImpl<T> implements GetAllProductsSuccess<T> {
         getCategoryProductSuccess,
     required TResult Function(GetCategoryProductError<T> value)
         getCategoryProductError,
+    required TResult Function(SearchForProductLoading<T> value)
+        searchForProductLoading,
+    required TResult Function(SearchForProductSuccess<T> value)
+        searchForProductSuccess,
+    required TResult Function(SearchForProductError<T> value)
+        searchForProductError,
   }) {
     return getAllProductsSuccess(this);
   }
@@ -2029,6 +2281,11 @@ class _$GetAllProductsSuccessImpl<T> implements GetAllProductsSuccess<T> {
         getCategoryProductSuccess,
     TResult? Function(GetCategoryProductError<T> value)?
         getCategoryProductError,
+    TResult? Function(SearchForProductLoading<T> value)?
+        searchForProductLoading,
+    TResult? Function(SearchForProductSuccess<T> value)?
+        searchForProductSuccess,
+    TResult? Function(SearchForProductError<T> value)? searchForProductError,
   }) {
     return getAllProductsSuccess?.call(this);
   }
@@ -2051,6 +2308,9 @@ class _$GetAllProductsSuccessImpl<T> implements GetAllProductsSuccess<T> {
     TResult Function(GetCategoryProductSuccess<T> value)?
         getCategoryProductSuccess,
     TResult Function(GetCategoryProductError<T> value)? getCategoryProductError,
+    TResult Function(SearchForProductLoading<T> value)? searchForProductLoading,
+    TResult Function(SearchForProductSuccess<T> value)? searchForProductSuccess,
+    TResult Function(SearchForProductError<T> value)? searchForProductError,
     required TResult orElse(),
   }) {
     if (getAllProductsSuccess != null) {
@@ -2152,6 +2412,10 @@ class _$GetAllProductsErrorImpl<T> implements GetAllProductsError<T> {
     required TResult Function(List<ProductDetailsModel>? categoryProductList)
         getCategoryProductSuccess,
     required TResult Function(String message) getCategoryProductError,
+    required TResult Function() searchForProductLoading,
+    required TResult Function(List<ProductDetailsModel>? allProductsList)
+        searchForProductSuccess,
+    required TResult Function(String message) searchForProductError,
   }) {
     return getAllProductsError(message);
   }
@@ -2175,6 +2439,10 @@ class _$GetAllProductsErrorImpl<T> implements GetAllProductsError<T> {
     TResult? Function(List<ProductDetailsModel>? categoryProductList)?
         getCategoryProductSuccess,
     TResult? Function(String message)? getCategoryProductError,
+    TResult? Function()? searchForProductLoading,
+    TResult? Function(List<ProductDetailsModel>? allProductsList)?
+        searchForProductSuccess,
+    TResult? Function(String message)? searchForProductError,
   }) {
     return getAllProductsError?.call(message);
   }
@@ -2198,6 +2466,10 @@ class _$GetAllProductsErrorImpl<T> implements GetAllProductsError<T> {
     TResult Function(List<ProductDetailsModel>? categoryProductList)?
         getCategoryProductSuccess,
     TResult Function(String message)? getCategoryProductError,
+    TResult Function()? searchForProductLoading,
+    TResult Function(List<ProductDetailsModel>? allProductsList)?
+        searchForProductSuccess,
+    TResult Function(String message)? searchForProductError,
     required TResult orElse(),
   }) {
     if (getAllProductsError != null) {
@@ -2229,6 +2501,12 @@ class _$GetAllProductsErrorImpl<T> implements GetAllProductsError<T> {
         getCategoryProductSuccess,
     required TResult Function(GetCategoryProductError<T> value)
         getCategoryProductError,
+    required TResult Function(SearchForProductLoading<T> value)
+        searchForProductLoading,
+    required TResult Function(SearchForProductSuccess<T> value)
+        searchForProductSuccess,
+    required TResult Function(SearchForProductError<T> value)
+        searchForProductError,
   }) {
     return getAllProductsError(this);
   }
@@ -2252,6 +2530,11 @@ class _$GetAllProductsErrorImpl<T> implements GetAllProductsError<T> {
         getCategoryProductSuccess,
     TResult? Function(GetCategoryProductError<T> value)?
         getCategoryProductError,
+    TResult? Function(SearchForProductLoading<T> value)?
+        searchForProductLoading,
+    TResult? Function(SearchForProductSuccess<T> value)?
+        searchForProductSuccess,
+    TResult? Function(SearchForProductError<T> value)? searchForProductError,
   }) {
     return getAllProductsError?.call(this);
   }
@@ -2274,6 +2557,9 @@ class _$GetAllProductsErrorImpl<T> implements GetAllProductsError<T> {
     TResult Function(GetCategoryProductSuccess<T> value)?
         getCategoryProductSuccess,
     TResult Function(GetCategoryProductError<T> value)? getCategoryProductError,
+    TResult Function(SearchForProductLoading<T> value)? searchForProductLoading,
+    TResult Function(SearchForProductSuccess<T> value)? searchForProductSuccess,
+    TResult Function(SearchForProductError<T> value)? searchForProductError,
     required TResult orElse(),
   }) {
     if (getAllProductsError != null) {
@@ -2351,6 +2637,10 @@ class _$GetCategoryProductLoadingImpl<T>
     required TResult Function(List<ProductDetailsModel>? categoryProductList)
         getCategoryProductSuccess,
     required TResult Function(String message) getCategoryProductError,
+    required TResult Function() searchForProductLoading,
+    required TResult Function(List<ProductDetailsModel>? allProductsList)
+        searchForProductSuccess,
+    required TResult Function(String message) searchForProductError,
   }) {
     return getCategoryProductLoading();
   }
@@ -2374,6 +2664,10 @@ class _$GetCategoryProductLoadingImpl<T>
     TResult? Function(List<ProductDetailsModel>? categoryProductList)?
         getCategoryProductSuccess,
     TResult? Function(String message)? getCategoryProductError,
+    TResult? Function()? searchForProductLoading,
+    TResult? Function(List<ProductDetailsModel>? allProductsList)?
+        searchForProductSuccess,
+    TResult? Function(String message)? searchForProductError,
   }) {
     return getCategoryProductLoading?.call();
   }
@@ -2397,6 +2691,10 @@ class _$GetCategoryProductLoadingImpl<T>
     TResult Function(List<ProductDetailsModel>? categoryProductList)?
         getCategoryProductSuccess,
     TResult Function(String message)? getCategoryProductError,
+    TResult Function()? searchForProductLoading,
+    TResult Function(List<ProductDetailsModel>? allProductsList)?
+        searchForProductSuccess,
+    TResult Function(String message)? searchForProductError,
     required TResult orElse(),
   }) {
     if (getCategoryProductLoading != null) {
@@ -2428,6 +2726,12 @@ class _$GetCategoryProductLoadingImpl<T>
         getCategoryProductSuccess,
     required TResult Function(GetCategoryProductError<T> value)
         getCategoryProductError,
+    required TResult Function(SearchForProductLoading<T> value)
+        searchForProductLoading,
+    required TResult Function(SearchForProductSuccess<T> value)
+        searchForProductSuccess,
+    required TResult Function(SearchForProductError<T> value)
+        searchForProductError,
   }) {
     return getCategoryProductLoading(this);
   }
@@ -2451,6 +2755,11 @@ class _$GetCategoryProductLoadingImpl<T>
         getCategoryProductSuccess,
     TResult? Function(GetCategoryProductError<T> value)?
         getCategoryProductError,
+    TResult? Function(SearchForProductLoading<T> value)?
+        searchForProductLoading,
+    TResult? Function(SearchForProductSuccess<T> value)?
+        searchForProductSuccess,
+    TResult? Function(SearchForProductError<T> value)? searchForProductError,
   }) {
     return getCategoryProductLoading?.call(this);
   }
@@ -2473,6 +2782,9 @@ class _$GetCategoryProductLoadingImpl<T>
     TResult Function(GetCategoryProductSuccess<T> value)?
         getCategoryProductSuccess,
     TResult Function(GetCategoryProductError<T> value)? getCategoryProductError,
+    TResult Function(SearchForProductLoading<T> value)? searchForProductLoading,
+    TResult Function(SearchForProductSuccess<T> value)? searchForProductSuccess,
+    TResult Function(SearchForProductError<T> value)? searchForProductError,
     required TResult orElse(),
   }) {
     if (getCategoryProductLoading != null) {
@@ -2584,6 +2896,10 @@ class _$GetCategoryProductSuccessImpl<T>
     required TResult Function(List<ProductDetailsModel>? categoryProductList)
         getCategoryProductSuccess,
     required TResult Function(String message) getCategoryProductError,
+    required TResult Function() searchForProductLoading,
+    required TResult Function(List<ProductDetailsModel>? allProductsList)
+        searchForProductSuccess,
+    required TResult Function(String message) searchForProductError,
   }) {
     return getCategoryProductSuccess(categoryProductList);
   }
@@ -2607,6 +2923,10 @@ class _$GetCategoryProductSuccessImpl<T>
     TResult? Function(List<ProductDetailsModel>? categoryProductList)?
         getCategoryProductSuccess,
     TResult? Function(String message)? getCategoryProductError,
+    TResult? Function()? searchForProductLoading,
+    TResult? Function(List<ProductDetailsModel>? allProductsList)?
+        searchForProductSuccess,
+    TResult? Function(String message)? searchForProductError,
   }) {
     return getCategoryProductSuccess?.call(categoryProductList);
   }
@@ -2630,6 +2950,10 @@ class _$GetCategoryProductSuccessImpl<T>
     TResult Function(List<ProductDetailsModel>? categoryProductList)?
         getCategoryProductSuccess,
     TResult Function(String message)? getCategoryProductError,
+    TResult Function()? searchForProductLoading,
+    TResult Function(List<ProductDetailsModel>? allProductsList)?
+        searchForProductSuccess,
+    TResult Function(String message)? searchForProductError,
     required TResult orElse(),
   }) {
     if (getCategoryProductSuccess != null) {
@@ -2661,6 +2985,12 @@ class _$GetCategoryProductSuccessImpl<T>
         getCategoryProductSuccess,
     required TResult Function(GetCategoryProductError<T> value)
         getCategoryProductError,
+    required TResult Function(SearchForProductLoading<T> value)
+        searchForProductLoading,
+    required TResult Function(SearchForProductSuccess<T> value)
+        searchForProductSuccess,
+    required TResult Function(SearchForProductError<T> value)
+        searchForProductError,
   }) {
     return getCategoryProductSuccess(this);
   }
@@ -2684,6 +3014,11 @@ class _$GetCategoryProductSuccessImpl<T>
         getCategoryProductSuccess,
     TResult? Function(GetCategoryProductError<T> value)?
         getCategoryProductError,
+    TResult? Function(SearchForProductLoading<T> value)?
+        searchForProductLoading,
+    TResult? Function(SearchForProductSuccess<T> value)?
+        searchForProductSuccess,
+    TResult? Function(SearchForProductError<T> value)? searchForProductError,
   }) {
     return getCategoryProductSuccess?.call(this);
   }
@@ -2706,6 +3041,9 @@ class _$GetCategoryProductSuccessImpl<T>
     TResult Function(GetCategoryProductSuccess<T> value)?
         getCategoryProductSuccess,
     TResult Function(GetCategoryProductError<T> value)? getCategoryProductError,
+    TResult Function(SearchForProductLoading<T> value)? searchForProductLoading,
+    TResult Function(SearchForProductSuccess<T> value)? searchForProductSuccess,
+    TResult Function(SearchForProductError<T> value)? searchForProductError,
     required TResult orElse(),
   }) {
     if (getCategoryProductSuccess != null) {
@@ -2810,6 +3148,10 @@ class _$GetCategoryProductErrorImpl<T> implements GetCategoryProductError<T> {
     required TResult Function(List<ProductDetailsModel>? categoryProductList)
         getCategoryProductSuccess,
     required TResult Function(String message) getCategoryProductError,
+    required TResult Function() searchForProductLoading,
+    required TResult Function(List<ProductDetailsModel>? allProductsList)
+        searchForProductSuccess,
+    required TResult Function(String message) searchForProductError,
   }) {
     return getCategoryProductError(message);
   }
@@ -2833,6 +3175,10 @@ class _$GetCategoryProductErrorImpl<T> implements GetCategoryProductError<T> {
     TResult? Function(List<ProductDetailsModel>? categoryProductList)?
         getCategoryProductSuccess,
     TResult? Function(String message)? getCategoryProductError,
+    TResult? Function()? searchForProductLoading,
+    TResult? Function(List<ProductDetailsModel>? allProductsList)?
+        searchForProductSuccess,
+    TResult? Function(String message)? searchForProductError,
   }) {
     return getCategoryProductError?.call(message);
   }
@@ -2856,6 +3202,10 @@ class _$GetCategoryProductErrorImpl<T> implements GetCategoryProductError<T> {
     TResult Function(List<ProductDetailsModel>? categoryProductList)?
         getCategoryProductSuccess,
     TResult Function(String message)? getCategoryProductError,
+    TResult Function()? searchForProductLoading,
+    TResult Function(List<ProductDetailsModel>? allProductsList)?
+        searchForProductSuccess,
+    TResult Function(String message)? searchForProductError,
     required TResult orElse(),
   }) {
     if (getCategoryProductError != null) {
@@ -2887,6 +3237,12 @@ class _$GetCategoryProductErrorImpl<T> implements GetCategoryProductError<T> {
         getCategoryProductSuccess,
     required TResult Function(GetCategoryProductError<T> value)
         getCategoryProductError,
+    required TResult Function(SearchForProductLoading<T> value)
+        searchForProductLoading,
+    required TResult Function(SearchForProductSuccess<T> value)
+        searchForProductSuccess,
+    required TResult Function(SearchForProductError<T> value)
+        searchForProductError,
   }) {
     return getCategoryProductError(this);
   }
@@ -2910,6 +3266,11 @@ class _$GetCategoryProductErrorImpl<T> implements GetCategoryProductError<T> {
         getCategoryProductSuccess,
     TResult? Function(GetCategoryProductError<T> value)?
         getCategoryProductError,
+    TResult? Function(SearchForProductLoading<T> value)?
+        searchForProductLoading,
+    TResult? Function(SearchForProductSuccess<T> value)?
+        searchForProductSuccess,
+    TResult? Function(SearchForProductError<T> value)? searchForProductError,
   }) {
     return getCategoryProductError?.call(this);
   }
@@ -2932,6 +3293,9 @@ class _$GetCategoryProductErrorImpl<T> implements GetCategoryProductError<T> {
     TResult Function(GetCategoryProductSuccess<T> value)?
         getCategoryProductSuccess,
     TResult Function(GetCategoryProductError<T> value)? getCategoryProductError,
+    TResult Function(SearchForProductLoading<T> value)? searchForProductLoading,
+    TResult Function(SearchForProductSuccess<T> value)? searchForProductSuccess,
+    TResult Function(SearchForProductError<T> value)? searchForProductError,
     required TResult orElse(),
   }) {
     if (getCategoryProductError != null) {
@@ -2948,5 +3312,735 @@ abstract class GetCategoryProductError<T> implements HomeState<T> {
   String get message;
   @JsonKey(ignore: true)
   _$$GetCategoryProductErrorImplCopyWith<T, _$GetCategoryProductErrorImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$SearchForProductLoadingImplCopyWith<T, $Res> {
+  factory _$$SearchForProductLoadingImplCopyWith(
+          _$SearchForProductLoadingImpl<T> value,
+          $Res Function(_$SearchForProductLoadingImpl<T>) then) =
+      __$$SearchForProductLoadingImplCopyWithImpl<T, $Res>;
+}
+
+/// @nodoc
+class __$$SearchForProductLoadingImplCopyWithImpl<T, $Res>
+    extends _$HomeStateCopyWithImpl<T, $Res, _$SearchForProductLoadingImpl<T>>
+    implements _$$SearchForProductLoadingImplCopyWith<T, $Res> {
+  __$$SearchForProductLoadingImplCopyWithImpl(
+      _$SearchForProductLoadingImpl<T> _value,
+      $Res Function(_$SearchForProductLoadingImpl<T>) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$SearchForProductLoadingImpl<T> implements SearchForProductLoading<T> {
+  const _$SearchForProductLoadingImpl();
+
+  @override
+  String toString() {
+    return 'HomeState<$T>.searchForProductLoading()';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SearchForProductLoadingImpl<T>);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getBannerLoading,
+    required TResult Function(List<DataBanner>? bannerList) getBannerSuccess,
+    required TResult Function(String message) getBannerError,
+    required TResult Function() getCategoriesLoading,
+    required TResult Function(List<CategoriesDataList>? categoriesDataList)
+        getCategoriesSuccess,
+    required TResult Function(String message) getCategoriesError,
+    required TResult Function() getAllProductsLoading,
+    required TResult Function(List<ProductDetailsModel>? allProductsList)
+        getAllProductsSuccess,
+    required TResult Function(String message) getAllProductsError,
+    required TResult Function() getCategoryProductLoading,
+    required TResult Function(List<ProductDetailsModel>? categoryProductList)
+        getCategoryProductSuccess,
+    required TResult Function(String message) getCategoryProductError,
+    required TResult Function() searchForProductLoading,
+    required TResult Function(List<ProductDetailsModel>? allProductsList)
+        searchForProductSuccess,
+    required TResult Function(String message) searchForProductError,
+  }) {
+    return searchForProductLoading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getBannerLoading,
+    TResult? Function(List<DataBanner>? bannerList)? getBannerSuccess,
+    TResult? Function(String message)? getBannerError,
+    TResult? Function()? getCategoriesLoading,
+    TResult? Function(List<CategoriesDataList>? categoriesDataList)?
+        getCategoriesSuccess,
+    TResult? Function(String message)? getCategoriesError,
+    TResult? Function()? getAllProductsLoading,
+    TResult? Function(List<ProductDetailsModel>? allProductsList)?
+        getAllProductsSuccess,
+    TResult? Function(String message)? getAllProductsError,
+    TResult? Function()? getCategoryProductLoading,
+    TResult? Function(List<ProductDetailsModel>? categoryProductList)?
+        getCategoryProductSuccess,
+    TResult? Function(String message)? getCategoryProductError,
+    TResult? Function()? searchForProductLoading,
+    TResult? Function(List<ProductDetailsModel>? allProductsList)?
+        searchForProductSuccess,
+    TResult? Function(String message)? searchForProductError,
+  }) {
+    return searchForProductLoading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getBannerLoading,
+    TResult Function(List<DataBanner>? bannerList)? getBannerSuccess,
+    TResult Function(String message)? getBannerError,
+    TResult Function()? getCategoriesLoading,
+    TResult Function(List<CategoriesDataList>? categoriesDataList)?
+        getCategoriesSuccess,
+    TResult Function(String message)? getCategoriesError,
+    TResult Function()? getAllProductsLoading,
+    TResult Function(List<ProductDetailsModel>? allProductsList)?
+        getAllProductsSuccess,
+    TResult Function(String message)? getAllProductsError,
+    TResult Function()? getCategoryProductLoading,
+    TResult Function(List<ProductDetailsModel>? categoryProductList)?
+        getCategoryProductSuccess,
+    TResult Function(String message)? getCategoryProductError,
+    TResult Function()? searchForProductLoading,
+    TResult Function(List<ProductDetailsModel>? allProductsList)?
+        searchForProductSuccess,
+    TResult Function(String message)? searchForProductError,
+    required TResult orElse(),
+  }) {
+    if (searchForProductLoading != null) {
+      return searchForProductLoading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(GetBannerLoading<T> value) getBannerLoading,
+    required TResult Function(GetBannerSuccess<T> value) getBannerSuccess,
+    required TResult Function(GetBannerError<T> value) getBannerError,
+    required TResult Function(GetCategoriesLoading<T> value)
+        getCategoriesLoading,
+    required TResult Function(GetCategoriesSuccess<T> value)
+        getCategoriesSuccess,
+    required TResult Function(GetCategoriesError<T> value) getCategoriesError,
+    required TResult Function(GetAllProductsLoading<T> value)
+        getAllProductsLoading,
+    required TResult Function(GetAllProductsSuccess<T> value)
+        getAllProductsSuccess,
+    required TResult Function(GetAllProductsError<T> value) getAllProductsError,
+    required TResult Function(GetCategoryProductLoading<T> value)
+        getCategoryProductLoading,
+    required TResult Function(GetCategoryProductSuccess<T> value)
+        getCategoryProductSuccess,
+    required TResult Function(GetCategoryProductError<T> value)
+        getCategoryProductError,
+    required TResult Function(SearchForProductLoading<T> value)
+        searchForProductLoading,
+    required TResult Function(SearchForProductSuccess<T> value)
+        searchForProductSuccess,
+    required TResult Function(SearchForProductError<T> value)
+        searchForProductError,
+  }) {
+    return searchForProductLoading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(GetBannerLoading<T> value)? getBannerLoading,
+    TResult? Function(GetBannerSuccess<T> value)? getBannerSuccess,
+    TResult? Function(GetBannerError<T> value)? getBannerError,
+    TResult? Function(GetCategoriesLoading<T> value)? getCategoriesLoading,
+    TResult? Function(GetCategoriesSuccess<T> value)? getCategoriesSuccess,
+    TResult? Function(GetCategoriesError<T> value)? getCategoriesError,
+    TResult? Function(GetAllProductsLoading<T> value)? getAllProductsLoading,
+    TResult? Function(GetAllProductsSuccess<T> value)? getAllProductsSuccess,
+    TResult? Function(GetAllProductsError<T> value)? getAllProductsError,
+    TResult? Function(GetCategoryProductLoading<T> value)?
+        getCategoryProductLoading,
+    TResult? Function(GetCategoryProductSuccess<T> value)?
+        getCategoryProductSuccess,
+    TResult? Function(GetCategoryProductError<T> value)?
+        getCategoryProductError,
+    TResult? Function(SearchForProductLoading<T> value)?
+        searchForProductLoading,
+    TResult? Function(SearchForProductSuccess<T> value)?
+        searchForProductSuccess,
+    TResult? Function(SearchForProductError<T> value)? searchForProductError,
+  }) {
+    return searchForProductLoading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(GetBannerLoading<T> value)? getBannerLoading,
+    TResult Function(GetBannerSuccess<T> value)? getBannerSuccess,
+    TResult Function(GetBannerError<T> value)? getBannerError,
+    TResult Function(GetCategoriesLoading<T> value)? getCategoriesLoading,
+    TResult Function(GetCategoriesSuccess<T> value)? getCategoriesSuccess,
+    TResult Function(GetCategoriesError<T> value)? getCategoriesError,
+    TResult Function(GetAllProductsLoading<T> value)? getAllProductsLoading,
+    TResult Function(GetAllProductsSuccess<T> value)? getAllProductsSuccess,
+    TResult Function(GetAllProductsError<T> value)? getAllProductsError,
+    TResult Function(GetCategoryProductLoading<T> value)?
+        getCategoryProductLoading,
+    TResult Function(GetCategoryProductSuccess<T> value)?
+        getCategoryProductSuccess,
+    TResult Function(GetCategoryProductError<T> value)? getCategoryProductError,
+    TResult Function(SearchForProductLoading<T> value)? searchForProductLoading,
+    TResult Function(SearchForProductSuccess<T> value)? searchForProductSuccess,
+    TResult Function(SearchForProductError<T> value)? searchForProductError,
+    required TResult orElse(),
+  }) {
+    if (searchForProductLoading != null) {
+      return searchForProductLoading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SearchForProductLoading<T> implements HomeState<T> {
+  const factory SearchForProductLoading() = _$SearchForProductLoadingImpl<T>;
+}
+
+/// @nodoc
+abstract class _$$SearchForProductSuccessImplCopyWith<T, $Res> {
+  factory _$$SearchForProductSuccessImplCopyWith(
+          _$SearchForProductSuccessImpl<T> value,
+          $Res Function(_$SearchForProductSuccessImpl<T>) then) =
+      __$$SearchForProductSuccessImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({List<ProductDetailsModel>? allProductsList});
+}
+
+/// @nodoc
+class __$$SearchForProductSuccessImplCopyWithImpl<T, $Res>
+    extends _$HomeStateCopyWithImpl<T, $Res, _$SearchForProductSuccessImpl<T>>
+    implements _$$SearchForProductSuccessImplCopyWith<T, $Res> {
+  __$$SearchForProductSuccessImplCopyWithImpl(
+      _$SearchForProductSuccessImpl<T> _value,
+      $Res Function(_$SearchForProductSuccessImpl<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? allProductsList = freezed,
+  }) {
+    return _then(_$SearchForProductSuccessImpl<T>(
+      freezed == allProductsList
+          ? _value._allProductsList
+          : allProductsList // ignore: cast_nullable_to_non_nullable
+              as List<ProductDetailsModel>?,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$SearchForProductSuccessImpl<T> implements SearchForProductSuccess<T> {
+  const _$SearchForProductSuccessImpl(
+      final List<ProductDetailsModel>? allProductsList)
+      : _allProductsList = allProductsList;
+
+  final List<ProductDetailsModel>? _allProductsList;
+  @override
+  List<ProductDetailsModel>? get allProductsList {
+    final value = _allProductsList;
+    if (value == null) return null;
+    if (_allProductsList is EqualUnmodifiableListView) return _allProductsList;
+    // ignore: implicit_dynamic_type
+    return EqualUnmodifiableListView(value);
+  }
+
+  @override
+  String toString() {
+    return 'HomeState<$T>.searchForProductSuccess(allProductsList: $allProductsList)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SearchForProductSuccessImpl<T> &&
+            const DeepCollectionEquality()
+                .equals(other._allProductsList, _allProductsList));
+  }
+
+  @override
+  int get hashCode => Object.hash(
+      runtimeType, const DeepCollectionEquality().hash(_allProductsList));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SearchForProductSuccessImplCopyWith<T, _$SearchForProductSuccessImpl<T>>
+      get copyWith => __$$SearchForProductSuccessImplCopyWithImpl<T,
+          _$SearchForProductSuccessImpl<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getBannerLoading,
+    required TResult Function(List<DataBanner>? bannerList) getBannerSuccess,
+    required TResult Function(String message) getBannerError,
+    required TResult Function() getCategoriesLoading,
+    required TResult Function(List<CategoriesDataList>? categoriesDataList)
+        getCategoriesSuccess,
+    required TResult Function(String message) getCategoriesError,
+    required TResult Function() getAllProductsLoading,
+    required TResult Function(List<ProductDetailsModel>? allProductsList)
+        getAllProductsSuccess,
+    required TResult Function(String message) getAllProductsError,
+    required TResult Function() getCategoryProductLoading,
+    required TResult Function(List<ProductDetailsModel>? categoryProductList)
+        getCategoryProductSuccess,
+    required TResult Function(String message) getCategoryProductError,
+    required TResult Function() searchForProductLoading,
+    required TResult Function(List<ProductDetailsModel>? allProductsList)
+        searchForProductSuccess,
+    required TResult Function(String message) searchForProductError,
+  }) {
+    return searchForProductSuccess(allProductsList);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getBannerLoading,
+    TResult? Function(List<DataBanner>? bannerList)? getBannerSuccess,
+    TResult? Function(String message)? getBannerError,
+    TResult? Function()? getCategoriesLoading,
+    TResult? Function(List<CategoriesDataList>? categoriesDataList)?
+        getCategoriesSuccess,
+    TResult? Function(String message)? getCategoriesError,
+    TResult? Function()? getAllProductsLoading,
+    TResult? Function(List<ProductDetailsModel>? allProductsList)?
+        getAllProductsSuccess,
+    TResult? Function(String message)? getAllProductsError,
+    TResult? Function()? getCategoryProductLoading,
+    TResult? Function(List<ProductDetailsModel>? categoryProductList)?
+        getCategoryProductSuccess,
+    TResult? Function(String message)? getCategoryProductError,
+    TResult? Function()? searchForProductLoading,
+    TResult? Function(List<ProductDetailsModel>? allProductsList)?
+        searchForProductSuccess,
+    TResult? Function(String message)? searchForProductError,
+  }) {
+    return searchForProductSuccess?.call(allProductsList);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getBannerLoading,
+    TResult Function(List<DataBanner>? bannerList)? getBannerSuccess,
+    TResult Function(String message)? getBannerError,
+    TResult Function()? getCategoriesLoading,
+    TResult Function(List<CategoriesDataList>? categoriesDataList)?
+        getCategoriesSuccess,
+    TResult Function(String message)? getCategoriesError,
+    TResult Function()? getAllProductsLoading,
+    TResult Function(List<ProductDetailsModel>? allProductsList)?
+        getAllProductsSuccess,
+    TResult Function(String message)? getAllProductsError,
+    TResult Function()? getCategoryProductLoading,
+    TResult Function(List<ProductDetailsModel>? categoryProductList)?
+        getCategoryProductSuccess,
+    TResult Function(String message)? getCategoryProductError,
+    TResult Function()? searchForProductLoading,
+    TResult Function(List<ProductDetailsModel>? allProductsList)?
+        searchForProductSuccess,
+    TResult Function(String message)? searchForProductError,
+    required TResult orElse(),
+  }) {
+    if (searchForProductSuccess != null) {
+      return searchForProductSuccess(allProductsList);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(GetBannerLoading<T> value) getBannerLoading,
+    required TResult Function(GetBannerSuccess<T> value) getBannerSuccess,
+    required TResult Function(GetBannerError<T> value) getBannerError,
+    required TResult Function(GetCategoriesLoading<T> value)
+        getCategoriesLoading,
+    required TResult Function(GetCategoriesSuccess<T> value)
+        getCategoriesSuccess,
+    required TResult Function(GetCategoriesError<T> value) getCategoriesError,
+    required TResult Function(GetAllProductsLoading<T> value)
+        getAllProductsLoading,
+    required TResult Function(GetAllProductsSuccess<T> value)
+        getAllProductsSuccess,
+    required TResult Function(GetAllProductsError<T> value) getAllProductsError,
+    required TResult Function(GetCategoryProductLoading<T> value)
+        getCategoryProductLoading,
+    required TResult Function(GetCategoryProductSuccess<T> value)
+        getCategoryProductSuccess,
+    required TResult Function(GetCategoryProductError<T> value)
+        getCategoryProductError,
+    required TResult Function(SearchForProductLoading<T> value)
+        searchForProductLoading,
+    required TResult Function(SearchForProductSuccess<T> value)
+        searchForProductSuccess,
+    required TResult Function(SearchForProductError<T> value)
+        searchForProductError,
+  }) {
+    return searchForProductSuccess(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(GetBannerLoading<T> value)? getBannerLoading,
+    TResult? Function(GetBannerSuccess<T> value)? getBannerSuccess,
+    TResult? Function(GetBannerError<T> value)? getBannerError,
+    TResult? Function(GetCategoriesLoading<T> value)? getCategoriesLoading,
+    TResult? Function(GetCategoriesSuccess<T> value)? getCategoriesSuccess,
+    TResult? Function(GetCategoriesError<T> value)? getCategoriesError,
+    TResult? Function(GetAllProductsLoading<T> value)? getAllProductsLoading,
+    TResult? Function(GetAllProductsSuccess<T> value)? getAllProductsSuccess,
+    TResult? Function(GetAllProductsError<T> value)? getAllProductsError,
+    TResult? Function(GetCategoryProductLoading<T> value)?
+        getCategoryProductLoading,
+    TResult? Function(GetCategoryProductSuccess<T> value)?
+        getCategoryProductSuccess,
+    TResult? Function(GetCategoryProductError<T> value)?
+        getCategoryProductError,
+    TResult? Function(SearchForProductLoading<T> value)?
+        searchForProductLoading,
+    TResult? Function(SearchForProductSuccess<T> value)?
+        searchForProductSuccess,
+    TResult? Function(SearchForProductError<T> value)? searchForProductError,
+  }) {
+    return searchForProductSuccess?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(GetBannerLoading<T> value)? getBannerLoading,
+    TResult Function(GetBannerSuccess<T> value)? getBannerSuccess,
+    TResult Function(GetBannerError<T> value)? getBannerError,
+    TResult Function(GetCategoriesLoading<T> value)? getCategoriesLoading,
+    TResult Function(GetCategoriesSuccess<T> value)? getCategoriesSuccess,
+    TResult Function(GetCategoriesError<T> value)? getCategoriesError,
+    TResult Function(GetAllProductsLoading<T> value)? getAllProductsLoading,
+    TResult Function(GetAllProductsSuccess<T> value)? getAllProductsSuccess,
+    TResult Function(GetAllProductsError<T> value)? getAllProductsError,
+    TResult Function(GetCategoryProductLoading<T> value)?
+        getCategoryProductLoading,
+    TResult Function(GetCategoryProductSuccess<T> value)?
+        getCategoryProductSuccess,
+    TResult Function(GetCategoryProductError<T> value)? getCategoryProductError,
+    TResult Function(SearchForProductLoading<T> value)? searchForProductLoading,
+    TResult Function(SearchForProductSuccess<T> value)? searchForProductSuccess,
+    TResult Function(SearchForProductError<T> value)? searchForProductError,
+    required TResult orElse(),
+  }) {
+    if (searchForProductSuccess != null) {
+      return searchForProductSuccess(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SearchForProductSuccess<T> implements HomeState<T> {
+  const factory SearchForProductSuccess(
+          final List<ProductDetailsModel>? allProductsList) =
+      _$SearchForProductSuccessImpl<T>;
+
+  List<ProductDetailsModel>? get allProductsList;
+  @JsonKey(ignore: true)
+  _$$SearchForProductSuccessImplCopyWith<T, _$SearchForProductSuccessImpl<T>>
+      get copyWith => throw _privateConstructorUsedError;
+}
+
+/// @nodoc
+abstract class _$$SearchForProductErrorImplCopyWith<T, $Res> {
+  factory _$$SearchForProductErrorImplCopyWith(
+          _$SearchForProductErrorImpl<T> value,
+          $Res Function(_$SearchForProductErrorImpl<T>) then) =
+      __$$SearchForProductErrorImplCopyWithImpl<T, $Res>;
+  @useResult
+  $Res call({String message});
+}
+
+/// @nodoc
+class __$$SearchForProductErrorImplCopyWithImpl<T, $Res>
+    extends _$HomeStateCopyWithImpl<T, $Res, _$SearchForProductErrorImpl<T>>
+    implements _$$SearchForProductErrorImplCopyWith<T, $Res> {
+  __$$SearchForProductErrorImplCopyWithImpl(
+      _$SearchForProductErrorImpl<T> _value,
+      $Res Function(_$SearchForProductErrorImpl<T>) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? message = null,
+  }) {
+    return _then(_$SearchForProductErrorImpl<T>(
+      message: null == message
+          ? _value.message
+          : message // ignore: cast_nullable_to_non_nullable
+              as String,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$SearchForProductErrorImpl<T> implements SearchForProductError<T> {
+  const _$SearchForProductErrorImpl({required this.message});
+
+  @override
+  final String message;
+
+  @override
+  String toString() {
+    return 'HomeState<$T>.searchForProductError(message: $message)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$SearchForProductErrorImpl<T> &&
+            (identical(other.message, message) || other.message == message));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, message);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$SearchForProductErrorImplCopyWith<T, _$SearchForProductErrorImpl<T>>
+      get copyWith => __$$SearchForProductErrorImplCopyWithImpl<T,
+          _$SearchForProductErrorImpl<T>>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() getBannerLoading,
+    required TResult Function(List<DataBanner>? bannerList) getBannerSuccess,
+    required TResult Function(String message) getBannerError,
+    required TResult Function() getCategoriesLoading,
+    required TResult Function(List<CategoriesDataList>? categoriesDataList)
+        getCategoriesSuccess,
+    required TResult Function(String message) getCategoriesError,
+    required TResult Function() getAllProductsLoading,
+    required TResult Function(List<ProductDetailsModel>? allProductsList)
+        getAllProductsSuccess,
+    required TResult Function(String message) getAllProductsError,
+    required TResult Function() getCategoryProductLoading,
+    required TResult Function(List<ProductDetailsModel>? categoryProductList)
+        getCategoryProductSuccess,
+    required TResult Function(String message) getCategoryProductError,
+    required TResult Function() searchForProductLoading,
+    required TResult Function(List<ProductDetailsModel>? allProductsList)
+        searchForProductSuccess,
+    required TResult Function(String message) searchForProductError,
+  }) {
+    return searchForProductError(message);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? getBannerLoading,
+    TResult? Function(List<DataBanner>? bannerList)? getBannerSuccess,
+    TResult? Function(String message)? getBannerError,
+    TResult? Function()? getCategoriesLoading,
+    TResult? Function(List<CategoriesDataList>? categoriesDataList)?
+        getCategoriesSuccess,
+    TResult? Function(String message)? getCategoriesError,
+    TResult? Function()? getAllProductsLoading,
+    TResult? Function(List<ProductDetailsModel>? allProductsList)?
+        getAllProductsSuccess,
+    TResult? Function(String message)? getAllProductsError,
+    TResult? Function()? getCategoryProductLoading,
+    TResult? Function(List<ProductDetailsModel>? categoryProductList)?
+        getCategoryProductSuccess,
+    TResult? Function(String message)? getCategoryProductError,
+    TResult? Function()? searchForProductLoading,
+    TResult? Function(List<ProductDetailsModel>? allProductsList)?
+        searchForProductSuccess,
+    TResult? Function(String message)? searchForProductError,
+  }) {
+    return searchForProductError?.call(message);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? getBannerLoading,
+    TResult Function(List<DataBanner>? bannerList)? getBannerSuccess,
+    TResult Function(String message)? getBannerError,
+    TResult Function()? getCategoriesLoading,
+    TResult Function(List<CategoriesDataList>? categoriesDataList)?
+        getCategoriesSuccess,
+    TResult Function(String message)? getCategoriesError,
+    TResult Function()? getAllProductsLoading,
+    TResult Function(List<ProductDetailsModel>? allProductsList)?
+        getAllProductsSuccess,
+    TResult Function(String message)? getAllProductsError,
+    TResult Function()? getCategoryProductLoading,
+    TResult Function(List<ProductDetailsModel>? categoryProductList)?
+        getCategoryProductSuccess,
+    TResult Function(String message)? getCategoryProductError,
+    TResult Function()? searchForProductLoading,
+    TResult Function(List<ProductDetailsModel>? allProductsList)?
+        searchForProductSuccess,
+    TResult Function(String message)? searchForProductError,
+    required TResult orElse(),
+  }) {
+    if (searchForProductError != null) {
+      return searchForProductError(message);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_Initial<T> value) initial,
+    required TResult Function(GetBannerLoading<T> value) getBannerLoading,
+    required TResult Function(GetBannerSuccess<T> value) getBannerSuccess,
+    required TResult Function(GetBannerError<T> value) getBannerError,
+    required TResult Function(GetCategoriesLoading<T> value)
+        getCategoriesLoading,
+    required TResult Function(GetCategoriesSuccess<T> value)
+        getCategoriesSuccess,
+    required TResult Function(GetCategoriesError<T> value) getCategoriesError,
+    required TResult Function(GetAllProductsLoading<T> value)
+        getAllProductsLoading,
+    required TResult Function(GetAllProductsSuccess<T> value)
+        getAllProductsSuccess,
+    required TResult Function(GetAllProductsError<T> value) getAllProductsError,
+    required TResult Function(GetCategoryProductLoading<T> value)
+        getCategoryProductLoading,
+    required TResult Function(GetCategoryProductSuccess<T> value)
+        getCategoryProductSuccess,
+    required TResult Function(GetCategoryProductError<T> value)
+        getCategoryProductError,
+    required TResult Function(SearchForProductLoading<T> value)
+        searchForProductLoading,
+    required TResult Function(SearchForProductSuccess<T> value)
+        searchForProductSuccess,
+    required TResult Function(SearchForProductError<T> value)
+        searchForProductError,
+  }) {
+    return searchForProductError(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_Initial<T> value)? initial,
+    TResult? Function(GetBannerLoading<T> value)? getBannerLoading,
+    TResult? Function(GetBannerSuccess<T> value)? getBannerSuccess,
+    TResult? Function(GetBannerError<T> value)? getBannerError,
+    TResult? Function(GetCategoriesLoading<T> value)? getCategoriesLoading,
+    TResult? Function(GetCategoriesSuccess<T> value)? getCategoriesSuccess,
+    TResult? Function(GetCategoriesError<T> value)? getCategoriesError,
+    TResult? Function(GetAllProductsLoading<T> value)? getAllProductsLoading,
+    TResult? Function(GetAllProductsSuccess<T> value)? getAllProductsSuccess,
+    TResult? Function(GetAllProductsError<T> value)? getAllProductsError,
+    TResult? Function(GetCategoryProductLoading<T> value)?
+        getCategoryProductLoading,
+    TResult? Function(GetCategoryProductSuccess<T> value)?
+        getCategoryProductSuccess,
+    TResult? Function(GetCategoryProductError<T> value)?
+        getCategoryProductError,
+    TResult? Function(SearchForProductLoading<T> value)?
+        searchForProductLoading,
+    TResult? Function(SearchForProductSuccess<T> value)?
+        searchForProductSuccess,
+    TResult? Function(SearchForProductError<T> value)? searchForProductError,
+  }) {
+    return searchForProductError?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_Initial<T> value)? initial,
+    TResult Function(GetBannerLoading<T> value)? getBannerLoading,
+    TResult Function(GetBannerSuccess<T> value)? getBannerSuccess,
+    TResult Function(GetBannerError<T> value)? getBannerError,
+    TResult Function(GetCategoriesLoading<T> value)? getCategoriesLoading,
+    TResult Function(GetCategoriesSuccess<T> value)? getCategoriesSuccess,
+    TResult Function(GetCategoriesError<T> value)? getCategoriesError,
+    TResult Function(GetAllProductsLoading<T> value)? getAllProductsLoading,
+    TResult Function(GetAllProductsSuccess<T> value)? getAllProductsSuccess,
+    TResult Function(GetAllProductsError<T> value)? getAllProductsError,
+    TResult Function(GetCategoryProductLoading<T> value)?
+        getCategoryProductLoading,
+    TResult Function(GetCategoryProductSuccess<T> value)?
+        getCategoryProductSuccess,
+    TResult Function(GetCategoryProductError<T> value)? getCategoryProductError,
+    TResult Function(SearchForProductLoading<T> value)? searchForProductLoading,
+    TResult Function(SearchForProductSuccess<T> value)? searchForProductSuccess,
+    TResult Function(SearchForProductError<T> value)? searchForProductError,
+    required TResult orElse(),
+  }) {
+    if (searchForProductError != null) {
+      return searchForProductError(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class SearchForProductError<T> implements HomeState<T> {
+  const factory SearchForProductError({required final String message}) =
+      _$SearchForProductErrorImpl<T>;
+
+  String get message;
+  @JsonKey(ignore: true)
+  _$$SearchForProductErrorImplCopyWith<T, _$SearchForProductErrorImpl<T>>
       get copyWith => throw _privateConstructorUsedError;
 }

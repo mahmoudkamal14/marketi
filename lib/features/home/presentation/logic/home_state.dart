@@ -50,4 +50,14 @@ class HomeState<T> with _$HomeState {
 
   const factory HomeState.getCategoryProductError({required String message}) =
       GetCategoryProductError;
+
+  // Search
+
+  const factory HomeState.searchForProductLoading() = SearchForProductLoading;
+
+  const factory HomeState.searchForProductSuccess(
+      List<ProductDetailsModel>? allProductsList) = SearchForProductSuccess;
+
+  const factory HomeState.searchForProductError({required String message}) =
+      SearchForProductError;
 }

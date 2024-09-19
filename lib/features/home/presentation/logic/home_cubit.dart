@@ -6,6 +6,7 @@ import 'package:marketi/features/home/domain/usecases/get_all_products_usecase.d
 import 'package:marketi/features/home/domain/usecases/get_banners_usecase.dart';
 import 'package:marketi/features/home/domain/usecases/get_categories_usecase.dart';
 import 'package:marketi/features/home/domain/usecases/get_category_products_usecase.dart';
+import 'package:marketi/features/home/domain/usecases/search_for_product_usecase.dart';
 import 'package:marketi/features/home/presentation/logic/home_state.dart';
 
 class HomeCubit extends Cubit<HomeState> {
@@ -13,20 +14,22 @@ class HomeCubit extends Cubit<HomeState> {
   final GetCategoriesUsecase _categoriesUsecase;
   final GetAllProductsUsecase _allProductsUsecase;
   final GetCategoryProductsUsecase _categoryProductsUsecase;
+  final SearchForProductUsecase _searchUsecase;
 
   HomeCubit(
-    this._bannersUsecase,
-    this._categoriesUsecase,
-    this._allProductsUsecase,
-    this._categoryProductsUsecase,
-  ) : super(const HomeState.initial());
+      this._bannersUsecase,
+      this._categoriesUsecase,
+      this._allProductsUsecase,
+      this._categoryProductsUsecase,
+      this._searchUsecase)
+      : super(const HomeState.initial());
 
   static HomeCubit get(context) => BlocProvider.of(context);
 
   List<DataBanner>? bannerList = [];
   List<CategoriesDataList>? categoriesList = [];
   List<ProductDetailsModel>? allProductsList = [];
-  List<ProductDetailsModel>? categoryProductsList = [];
+  List<ProductDetailsModel>? searchList = [];
 
   void emitStatesBanners() async {
     emit(const HomeState.getBannerLoading());
@@ -67,7 +70,6 @@ class HomeCubit extends Cubit<HomeState> {
     response.when(
       success: (data) {
         allProductsList = data.data!.data;
-
         emit(HomeState.getAllProductsSuccess(allProductsList));
       },
       failure: (message) {
@@ -75,6 +77,24 @@ class HomeCubit extends Cubit<HomeState> {
       },
     );
   }
+
+  void emitSearchStates(String text) async {
+    emit(const HomeState.searchForProductLoading());
+    final response = await _searchUsecase.call(text);
+
+    response.when(
+      success: (data) {
+        searchList = data.data!.data;
+
+        emit(HomeState.searchForProductSuccess(searchList));
+      },
+      failure: (message) {
+        emit(HomeState.searchForProductError(message: message));
+      },
+    );
+  }
+
+  List<ProductDetailsModel>? categoryProductsList = [];
 
   void emitStatesCategoryProducts(int id) async {
     emit(const HomeState.getCategoryProductLoading());

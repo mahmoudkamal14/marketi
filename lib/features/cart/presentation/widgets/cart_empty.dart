@@ -19,7 +19,6 @@ class CartEmpty extends StatelessWidget {
           children: [
             const CustomAppBar(
               title: 'Cart',
-              pop: 'home',
             ),
             verticalSpace(57),
             Image.asset('assets/images/Illustration_Cart_Empty.png'),

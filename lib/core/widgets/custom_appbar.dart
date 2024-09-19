@@ -8,12 +8,10 @@ class CustomAppBar extends StatelessWidget {
     super.key,
     required this.title,
     this.image,
-    required this.pop,
   });
 
   final String title;
   final String? image;
-  final String pop;
   @override
   Widget build(BuildContext context) {
     return Padding(

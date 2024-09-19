@@ -8,4 +8,5 @@ abstract class BaseHomeRepository {
   Future<ApiResult<CategoriesResponseModel>> getCategories();
   Future<ApiResult<ProductResponseModel>> getCategoryById(int id);
   Future<ApiResult<ProductResponseModel>> getAllProducts();
+  Future<ApiResult<ProductResponseModel>> searchForProduct(String text);
 }

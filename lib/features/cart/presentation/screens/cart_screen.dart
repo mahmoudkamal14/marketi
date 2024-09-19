@@ -19,10 +19,7 @@ class CartScreen extends StatelessWidget {
               body: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const CustomAppBar(
-                    title: 'Cart',
-                    pop: 'home',
-                  ),
+                  const CustomAppBar(title: 'Cart'),
                   verticalSpace(14),
                   Padding(
                       padding: EdgeInsets.symmetric(

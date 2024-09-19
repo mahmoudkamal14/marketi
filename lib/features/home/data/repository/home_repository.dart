@@ -52,4 +52,15 @@ class HomeRepository extends BaseHomeRepository {
       return ApiResult.failure(message.toString());
     }
   }
+
+  @override
+  Future<ApiResult<ProductResponseModel>> searchForProduct(String text) async {
+    try {
+      final result = await _datasource.searchForProduct(text);
+
+      return ApiResult.success(result);
+    } catch (message) {
+      return ApiResult.failure(message.toString());
+    }
+  }
 }

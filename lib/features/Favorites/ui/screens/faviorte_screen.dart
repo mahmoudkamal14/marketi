@@ -17,10 +17,7 @@ class FaviorteScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const CustomAppBar(
-                title: 'Favorites',
-                pop: 'home',
-              ),
+              const CustomAppBar(title: 'Favorites'),
               const AppSearchBar(),
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 14.w),

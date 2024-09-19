@@ -23,4 +23,9 @@ abstract class RemoteHomeDatasource {
 
   @GET("${ApiConstants.categoryProduct}/{id}")
   Future<ProductResponseModel> getCategoryById(@Path("id") int id);
+
+  @POST(ApiConstants.search)
+  Future<ProductResponseModel> searchForProduct(
+    @Query("text") String text,
+  );
 }

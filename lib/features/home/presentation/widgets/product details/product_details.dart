@@ -20,10 +20,7 @@ class ProductDetails extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            const CustomAppBar(
-              title: 'Product Details',
-              pop: '',
-            ),
+            const CustomAppBar(title: 'Product Details'),
             verticalSpace(14),
             AnimatedImageProduct(model: model),
             Expanded(
@@ -38,7 +35,7 @@ class ProductDetails extends StatelessWidget {
                       blurRadius: 10,
                       offset: Offset(0, -1),
                       spreadRadius: 0,
-                    )
+                    ),
                   ],
                 ),
                 padding: const EdgeInsetsDirectional.all(14),

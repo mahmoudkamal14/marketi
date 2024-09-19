@@ -19,6 +19,8 @@ class ApiConstants {
 
   static const String categoryProduct = "categories";
 
+  static const String search = "products/search";
+
   static const String primaryKey = 'primaryKey';
 }
 

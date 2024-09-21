@@ -15,6 +15,7 @@ import 'package:marketi/features/auth/presentation/widgets/verificatin_code.dart
 import 'package:marketi/features/home/presentation/logic/home_cubit.dart';
 import 'package:marketi/features/onboarding/screens/onboarding_screen.dart';
 import 'package:marketi/features/auth/presentation/screens/register_screen.dart';
+import 'package:marketi/features/profile/presentation/screens/personal_info_screen.dart';
 
 class AppRouter {
   Route? generateRoute(RouteSettings settings) {
@@ -91,6 +92,14 @@ class AppRouter {
           BlocProvider(
             create: (context) => getIt<HomeCubit>(),
             child: const CategoryProductsScreen(),
+          ),
+        );
+
+      case Routes.personalInfoScreen:
+        return fadePageRoute(
+          BlocProvider(
+            create: (context) => getIt<LoginCubit>(),
+            child: const PersonalInfoScreen(),
           ),
         );
     }

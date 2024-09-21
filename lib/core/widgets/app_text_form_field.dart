@@ -38,58 +38,61 @@ class AppTextFormField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TextFormField(
-      controller: controller,
-      keyboardType: textInputType,
-      onChanged: onChanged,
-      decoration: InputDecoration(
-        isDense: true,
-        contentPadding: contentPadding ??
-            EdgeInsets.symmetric(horizontal: 20.w, vertical: 18.h),
-        focusedBorder: focusedBorder ??
-            OutlineInputBorder(
-              borderSide: const BorderSide(
-                color: Color(0xB2B2CCFF),
-                width: 1.3,
+    return Directionality(
+      textDirection: TextDirection.rtl,
+      child: TextFormField(
+        controller: controller,
+        keyboardType: textInputType,
+        onChanged: onChanged,
+        decoration: InputDecoration(
+          isDense: true,
+          contentPadding: contentPadding ??
+              EdgeInsets.symmetric(horizontal: 20.w, vertical: 18.h),
+          focusedBorder: focusedBorder ??
+              OutlineInputBorder(
+                borderSide: const BorderSide(
+                  color: Color(0xB2B2CCFF),
+                  width: 1.3,
+                ),
+                borderRadius: BorderRadius.circular(16),
               ),
-              borderRadius: BorderRadius.circular(16),
-            ),
-        enabledBorder: enabledBorder ??
-            OutlineInputBorder(
-              borderSide: const BorderSide(
-                color: Color(0xB2B2CCFF),
-                width: 1.3,
+          enabledBorder: enabledBorder ??
+              OutlineInputBorder(
+                borderSide: const BorderSide(
+                  color: Color(0xB2B2CCFF),
+                  width: 1.3,
+                ),
+                borderRadius: BorderRadius.circular(16),
               ),
-              borderRadius: BorderRadius.circular(16),
+          errorBorder: OutlineInputBorder(
+            borderSide: const BorderSide(
+              color: Colors.red,
+              width: 1.3,
             ),
-        errorBorder: OutlineInputBorder(
-          borderSide: const BorderSide(
-            color: Colors.red,
-            width: 1.3,
+            borderRadius: BorderRadius.circular(16),
           ),
-          borderRadius: BorderRadius.circular(16),
-        ),
-        focusedErrorBorder: OutlineInputBorder(
-          borderSide: const BorderSide(
-            color: Colors.red,
-            width: 1.3,
-          ),
-          borderRadius: BorderRadius.circular(16),
-        ),
-        hintText: hintText,
-        hintStyle: hintTextStyle ??
-            AppStyles.style16Regular.copyWith(
-              color: const Color(0xFF919AAB),
+          focusedErrorBorder: OutlineInputBorder(
+            borderSide: const BorderSide(
+              color: Colors.red,
+              width: 1.3,
             ),
-        suffixIcon: suffixIcon,
-        prefixIcon: prefixIcon,
-        fillColor: backGroundColorHint ?? Colors.white,
-        filled: true,
+            borderRadius: BorderRadius.circular(16),
+          ),
+          hintText: hintText,
+          hintStyle: hintTextStyle ??
+              AppStyles.style16Regular.copyWith(
+                color: const Color(0xFF919AAB),
+              ),
+          suffix: suffixIcon,
+          prefix: prefixIcon,
+          fillColor: backGroundColorHint ?? Colors.white,
+          filled: true,
+        ),
+        obscureText: isObscureText ?? false,
+        validator: (value) {
+          return validator(value);
+        },
       ),
-      obscureText: isObscureText ?? false,
-      validator: (value) {
-        return validator(value);
-      },
     );
   }
 }

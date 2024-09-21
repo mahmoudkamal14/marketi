@@ -4,7 +4,7 @@ import 'package:marketi/core/theme/app_styles.dart';
 import 'package:marketi/features/cart/presentation/screens/cart_screen.dart';
 import 'package:marketi/features/Favorites/ui/screens/faviorte_screen.dart';
 import 'package:marketi/features/home/presentation/Screens/home_screen.dart';
-import 'package:marketi/features/profile/ui/screens/profile_screen.dart';
+import 'package:marketi/features/profile/presentation/screens/profile_screen.dart';
 
 class NavBarLayout extends StatefulWidget {
   const NavBarLayout({super.key});

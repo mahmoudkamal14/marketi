@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:marketi/core/theme/spaces.dart';
-import 'package:marketi/features/profile/ui/widgets/change_theme_mode.dart';
-import 'package:marketi/features/profile/ui/widgets/check_notifications_widget.dart';
-import 'package:marketi/features/profile/ui/widgets/image_profile_widget.dart';
-import 'package:marketi/features/profile/ui/widgets/log_out_widget.dart';
-import 'package:marketi/features/profile/ui/widgets/personal_info_widget.dart';
-import 'package:marketi/features/profile/ui/widgets/profile_appbar_widget.dart';
-import 'package:marketi/features/profile/ui/widgets/rate_us_widget.dart';
+import 'package:marketi/features/profile/presentation/widgets/change_theme_mode.dart';
+import 'package:marketi/features/profile/presentation/widgets/check_notifications_widget.dart';
+import 'package:marketi/features/profile/presentation/widgets/image_profile_widget.dart';
+import 'package:marketi/features/profile/presentation/widgets/log_out_widget.dart';
+import 'package:marketi/features/profile/presentation/widgets/personal_info_widget.dart';
+import 'package:marketi/features/profile/presentation/widgets/profile_appbar_widget.dart';
+import 'package:marketi/features/profile/presentation/widgets/rate_us_widget.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});

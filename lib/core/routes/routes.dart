@@ -20,4 +20,6 @@ class Routes {
   static const categoryProductsScreen = '/categoryProductsScreen';
 
   static const productDetailsScreen = '/productDetailsScreen';
+
+  static const personalInfoScreen = '/personalInfoScreen';
 }

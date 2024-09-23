@@ -1,18 +1,17 @@
 import 'package:marketi/core/networking/api_result.dart';
-import 'package:marketi/features/home/data/datasource/remote_home_datasource.dart';
 import 'package:marketi/features/home/data/models/banner_response_model.dart';
 import 'package:marketi/features/home/data/models/categories_response_model.dart';
 import 'package:marketi/features/home/data/models/product_response_model.dart';
-import 'package:marketi/features/home/domain/repository/base_home_repository.dart';
+import 'package:marketi/features/home/data/services/home_services.dart';
 
-class HomeRepository extends BaseHomeRepository {
-  final RemoteHomeDatasource _datasource;
+class HomeRepository {
+  final HomeServices _homeServices;
 
-  HomeRepository(this._datasource);
-  @override
+  HomeRepository(this._homeServices);
+
   Future<ApiResult<BannerResponseModel>> getBanners() async {
     try {
-      final result = await _datasource.getBanners();
+      final result = await _homeServices.getBanners();
 
       return ApiResult.success(result);
     } catch (message) {
@@ -20,10 +19,9 @@ class HomeRepository extends BaseHomeRepository {
     }
   }
 
-  @override
   Future<ApiResult<CategoriesResponseModel>> getCategories() async {
     try {
-      final result = await _datasource.getCategories();
+      final result = await _homeServices.getCategories();
 
       return ApiResult.success(result);
     } catch (message) {
@@ -31,10 +29,9 @@ class HomeRepository extends BaseHomeRepository {
     }
   }
 
-  @override
   Future<ApiResult<ProductResponseModel>> getCategoryById(int id) async {
     try {
-      final result = await _datasource.getCategoryById(id);
+      final result = await _homeServices.getCategoryById(id);
 
       return ApiResult.success(result);
     } catch (message) {
@@ -42,10 +39,9 @@ class HomeRepository extends BaseHomeRepository {
     }
   }
 
-  @override
   Future<ApiResult<ProductResponseModel>> getAllProducts() async {
     try {
-      final result = await _datasource.getAllProducts();
+      final result = await _homeServices.getAllProducts();
 
       return ApiResult.success(result);
     } catch (message) {
@@ -53,10 +49,9 @@ class HomeRepository extends BaseHomeRepository {
     }
   }
 
-  @override
   Future<ApiResult<ProductResponseModel>> searchForProduct(String text) async {
     try {
-      final result = await _datasource.searchForProduct(text);
+      final result = await _homeServices.searchForProduct(text);
 
       return ApiResult.success(result);
     } catch (message) {

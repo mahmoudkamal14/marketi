@@ -1,15 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:marketi/features/auth/data/models/auth_response_model.dart';
 import 'package:marketi/features/auth/data/models/register_request_body.dart';
-import 'package:marketi/features/auth/domain/usecases/register_with_email_password_usecase.dart';
+import 'package:marketi/features/auth/data/repository/auth_repository.dart';
 import 'package:marketi/features/auth/presentation/logic/register/register_state.dart';
 
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class RegisterCubit extends Cubit<RegisterState> {
-  final RegisterWithEmailPasswordUsecase _emailPasswordUsecase;
-  RegisterCubit(this._emailPasswordUsecase)
-      : super(const RegisterState.initial());
+  final AuthRepository _authRepository;
+  RegisterCubit(this._authRepository) : super(const RegisterState.initial());
 
   static RegisterCubit get(context) => BlocProvider.of(context);
 
@@ -22,7 +21,7 @@ class RegisterCubit extends Cubit<RegisterState> {
 
   void emitRegisterStates() async {
     emit(const RegisterState.loading());
-    final response = await _emailPasswordUsecase.call(
+    final response = await _authRepository.registerWithEmailPassword(
       RegisterRequestBody(
         email: emailController.text,
         password: passwordController.text,

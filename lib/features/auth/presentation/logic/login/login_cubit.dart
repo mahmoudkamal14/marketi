@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:marketi/features/auth/data/models/auth_response_model.dart';
 import 'package:marketi/features/auth/data/models/login_request_body.dart';
-import 'package:marketi/features/auth/domain/usecases/login_with_email_password_usecase.dart';
+import 'package:marketi/features/auth/data/repository/auth_repository.dart';
 
 import 'login_state.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class LoginCubit extends Cubit<LoginState> {
-  final LoginWithEmailPasswordUsecase _emailPasswordUsecase;
-  LoginCubit(this._emailPasswordUsecase) : super(const LoginState.initial());
+  final AuthRepository _authRepository;
+  LoginCubit(this._authRepository) : super(const LoginState.initial());
 
   static LoginCubit get(context) => BlocProvider.of(context);
 
@@ -20,7 +20,7 @@ class LoginCubit extends Cubit<LoginState> {
 
   void emitLoginStates() async {
     emit(const LoginState.loading());
-    final response = await _emailPasswordUsecase.call(
+    final response = await _authRepository.loginWithEmailPassword(
       LoginRequestBody(
         email: emailController.text,
         password: passwordController.text,

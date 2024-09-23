@@ -1,7 +1,7 @@
 import 'package:get_it/get_it.dart';
 import 'package:marketi/core/cache/cache_helper.dart';
-import 'package:marketi/features/auth/data/datasource/auth_dependency.dart';
-import 'package:marketi/features/home/data/datasource/home_dependency.dart';
+import 'package:marketi/features/auth/data/services/auth_dependency.dart';
+import 'package:marketi/features/home/data/services/home_dependency.dart';
 
 final getIt = GetIt.instance;
 

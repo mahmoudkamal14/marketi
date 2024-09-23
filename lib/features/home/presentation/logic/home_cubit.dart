@@ -2,27 +2,13 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:marketi/features/home/data/models/banner_response_model.dart';
 import 'package:marketi/features/home/data/models/categories_response_model.dart';
 import 'package:marketi/features/home/data/models/product_response_model.dart';
-import 'package:marketi/features/home/domain/usecases/get_all_products_usecase.dart';
-import 'package:marketi/features/home/domain/usecases/get_banners_usecase.dart';
-import 'package:marketi/features/home/domain/usecases/get_categories_usecase.dart';
-import 'package:marketi/features/home/domain/usecases/get_category_products_usecase.dart';
-import 'package:marketi/features/home/domain/usecases/search_for_product_usecase.dart';
+import 'package:marketi/features/home/data/repository/home_repository.dart';
 import 'package:marketi/features/home/presentation/logic/home_state.dart';
 
 class HomeCubit extends Cubit<HomeState> {
-  final GetBannersUsecase _bannersUsecase;
-  final GetCategoriesUsecase _categoriesUsecase;
-  final GetAllProductsUsecase _allProductsUsecase;
-  final GetCategoryProductsUsecase _categoryProductsUsecase;
-  final SearchForProductUsecase _searchUsecase;
+  final HomeRepository _homeRepository;
 
-  HomeCubit(
-      this._bannersUsecase,
-      this._categoriesUsecase,
-      this._allProductsUsecase,
-      this._categoryProductsUsecase,
-      this._searchUsecase)
-      : super(const HomeState.initial());
+  HomeCubit(this._homeRepository) : super(const HomeState.initial());
 
   static HomeCubit get(context) => BlocProvider.of(context);
 
@@ -33,7 +19,7 @@ class HomeCubit extends Cubit<HomeState> {
 
   void emitStatesBanners() async {
     emit(const HomeState.getBannerLoading());
-    final response = await _bannersUsecase.call();
+    final response = await _homeRepository.getBanners();
 
     response.when(
       success: (data) {
@@ -49,7 +35,7 @@ class HomeCubit extends Cubit<HomeState> {
 
   void emitStatesCategories() async {
     emit(const HomeState.getCategoriesLoading());
-    final response = await _categoriesUsecase.call();
+    final response = await _homeRepository.getCategories();
 
     response.when(
       success: (data) {
@@ -65,7 +51,7 @@ class HomeCubit extends Cubit<HomeState> {
 
   void emitStatesAllProducts() async {
     emit(const HomeState.getAllProductsLoading());
-    final response = await _allProductsUsecase.call();
+    final response = await _homeRepository.getAllProducts();
 
     response.when(
       success: (data) {
@@ -80,7 +66,7 @@ class HomeCubit extends Cubit<HomeState> {
 
   void emitSearchStates(String text) async {
     emit(const HomeState.searchForProductLoading());
-    final response = await _searchUsecase.call(text);
+    final response = await _homeRepository.searchForProduct(text);
 
     response.when(
       success: (data) {
@@ -98,7 +84,7 @@ class HomeCubit extends Cubit<HomeState> {
 
   void emitStatesCategoryProducts(int id) async {
     emit(const HomeState.getCategoryProductLoading());
-    final response = await _categoryProductsUsecase.call(id);
+    final response = await _homeRepository.getCategoryById(id);
 
     response.when(
       success: (data) {

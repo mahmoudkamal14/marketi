@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'remote_auth_datasource.dart';
+part of 'auth_services.dart';
 
 // **************************************************************************
 // RetrofitGenerator
@@ -8,8 +8,8 @@ part of 'remote_auth_datasource.dart';
 
 // ignore_for_file: unnecessary_brace_in_string_interps,no_leading_underscores_for_local_identifiers,unused_element
 
-class _RemoteAuthDatasource implements RemoteAuthDatasource {
-  _RemoteAuthDatasource(
+class _AuthServices implements AuthServices {
+  _AuthServices(
     this._dio, {
     this.baseUrl,
     this.errorLogger,

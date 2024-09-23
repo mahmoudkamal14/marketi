@@ -5,12 +5,11 @@ import 'package:marketi/features/home/data/models/categories_response_model.dart
 import 'package:marketi/features/home/data/models/product_response_model.dart';
 import 'package:retrofit/retrofit.dart';
 
-part 'remote_home_datasource.g.dart';
+part 'home_services.g.dart';
 
 @RestApi(baseUrl: ApiConstants.baseUrl)
-abstract class RemoteHomeDatasource {
-  factory RemoteHomeDatasource(Dio dio, {String baseUrl}) =
-      _RemoteHomeDatasource;
+abstract class HomeServices {
+  factory HomeServices(Dio dio, {String baseUrl}) = _HomeServices;
 
   @GET(ApiConstants.banners)
   Future<BannerResponseModel> getBanners();

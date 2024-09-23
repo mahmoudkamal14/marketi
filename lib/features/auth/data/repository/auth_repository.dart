@@ -1,22 +1,19 @@
 import 'package:marketi/core/networking/api_result.dart';
-import 'package:marketi/features/auth/data/datasource/remote_auth_datasource.dart';
 import 'package:marketi/features/auth/data/models/auth_response_model.dart';
 import 'package:marketi/features/auth/data/models/login_request_body.dart';
 import 'package:marketi/features/auth/data/models/register_request_body.dart';
-import 'package:marketi/features/auth/domain/repository/base_auth_repository.dart';
+import 'package:marketi/features/auth/data/services/auth_services.dart';
 
-class AuthRepository extends BaseAuthRepository {
-  final RemoteAuthDatasource _datasource;
+class AuthRepository {
+  final AuthServices _authServices;
 
-  AuthRepository(this._datasource);
+  AuthRepository(this._authServices);
 
-  @override
   Future<ApiResult<AuthResponseModel>> loginWithEmailPassword(
       LoginRequestBody loginRequestBody) async {
     try {
-      final result = await _datasource.loginWithEmailPassword(loginRequestBody);
-
-      print('User Name => ${result.data!.name}');
+      final result =
+          await _authServices.loginWithEmailPassword(loginRequestBody);
 
       return ApiResult.success(result);
     } catch (error) {
@@ -24,11 +21,10 @@ class AuthRepository extends BaseAuthRepository {
     }
   }
 
-  @override
   Future<ApiResult<AuthResponseModel>> registerWithEmailPassword(
       RegisterRequestBody registerRequestBody) async {
     final result =
-        await _datasource.registerWithEmailPassword(registerRequestBody);
+        await _authServices.registerWithEmailPassword(registerRequestBody);
     try {
       return ApiResult.success(result);
     } catch (error) {

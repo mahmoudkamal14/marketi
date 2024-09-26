@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:marketi/core/function/show_toast.dart';
 import 'package:marketi/core/routes/extentions.dart';
 import 'package:marketi/core/routes/routes.dart';
 import 'package:marketi/features/auth/presentation/logic/login/login_cubit.dart';
@@ -14,53 +15,37 @@ class LoginBlocListener extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocListener<LoginCubit, LoginState>(
       child: child,
-      listenWhen: (previous, current) =>
-          current is Loading || current is LoginSuccess || current is Error,
       listener: (context, state) {
-        state.whenOrNull(
-          loading: () {
+        var user = LoginCubit.get(context).userModel;
+
+        switch (state) {
+          case LoginLoadingState():
             showDialog(
               context: context,
               builder: (context) => Center(
-                child:
-                    Image.asset('assets/images/Animation - 1726144698470.gif'),
+                child: Image.asset(
+                  'assets/images/Animation - 1726144698470.gif',
+                ),
               ),
             );
-          },
-          loginSuccess: (userEntity) {
+
+          case LoginSuccessState():
             context.pop();
-            context.navigateTo(Routes.navBarLayout);
-          },
-          error: (message) {
-            setupErrorState(context, message);
-          },
-        );
+            if (user!.status == true) {
+              showToast(msg: user.message!, color: Colors.green);
+              context.navigateToReplacement(Routes.navBarLayout);
+            } else {
+              setupErrorState(context, user.message!);
+            }
+          default:
+            setupErrorState(context, user!.message!);
+        }
       },
     );
   }
 
   void setupErrorState(BuildContext context, String error) {
     context.pop();
-    showDialog(
-      context: context,
-      builder: (context) => AlertDialog(
-        icon: const Icon(
-          Icons.error,
-          color: Colors.red,
-          size: 32,
-        ),
-        content: Text(error),
-        actions: [
-          TextButton(
-            onPressed: () {
-              context.pop();
-            },
-            child: const Text(
-              'OK',
-            ),
-          ),
-        ],
-      ),
-    );
+    showToast(msg: error, color: Colors.red);
   }
 }

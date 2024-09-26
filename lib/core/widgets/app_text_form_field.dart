@@ -83,8 +83,8 @@ class AppTextFormField extends StatelessWidget {
               AppStyles.style16Regular.copyWith(
                 color: const Color(0xFF919AAB),
               ),
-          suffix: suffixIcon,
-          prefix: prefixIcon,
+          suffixIcon: suffixIcon,
+          prefixIcon: prefixIcon,
           fillColor: backGroundColorHint ?? Colors.white,
           filled: true,
         ),

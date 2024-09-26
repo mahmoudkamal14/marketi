@@ -8,7 +8,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 class RegisterCubit extends Cubit<RegisterState> {
   final AuthRepository _authRepository;
-  RegisterCubit(this._authRepository) : super(const RegisterState.initial());
+  RegisterCubit(this._authRepository) : super(RegisterInitialState());
 
   static RegisterCubit get(context) => BlocProvider.of(context);
 
@@ -20,7 +20,7 @@ class RegisterCubit extends Cubit<RegisterState> {
   AuthResponseModel? userModel;
 
   void emitRegisterStates() async {
-    emit(const RegisterState.loading());
+    emit(RegisterLoadingState());
     final response = await _authRepository.registerWithEmailPassword(
       RegisterRequestBody(
         email: emailController.text,
@@ -30,15 +30,12 @@ class RegisterCubit extends Cubit<RegisterState> {
         image: 'https://wallpapercave.com/wp/wp5502061.jpg',
       ),
     );
-    response.when(
-      success: (data) {
-        userModel = data;
 
-        emit(RegisterState.registerSuccess(data));
-      },
-      failure: (error) {
-        emit(RegisterState.error(message: error));
-      },
-    );
+    if (response.hasData) {
+      userModel = response.data;
+      emit(RegisterSuccessState(authResponseModel: response.data!));
+    } else {
+      emit(RegisterErrorState(message: response.data!.message!));
+    }
   }
 }

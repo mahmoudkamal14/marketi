@@ -10,17 +10,9 @@ void main() async {
   setupGetIt();
   await CacheHelper().init();
   await ScreenUtil.ensureScreenSize();
-  runApp(
-    MarketiApp(
-      appRouter: AppRouter(),
-    ),
-  );
+  runApp(MarketiApp(appRouter: AppRouter()));
 }
 
-// id = 669d86fb779ceafe27e8f9bb
-
-// email = mahmoudkamalx17@gmail.com
-// password = mahmoudkamalx14
 
 //? dart run build_runner build --delete-conflicting-outputs
 

@@ -8,7 +8,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 
 class LoginCubit extends Cubit<LoginState> {
   final AuthRepository _authRepository;
-  LoginCubit(this._authRepository) : super(const LoginState.initial());
+  LoginCubit(this._authRepository) : super(LoginInitialState());
 
   static LoginCubit get(context) => BlocProvider.of(context);
 
@@ -19,21 +19,19 @@ class LoginCubit extends Cubit<LoginState> {
   AuthResponseModel? userModel;
 
   void emitLoginStates() async {
-    emit(const LoginState.loading());
+    emit(LoginLoadingState());
     final response = await _authRepository.loginWithEmailPassword(
       LoginRequestBody(
         email: emailController.text,
         password: passwordController.text,
       ),
     );
-    response.when(
-      success: (data) {
-        userModel = data;
-        emit(LoginState.loginSuccess(data));
-      },
-      failure: (error) {
-        emit(LoginState.error(message: error));
-      },
-    );
+
+    if (response.hasData) {
+      userModel = response.data;
+      emit(LoginSuccessState(authResponseModel: response.data!));
+    } else {
+      emit(LoginErrorState(message: response.data!.message!));
+    }
   }
 }

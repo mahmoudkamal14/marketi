@@ -1,13 +1,19 @@
-import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:marketi/features/auth/data/models/auth_response_model.dart';
 
-part 'register_state.freezed.dart';
+abstract class RegisterState {}
 
-@freezed
-class RegisterState with _$RegisterState {
-  const factory RegisterState.initial() = _Initial;
-  const factory RegisterState.loading() = Loading;
-  const factory RegisterState.error({required String message}) = Error;
-  const factory RegisterState.registerSuccess(AuthResponseModel userEntity) =
-      RegisterSuccess;
+final class RegisterInitialState extends RegisterState {}
+
+final class RegisterLoadingState extends RegisterState {}
+
+final class RegisterErrorState extends RegisterState {
+  final String message;
+
+  RegisterErrorState({required this.message});
+}
+
+final class RegisterSuccessState extends RegisterState {
+  final AuthResponseModel authResponseModel;
+
+  RegisterSuccessState({required this.authResponseModel});
 }

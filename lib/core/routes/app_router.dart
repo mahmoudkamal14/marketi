@@ -71,6 +71,7 @@ class AppRouter {
               BlocProvider(
                 create: (context) => getIt<HomeCubit>()
                   ..emitStatesBanners()
+                  ..bannerList
                   ..emitStatesCategories()
                   ..emitStatesAllProducts(),
               )

@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:marketi/core/theme/spaces.dart';
 import 'package:marketi/core/theme/app_styles.dart';
 import 'package:marketi/core/widgets/custom_appbar.dart';
-import 'package:marketi/core/widgets/search_bar.dart';
+import 'package:marketi/features/home/presentation/widgets/search_bar.dart';
 import 'package:marketi/features/Favorites/ui/widgets/all_favorites_products.dart';
 
 class FaviorteScreen extends StatelessWidget {

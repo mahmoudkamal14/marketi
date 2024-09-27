@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:iconly/iconly.dart';
 import 'package:marketi/core/widgets/app_text_form_field.dart';
-import 'package:marketi/features/home/presentation/logic/home_cubit.dart';
 
 class AppSearchBar extends StatelessWidget {
   const AppSearchBar({
@@ -19,9 +18,7 @@ class AppSearchBar extends StatelessWidget {
           hintText: 'ما الذي تبحث عنه ؟',
           textInputType: TextInputType.text,
           validator: (p0) {},
-          onChanged: (value) {
-            HomeCubit.get(context).emitSearchStates(value!);
-          },
+          onChanged: (value) {},
           prefixIcon: const Icon(Icons.search, size: 30, color: Colors.black),
           suffixIcon:
               const Icon(IconlyBold.filter, size: 30, color: Colors.blue),

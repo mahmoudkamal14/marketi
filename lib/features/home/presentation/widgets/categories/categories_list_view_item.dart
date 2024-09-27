@@ -5,7 +5,6 @@ import 'package:marketi/core/routes/extentions.dart';
 import 'package:marketi/core/routes/routes.dart';
 import 'package:marketi/core/theme/app_styles.dart';
 import 'package:marketi/features/home/data/models/categories_response_model.dart';
-import 'package:marketi/features/home/presentation/logic/home_cubit.dart';
 import 'package:shimmer/shimmer.dart';
 
 class CategoriesListViewItem extends StatelessWidget {
@@ -18,7 +17,7 @@ class CategoriesListViewItem extends StatelessWidget {
     return GestureDetector(
       onTap: () {
         context.navigateTo(Routes.categoryProductsScreen);
-        HomeCubit.get(context).emitStatesCategoryProducts(model.id!);
+        //      HomeCubit.get(context).emitStatesCategoryProducts(model.id!);
       },
       child: Container(
         width: 160.w,

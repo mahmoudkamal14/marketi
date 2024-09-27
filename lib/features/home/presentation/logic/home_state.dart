@@ -48,3 +48,17 @@ class HomeAllProductsErrorState extends HomeState {
   final String message;
   HomeAllProductsErrorState({required this.message});
 }
+
+// Category By Id
+
+class HomeCategoryByIdLoadingState extends HomeState {}
+
+class HomeCategoryByIdSuccessState extends HomeState {
+  List<ProductDetailsModel> categoryList;
+  HomeCategoryByIdSuccessState({required this.categoryList});
+}
+
+class HomeCategoryByIdErrorState extends HomeState {
+  final String message;
+  HomeCategoryByIdErrorState({required this.message});
+}

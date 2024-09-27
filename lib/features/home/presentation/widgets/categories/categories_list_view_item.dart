@@ -1,10 +1,9 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:marketi/core/routes/extentions.dart';
-import 'package:marketi/core/routes/routes.dart';
 import 'package:marketi/core/theme/app_styles.dart';
 import 'package:marketi/features/home/data/models/categories_response_model.dart';
+import 'package:marketi/features/home/presentation/Screens/category_products_screen.dart';
 import 'package:shimmer/shimmer.dart';
 
 class CategoriesListViewItem extends StatelessWidget {
@@ -16,8 +15,15 @@ class CategoriesListViewItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        context.navigateTo(Routes.categoryProductsScreen);
-        //      HomeCubit.get(context).emitStatesCategoryProducts(model.id!);
+        Navigator.push(
+          context,
+          MaterialPageRoute(
+            builder: (_) => CategoryProductsScreen(
+              id: model.id!,
+              categoryName: model.name!,
+            ),
+          ),
+        );
       },
       child: Container(
         width: 160.w,

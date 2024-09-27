@@ -19,8 +19,8 @@ class HomeScreen extends StatelessWidget {
       builder: (context, state) {
         return Scaffold(
           body: SafeArea(
-            child: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 14.w),
+            child: Container(
+              margin: EdgeInsets.symmetric(horizontal: 14.w),
               child: CustomScrollView(
                 slivers: [
                   const SliverToBoxAdapter(child: AppBarHome()),

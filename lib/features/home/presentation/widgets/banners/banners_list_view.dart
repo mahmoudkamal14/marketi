@@ -2,6 +2,7 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:marketi/features/home/data/models/banner_response_model.dart';
+import 'package:marketi/features/home/presentation/widgets/banners/banner_shimmer_loading.dart';
 import 'package:marketi/features/home/presentation/widgets/banners/banners_list_view_item.dart';
 
 class BannersListView extends StatelessWidget {
@@ -17,7 +18,9 @@ class BannersListView extends StatelessWidget {
       child: CarouselSlider.builder(
         itemCount: bannersList?.length,
         itemBuilder: (BuildContext context, int itemIndex, int pageViewIndex) =>
-            BannersListViewItem(model: bannersList![itemIndex]),
+            bannersList!.isEmpty
+                ? const BannerShimmerLoading()
+                : BannersListViewItem(model: bannersList![itemIndex]),
         options: CarouselOptions(
           aspectRatio: 16 / 9,
           autoPlay: true,

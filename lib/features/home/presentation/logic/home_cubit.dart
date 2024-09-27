@@ -18,8 +18,6 @@ class HomeCubit extends Cubit<HomeState> {
   List<ProductDetailsModel>? allProductsList = [];
   List<ProductDetailsModel>? searchList = [];
 
-  get categoryProductsList => null;
-
   void emitStatesBanners() async {
     emit(HomeBannerLoadingState());
     final response = await _homeRepository.getBanners();
@@ -72,21 +70,17 @@ class HomeCubit extends Cubit<HomeState> {
   //   );
   // }
 
-  // List<ProductDetailsModel>? categoryProductsList = [];
+  List<ProductDetailsModel>? categoryProductsList = [];
 
-  // void emitStatesCategoryProducts(int id) async {
-  //   emit(const HomeState.getCategoryProductLoading());
-  //   final response = await _homeRepository.getCategoryById(id);
+  void getCategoryById(int id) async {
+    emit(HomeCategoryByIdLoadingState());
+    final response = await _homeRepository.getCategoryById(id);
 
-  //   response.when(
-  //     success: (data) {
-  //       categoryProductsList = data.data!.data;
-
-  //       emit(HomeState.getCategoryProductSuccess(categoryProductsList));
-  //     },
-  //     failure: (message) {
-  //       emit(HomeState.getCategoryProductError(message: message));
-  //     },
-  //   );
-  // }
+    if (response is Success<ProductResponseModel>) {
+      categoryProductsList = response.data.data!.data;
+      emit(HomeCategoryByIdSuccessState(categoryList: categoryProductsList!));
+    } else if (response is Failure<ProductResponseModel>) {
+      emit(HomeCategoryByIdErrorState(message: response.apiErrorModel));
+    }
+  }
 }

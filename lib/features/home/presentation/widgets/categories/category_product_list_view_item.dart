@@ -1,8 +1,10 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:marketi/core/theme/app_styles.dart';
 import 'package:marketi/core/theme/spaces.dart';
 import 'package:marketi/features/home/data/models/product_response_model.dart';
+import 'package:shimmer/shimmer.dart';
 
 class CategoryProductListViewItem extends StatelessWidget {
   const CategoryProductListViewItem({
@@ -25,9 +27,11 @@ class CategoryProductListViewItem extends StatelessWidget {
         children: [
           Expanded(
             flex: 2,
-            child: SizedBox(
-              height: 190.h,
-              child: Image.network(model.image!),
+            child: CachedNetworkImage(
+              imageUrl: model.image!,
+              fit: BoxFit.cover,
+              placeholder: (context, url) => imageLoading(),
+              errorWidget: (context, url, error) => imageLoading(),
             ),
           ),
           horizontalSpace(12),
@@ -52,6 +56,18 @@ class CategoryProductListViewItem extends StatelessWidget {
             ),
           ),
         ],
+      ),
+    );
+  }
+
+  Shimmer imageLoading() {
+    return Shimmer.fromColors(
+      baseColor: Colors.grey[300]!,
+      highlightColor: Colors.grey[100]!,
+      child: Container(
+        width: 90,
+        height: 190,
+        color: Colors.white,
       ),
     );
   }

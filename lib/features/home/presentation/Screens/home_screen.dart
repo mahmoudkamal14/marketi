@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:marketi/core/theme/spaces.dart';
-import 'package:marketi/core/widgets/search_bar.dart';
+import 'package:marketi/features/home/presentation/widgets/search_bar.dart';
 import 'package:marketi/features/home/presentation/logic/home_cubit.dart';
 import 'package:marketi/features/home/presentation/logic/home_state.dart';
 import 'package:marketi/features/home/presentation/widgets/banners/banner_bloc_builder.dart';

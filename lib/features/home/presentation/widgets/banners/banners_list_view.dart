@@ -15,7 +15,7 @@ class BannersListView extends StatelessWidget {
       height: 230.h,
       width: double.infinity,
       child: CarouselSlider.builder(
-        itemCount: bannersList!.length,
+        itemCount: bannersList?.length,
         itemBuilder: (BuildContext context, int itemIndex, int pageViewIndex) =>
             BannersListViewItem(model: bannersList![itemIndex]),
         options: CarouselOptions(

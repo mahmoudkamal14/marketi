@@ -1,63 +1,50 @@
-import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:marketi/features/home/data/models/banner_response_model.dart';
 import 'package:marketi/features/home/data/models/categories_response_model.dart';
 import 'package:marketi/features/home/data/models/product_response_model.dart';
 
-part 'home_state.freezed.dart';
+abstract class HomeState {}
 
-@freezed
-class HomeState<T> with _$HomeState {
-  const factory HomeState.initial() = _Initial;
+class HomeInitialState extends HomeState {}
 
-  // Banners
+// Banners
 
-  const factory HomeState.getBannerLoading() = GetBannerLoading;
+class HomeBannerLoadingState extends HomeState {}
 
-  const factory HomeState.getBannerSuccess(List<DataBanner>? bannerList) =
-      GetBannerSuccess;
+class HomeBannerSuccessState extends HomeState {
+  List<DataBanner> bannerList;
+  HomeBannerSuccessState({required this.bannerList});
+}
 
-  const factory HomeState.getBannerError({required String message}) =
-      GetBannerError;
+class HomeBannerErrorState extends HomeState {
+  final String message;
 
-  // Categories
+  HomeBannerErrorState({required this.message});
+}
 
-  const factory HomeState.getCategoriesLoading() = GetCategoriesLoading;
+// Categories
 
-  const factory HomeState.getCategoriesSuccess(
-      List<CategoriesDataList>? categoriesDataList) = GetCategoriesSuccess;
+class HomeCategoriesLoadingState extends HomeState {}
 
-  const factory HomeState.getCategoriesError({required String message}) =
-      GetCategoriesError;
+class HomeCategoriesSuccessState extends HomeState {
+  List<CategoriesDataList> categoriesDataList;
+  HomeCategoriesSuccessState({required this.categoriesDataList});
+}
 
-  // All Products
+class HomeCategoriesErrorState extends HomeState {
+  final String message;
+  HomeCategoriesErrorState({required this.message});
+}
 
-  const factory HomeState.getAllProductsLoading() = GetAllProductsLoading;
+// All Products
 
-  const factory HomeState.getAllProductsSuccess(
-      List<ProductDetailsModel>? allProductsList) = GetAllProductsSuccess;
+class HomeAllProductsLoadingState extends HomeState {}
 
-  const factory HomeState.getAllProductsError({required String message}) =
-      GetAllProductsError;
+class HomeAllProductsSuccessState extends HomeState {
+  List<ProductDetailsModel> allProductsList;
+  HomeAllProductsSuccessState({required this.allProductsList});
+}
 
-  // Category Product
-
-  const factory HomeState.getCategoryProductLoading() =
-      GetCategoryProductLoading;
-
-  const factory HomeState.getCategoryProductSuccess(
-          List<ProductDetailsModel>? categoryProductList) =
-      GetCategoryProductSuccess;
-
-  const factory HomeState.getCategoryProductError({required String message}) =
-      GetCategoryProductError;
-
-  // Search
-
-  const factory HomeState.searchForProductLoading() = SearchForProductLoading;
-
-  const factory HomeState.searchForProductSuccess(
-      List<ProductDetailsModel>? allProductsList) = SearchForProductSuccess;
-
-  const factory HomeState.searchForProductError({required String message}) =
-      SearchForProductError;
+class HomeAllProductsErrorState extends HomeState {
+  final String message;
+  HomeAllProductsErrorState({required this.message});
 }

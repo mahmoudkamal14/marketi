@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:marketi/core/networking/api_result.dart';
 import 'package:marketi/features/auth/data/models/auth_response_model.dart';
 import 'package:marketi/features/auth/data/models/register_request_body.dart';
 import 'package:marketi/features/auth/data/repository/auth_repository.dart';
@@ -31,11 +32,11 @@ class RegisterCubit extends Cubit<RegisterState> {
       ),
     );
 
-    if (response.hasData) {
+    if (response is Success<AuthResponseModel>) {
       userModel = response.data;
-      emit(RegisterSuccessState(authResponseModel: response.data!));
+      emit(RegisterSuccessState(authResponseModel: userModel!));
     } else {
-      emit(RegisterErrorState(message: response.data!.message!));
+      emit(RegisterErrorState(message: userModel!.message!));
     }
   }
 }

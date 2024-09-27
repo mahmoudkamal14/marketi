@@ -4,6 +4,7 @@ import 'package:marketi/features/home/data/models/categories_response_model.dart
 import 'package:marketi/features/home/presentation/logic/home_cubit.dart';
 import 'package:marketi/features/home/presentation/logic/home_state.dart';
 import 'package:marketi/features/home/presentation/widgets/categories/categories_list_view.dart';
+import 'package:marketi/features/home/presentation/widgets/categories/categories_shimmer_loading.dart';
 
 class CategoriesBlocBuilder extends StatelessWidget {
   const CategoriesBlocBuilder({super.key});
@@ -12,24 +13,24 @@ class CategoriesBlocBuilder extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<HomeCubit, HomeState>(
       buildWhen: (previous, current) =>
-          current is GetCategoriesLoading ||
-          current is GetCategoriesSuccess ||
-          current is GetCategoriesError,
+          current is HomeAllProductsLoadingState ||
+          current is HomeAllProductsSuccessState ||
+          current is HomeAllProductsErrorState,
       builder: (context, state) {
-        return state.maybeWhen(
-          //   getCategoriesLoading: () => const CategoriesShimmerLoading(),
-          getCategoriesSuccess: (categoriesList) {
+        var categoriesList = HomeCubit.get(context).categoriesList;
+        switch (state) {
+          case HomeAllProductsLoadingState _:
+            return const CategoriesShimmerLoading();
+
+          case HomeAllProductsSuccessState _:
             return setupSuccess(categoriesList);
-          },
-          getCategoriesError: (message) => const SizedBox.shrink(),
-          orElse: () {
-            if (HomeCubit.get(context).categoriesList!.isNotEmpty) {
-              return setupSuccess(HomeCubit.get(context).categoriesList);
-            } else {
-              return const SizedBox.shrink();
-            }
-          },
-        );
+
+          case HomeAllProductsErrorState _:
+            return const SizedBox.shrink();
+
+          default:
+            return setupSuccess(categoriesList);
+        }
       },
     );
   }

@@ -6,15 +6,14 @@ import 'package:marketi/features/home/presentation/widgets/banners/banner_shimme
 class BannersListViewItem extends StatelessWidget {
   const BannersListViewItem({super.key, required this.model});
 
-  final DataBanner model;
+  final DataBanner? model;
 
   @override
   Widget build(BuildContext context) {
     return CachedNetworkImage(
-      imageUrl: model.image!,
+      imageUrl: model!.image!,
       fit: BoxFit.cover,
       placeholder: (context, url) => const BannerShimmerLoading(),
-      errorWidget: (context, url, error) => const BannerShimmerLoading(),
     );
   }
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:marketi/core/networking/api_result.dart';
 import 'package:marketi/features/auth/data/models/auth_response_model.dart';
 import 'package:marketi/features/auth/data/models/login_request_body.dart';
 import 'package:marketi/features/auth/data/repository/auth_repository.dart';
@@ -20,18 +21,20 @@ class LoginCubit extends Cubit<LoginState> {
 
   void emitLoginStates() async {
     emit(LoginLoadingState());
-    final response = await _authRepository.loginWithEmailPassword(
+    ApiResult<AuthResponseModel> response =
+        await _authRepository.loginWithEmailPassword(
       LoginRequestBody(
         email: emailController.text,
         password: passwordController.text,
       ),
     );
 
-    if (response.hasData) {
+    if (response is Success<AuthResponseModel> &&
+        response.data.status == true) {
       userModel = response.data;
-      emit(LoginSuccessState(authResponseModel: response.data!));
+      emit(LoginSuccessState(authResponseModel: userModel!));
     } else {
-      emit(LoginErrorState(message: response.data!.message!));
+      emit(LoginErrorState(message: userModel!.message!));
     }
   }
 }

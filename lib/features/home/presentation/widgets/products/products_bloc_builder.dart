@@ -13,31 +13,29 @@ class ProductsBlocBuilder extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<HomeCubit, HomeState>(
       buildWhen: (previous, current) =>
-          current is GetAllProductsLoading ||
-          current is GetAllProductsSuccess ||
-          current is GetAllProductsError,
+          current is HomeAllProductsLoadingState ||
+          current is HomeAllProductsSuccessState ||
+          current is HomeAllProductsErrorState,
       builder: (context, state) {
-        return state.maybeWhen(
-          //     getAllProductsLoading: () => setupLoading(),
-          getAllProductsSuccess: (allProductList) {
-            return setupSuccess(allProductList);
-          },
-          getAllProductsError: (message) => const SizedBox.shrink(),
-          orElse: () {
-            if (HomeCubit.get(context).allProductsList!.isNotEmpty) {
-              return setupSuccess(HomeCubit.get(context).allProductsList);
-            } else {
-              return const SizedBox.shrink();
-            }
-          },
-        );
+        var allProductsList = HomeCubit.get(context).allProductsList;
+        switch (state) {
+          case HomeAllProductsLoadingState _:
+            return const ShimmerLoadingGridView();
+
+          case HomeAllProductsSuccessState _:
+            return setupSuccess(allProductsList);
+
+          case HomeAllProductsErrorState _:
+            return const SizedBox.shrink();
+
+          default:
+            return const SizedBox.shrink();
+        }
       },
     );
   }
 
-  setupLoading() {
-    return const ShimmerLoadingGridView();
-  }
+  setupLoading() {}
 
   setupSuccess(List<ProductDetailsModel>? allProductList) {
     return AllProductsGridView(allProductList: allProductList);

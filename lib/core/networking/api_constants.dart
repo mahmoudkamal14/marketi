@@ -21,6 +21,8 @@ class ApiConstants {
 
   static const String search = "products/search";
 
+  static const String favorites = "favorites";
+
   static const String primaryKey = 'primaryKey';
 }
 

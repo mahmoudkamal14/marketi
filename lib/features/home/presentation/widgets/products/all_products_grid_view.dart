@@ -15,9 +15,9 @@ class AllProductsGridView extends StatelessWidget {
       physics: const BouncingScrollPhysics(),
       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
         crossAxisCount: 2,
-        childAspectRatio: 164.w / 194.h,
-        crossAxisSpacing: 19.w,
-        mainAxisSpacing: 30.w,
+        childAspectRatio: 164.w / 260.h,
+        crossAxisSpacing: 10.w,
+        mainAxisSpacing: 10.w,
       ),
       shrinkWrap: true,
       itemBuilder: (context, index) => AllProductGridViewItem(

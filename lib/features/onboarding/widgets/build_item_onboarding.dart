@@ -4,7 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:marketi/core/animations/build_animation.dart';
-import 'package:marketi/core/cache/cache_helper.dart';
+import 'package:marketi/core/cache/shared_pref_helper.dart';
+import 'package:marketi/core/cache/shared_pref_keys.dart';
 import 'package:marketi/core/routes/extentions.dart';
 import 'package:marketi/core/theme/spaces.dart';
 import 'package:marketi/core/routes/routes.dart';
@@ -87,8 +88,6 @@ class _BuildItemOnBoardingState extends State<BuildItemOnBoarding> {
 
 void submitOnBoarding(BuildContext context) {
   context.navigateToReplacement(Routes.loginScreen);
-  CacheHelper().saveData(
-    key: Routes.onBoardingScreen,
-    value: true,
-  );
+
+  SharedPrefHelper.setData(SharedPrefKeys.onboarding, true);
 }

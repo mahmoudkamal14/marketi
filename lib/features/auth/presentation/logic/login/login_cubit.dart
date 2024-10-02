@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:marketi/core/cache/shared_pref_helper.dart';
+import 'package:marketi/core/cache/shared_pref_keys.dart';
 import 'package:marketi/core/networking/api_result.dart';
 import 'package:marketi/features/auth/data/models/auth_response_model.dart';
 import 'package:marketi/features/auth/data/models/login_request_body.dart';
@@ -32,9 +34,16 @@ class LoginCubit extends Cubit<LoginState> {
     if (response is Success<AuthResponseModel> &&
         response.data.status == true) {
       userModel = response.data;
+
+      saveUserToken(response.data.data!.token!);
+
       emit(LoginSuccessState(authResponseModel: userModel!));
     } else {
       emit(LoginErrorState(message: userModel!.message!));
     }
+  }
+
+  saveUserToken(String token) {
+    SharedPrefHelper.setSecuredString(SharedPrefKeys.userToken, token);
   }
 }

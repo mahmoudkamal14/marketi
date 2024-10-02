@@ -25,14 +25,14 @@ class Data {
 
   @JsonKey(name: 'current_page')
   final int currentPage;
-  final List<Datum>? data;
+  final List<FavoriteDataList>? data;
 
   factory Data.fromJson(Map<String, dynamic> json) => _$DataFromJson(json);
 }
 
 @JsonSerializable(createToJson: false)
-class Datum {
-  Datum({
+class FavoriteDataList {
+  FavoriteDataList({
     required this.id,
     required this.product,
   });
@@ -40,7 +40,8 @@ class Datum {
   final int id;
   final Product? product;
 
-  factory Datum.fromJson(Map<String, dynamic> json) => _$DatumFromJson(json);
+  factory FavoriteDataList.fromJson(Map<String, dynamic> json) =>
+      _$FavoriteDataListFromJson(json);
 }
 
 @JsonSerializable(createToJson: false)

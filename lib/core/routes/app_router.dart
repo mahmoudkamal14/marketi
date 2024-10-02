@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:marketi/core/di/dependency_injection.dart';
 import 'package:marketi/core/function/build_animate_page_route.dart';
 import 'package:marketi/core/routes/routes.dart';
+import 'package:marketi/features/Favorites/presentation/logic/favorite_cubit.dart';
 import 'package:marketi/features/auth/presentation/logic/login/login_cubit.dart';
 import 'package:marketi/features/home/presentation/Screens/home_screen.dart';
 import 'package:marketi/features/home/presentation/Screens/nav_bar_layout.dart';
@@ -66,6 +67,11 @@ class AppRouter {
             providers: [
               BlocProvider(
                 create: (context) => getIt<LoginCubit>()..userModel,
+              ),
+              BlocProvider(
+                create: (context) => getIt<FavoriteCubit>()
+                  ..getFavorites()
+                  ..favoriteList,
               ),
               BlocProvider(
                 create: (context) => getIt<HomeCubit>()

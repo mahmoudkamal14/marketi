@@ -15,8 +15,8 @@ abstract class FavoriteServices {
   );
 
   @POST(ApiConstants.favorites)
-  Future<FavoriteResponseModel> addOrDeleteProductFavorites(
+  Future<FavoriteResponseModel> addProductFavorites(
     @Header('Authorization') String userToken,
-    @Header('product_id') String id,
+    @Path("id") int id,
   );
 }

@@ -4,9 +4,7 @@ import 'package:marketi/core/theme/app_styles.dart';
 import 'package:marketi/features/auth/presentation/logic/login/login_cubit.dart';
 
 class AppBarHome extends StatelessWidget {
-  const AppBarHome({
-    super.key,
-  });
+  const AppBarHome({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -29,15 +27,18 @@ class AppBarHome extends StatelessWidget {
               child: Image.asset('assets/images/Pic.png'),
             ),
           ),
-          Text(userModel!.data!.name!, style: AppStyles.style20SemiBold),
+          //   Text(userModel!.data!.name!, style: AppStyles.style20SemiBold),
           const Spacer(),
-          SizedBox(
-            height: 48.h,
-            width: 44.w,
-            child: const Icon(
-              Icons.notifications_active_outlined,
-              color: Color(0xff3F80FF),
-              size: 36,
+          GestureDetector(
+            onTap: () {},
+            child: SizedBox(
+              height: 48.h,
+              width: 44.w,
+              child: const Icon(
+                Icons.notifications_active_outlined,
+                color: Color(0xff3F80FF),
+                size: 36,
+              ),
             ),
           ),
         ],

@@ -58,9 +58,9 @@ class _FavoriteServices implements FavoriteServices {
   }
 
   @override
-  Future<FavoriteResponseModel> addOrDeleteProductFavorites(
+  Future<FavoriteResponseModel> addProductFavorites(
     String userToken,
-    String id,
+    int id,
   ) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};

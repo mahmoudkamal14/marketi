@@ -18,11 +18,12 @@ FavoriteResponseModel _$FavoriteResponseModelFromJson(
 Data _$DataFromJson(Map<String, dynamic> json) => Data(
       currentPage: (json['current_page'] as num).toInt(),
       data: (json['data'] as List<dynamic>?)
-          ?.map((e) => Datum.fromJson(e as Map<String, dynamic>))
+          ?.map((e) => FavoriteDataList.fromJson(e as Map<String, dynamic>))
           .toList(),
     );
 
-Datum _$DatumFromJson(Map<String, dynamic> json) => Datum(
+FavoriteDataList _$FavoriteDataListFromJson(Map<String, dynamic> json) =>
+    FavoriteDataList(
       id: (json['id'] as num).toInt(),
       product: json['product'] == null
           ? null

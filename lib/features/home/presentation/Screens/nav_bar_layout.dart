@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:iconly/iconly.dart';
 import 'package:marketi/core/theme/app_styles.dart';
+import 'package:marketi/features/Favorites/presentation/screens/faviorte_screen.dart';
 import 'package:marketi/features/cart/presentation/screens/cart_screen.dart';
-import 'package:marketi/features/Favorites/ui/screens/faviorte_screen.dart';
 import 'package:marketi/features/home/presentation/Screens/home_screen.dart';
 import 'package:marketi/features/profile/presentation/screens/profile_screen.dart';
 

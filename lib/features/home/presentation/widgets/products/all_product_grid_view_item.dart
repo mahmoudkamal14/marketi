@@ -41,22 +41,21 @@ class AllProductGridViewItem extends StatelessWidget {
                 width: double.infinity,
                 child: CachedNetworkImage(
                   imageUrl: model.image!,
-                  fit: BoxFit.cover,
                   fadeInDuration: const Duration(milliseconds: 500),
                   placeholder: (context, url) => imageLoading(),
                   errorWidget: (context, url, error) => const Icon(Icons.error),
                 ),
               ),
             ),
-            verticalSpace(4),
+            verticalSpace(8),
+            Text('${model.name}', maxLines: 2, style: AppStyles.style14Medium),
+            verticalSpace(8),
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text('${model.price} جنيه', style: AppStyles.style14Medium),
-                Text(
-                  'خصم ${model.discount} %',
-                  textAlign: TextAlign.center,
-                  style: AppStyles.style14Medium,
+                GestureDetector(
+                  child: const Icon(Icons.favorite_border, size: 30),
                 ),
               ],
             ),

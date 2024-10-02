@@ -1,17 +1,14 @@
-// ignore_for_file: must_be_immutable
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:marketi/core/cache/cache_helper.dart';
+import 'package:marketi/core/cache/shared_pref_keys.dart';
 import 'package:marketi/core/routes/app_router.dart';
 import 'package:marketi/core/routes/routes.dart';
 
+// ignore: must_be_immutable
 class MarketiApp extends StatelessWidget {
   MarketiApp({super.key, required this.appRouter});
-  final AppRouter appRouter;
+  AppRouter appRouter;
 
-  dynamic onBoarding = CacheHelper().getData(key: Routes.onBoardingScreen);
-  dynamic login = CacheHelper().getData(key: Routes.loginScreen);
   @override
   Widget build(BuildContext context) {
     double height = MediaQuery.sizeOf(context).height;
@@ -35,9 +32,9 @@ class MarketiApp extends StatelessWidget {
   }
 
   String sharedStartApp() {
-    if (login == true) {
+    if (isLoggedInUser == true) {
       return Routes.navBarLayout;
-    } else if (onBoarding == true) {
+    } else if (isOnboardingApp == true) {
       return Routes.loginScreen;
     } else {
       return Routes.onBoardingScreen;

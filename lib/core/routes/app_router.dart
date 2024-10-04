@@ -15,7 +15,8 @@ import 'package:marketi/features/auth/presentation/widgets/verificatin_code.dart
 import 'package:marketi/features/home/presentation/logic/home_cubit.dart';
 import 'package:marketi/features/onboarding/screens/onboarding_screen.dart';
 import 'package:marketi/features/auth/presentation/screens/register_screen.dart';
-import 'package:marketi/features/profile/presentation/screens/personal_info_screen.dart';
+import 'package:marketi/features/profile/presentation/logic/profile_cubit.dart';
+import 'package:marketi/features/profile/presentation/screens/profile_screen.dart';
 
 class AppRouter {
   Route? generateRoute(RouteSettings settings) {
@@ -66,17 +67,14 @@ class AppRouter {
           MultiBlocProvider(
             providers: [
               BlocProvider(
-                create: (context) => getIt<LoginCubit>()..userModel,
+                create: (context) => getIt<ProfileCubit>()..getProfileDate(),
               ),
               BlocProvider(
-                create: (context) => getIt<FavoriteCubit>()
-                  ..getFavorites()
-                  ..favoriteList,
+                create: (context) => getIt<FavoriteCubit>(),
               ),
               BlocProvider(
                 create: (context) => getIt<HomeCubit>()
                   ..emitStatesBanners()
-                  ..bannerList
                   ..emitStatesCategories()
                   ..emitStatesAllProducts(),
               )
@@ -93,13 +91,21 @@ class AppRouter {
           ),
         );
 
-      case Routes.personalInfoScreen:
+      case Routes.profileScreen:
         return fadePageRoute(
           BlocProvider(
-            create: (context) => getIt<LoginCubit>(),
-            child: const PersonalInfoScreen(),
+            create: (context) => getIt<ProfileCubit>(),
+            child: const ProfileScreen(),
           ),
         );
+
+      // case Routes.personalInfoScreen:
+      //   return fadePageRoute(
+      //     BlocProvider(
+      //       create: (context) => getIt<ProfileCubit>()..getProfileDate(),
+      //       child: const PersonalInfoScreen(),
+      //     ),
+      //   );
     }
 
     return null;

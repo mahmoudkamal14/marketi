@@ -14,5 +14,5 @@ Future<void> favoriteDependency() async {
   getIt.registerLazySingleton<FavoriteRepository>(
       () => FavoriteRepository(getIt()));
 
-  getIt.registerLazySingleton<FavoriteCubit>(() => FavoriteCubit(getIt()));
+  getIt.registerFactory<FavoriteCubit>(() => FavoriteCubit(getIt()));
 }

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:marketi/core/theme/app_styles.dart';
 import 'package:marketi/core/theme/spaces.dart';
-import 'package:marketi/features/auth/presentation/logic/login/login_cubit.dart';
+import 'package:marketi/features/profile/presentation/logic/profile_cubit.dart';
 
 class ImageProfileWidget extends StatelessWidget {
   const ImageProfileWidget({
@@ -32,7 +32,7 @@ class ImageProfileWidget extends StatelessWidget {
           const Image(image: AssetImage('assets/images/Pic.png')),
           verticalSpace(8),
           Text(
-            '${LoginCubit.get(context).userModel!.data!.name}',
+            '${ProfileCubit.get(context).userModel!.data!.name}',
             style: AppStyles.style18SemiBold,
             maxLines: 1,
           ),

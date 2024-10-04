@@ -35,7 +35,9 @@ class LoginCubit extends Cubit<LoginState> {
         response.data.status == true) {
       userModel = response.data;
 
-      saveUserToken(response.data.data!.token!);
+      userToken = userModel!.data!.token!;
+
+      //  saveUserToken(response.data.data!.token!);
 
       emit(LoginSuccessState(authResponseModel: userModel!));
     } else {
@@ -44,6 +46,6 @@ class LoginCubit extends Cubit<LoginState> {
   }
 
   saveUserToken(String token) {
-    SharedPrefHelper.setSecuredString(SharedPrefKeys.userToken, token);
+    SharedPrefHelper.setData(userToken, token);
   }
 }

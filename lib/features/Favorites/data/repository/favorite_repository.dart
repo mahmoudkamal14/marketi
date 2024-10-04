@@ -22,7 +22,9 @@ class FavoriteRepository {
   Future<ApiResult<FavoriteResponseModel>> addProductFavorites(int id) async {
     try {
       final response = await _favoriteServices.addProductFavorites(
-          SharedPrefKeys.userToken, id);
+        SharedPrefKeys.userToken,
+        id,
+      );
 
       return ApiResult.success(response);
     } catch (error) {

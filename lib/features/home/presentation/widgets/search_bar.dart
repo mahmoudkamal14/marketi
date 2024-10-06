@@ -19,7 +19,7 @@ class AppSearchBar extends StatelessWidget {
           textInputType: TextInputType.text,
           validator: (p0) {},
           onChanged: (value) {},
-          prefixIcon: const Icon(Icons.search, size: 30, color: Colors.black),
+          prefixIcon: const Icon(Icons.search, size: 30, color: Colors.blue),
           suffixIcon:
               const Icon(IconlyBold.filter, size: 30, color: Colors.blue),
         ),

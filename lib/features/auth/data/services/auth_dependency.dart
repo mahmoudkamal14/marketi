@@ -20,6 +20,6 @@ Future<void> authDependency() async {
 
   /// LOGIC
 
-  getIt.registerLazySingleton<LoginCubit>(() => LoginCubit(getIt()));
-  getIt.registerLazySingleton<RegisterCubit>(() => RegisterCubit(getIt()));
+  getIt.registerFactory<LoginCubit>(() => LoginCubit(getIt()));
+  getIt.registerFactory<RegisterCubit>(() => RegisterCubit(getIt()));
 }

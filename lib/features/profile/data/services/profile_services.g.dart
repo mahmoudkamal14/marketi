@@ -60,16 +60,16 @@ class _ProfileServices implements ProfileServices {
   @override
   Future<AuthResponseModel> updateProfileData(
     String userToken,
-    RegisterRequestBody registerRequestBody,
+    UpdateRequestBody updateRequestBody,
   ) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{r'Authorization': userToken};
     _headers.removeWhere((k, v) => v == null);
     final _data = <String, dynamic>{};
-    _data.addAll(registerRequestBody.toJson());
+    _data.addAll(updateRequestBody.toJson());
     final _options = _setStreamType<AuthResponseModel>(Options(
-      method: 'GET',
+      method: 'PUT',
       headers: _headers,
       extra: _extra,
     )

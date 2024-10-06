@@ -11,13 +11,11 @@ class AuthRepository {
 
   Future<ApiResult<AuthResponseModel>> loginWithEmailPassword(
       LoginRequestBody loginRequestBody) async {
+    final result = await _authServices.loginWithEmailPassword(loginRequestBody);
     try {
-      final result =
-          await _authServices.loginWithEmailPassword(loginRequestBody);
-
       return ApiResult.success(result);
-    } catch (error) {
-      return ApiResult.failure(error.toString());
+    } catch (err) {
+      return ApiResult.failure(result.message!);
     }
   }
 

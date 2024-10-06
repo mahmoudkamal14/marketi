@@ -48,7 +48,7 @@ class AppTextFormField extends StatelessWidget {
         decoration: InputDecoration(
           isDense: true,
           contentPadding: contentPadding ??
-              EdgeInsets.symmetric(horizontal: 20.w, vertical: 20.h),
+              EdgeInsets.symmetric(horizontal: 20.w, vertical: 16.h),
           focusedBorder: focusedBorder ??
               OutlineInputBorder(
                 borderSide: const BorderSide(
@@ -84,7 +84,7 @@ class AppTextFormField extends StatelessWidget {
               AppStyles.style16Regular.copyWith(
                 color: const Color(0xFF919AAB),
               ),
-          suffix: suffixIcon,
+          suffixIcon: suffixIcon,
           prefixIcon: prefixIcon,
           fillColor: backGroundColorHint ?? Colors.white,
           filled: true,

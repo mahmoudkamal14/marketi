@@ -16,7 +16,7 @@ class LogOutWidget extends StatelessWidget {
       listener: (context, state) {
         switch (state) {
           case LogoutUserLoadingState _:
-            return showToast(
+            showToast(
               msg: 'جاري تسجيل الخروج من الحساب',
               color: Colors.green,
             );

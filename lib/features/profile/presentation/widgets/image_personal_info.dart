@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:marketi/features/auth/data/models/auth_response_model.dart';
 
 class ImagePersonalInfo extends StatelessWidget {
-  const ImagePersonalInfo({
-    super.key,
-  });
+  const ImagePersonalInfo({super.key, required this.userModel});
+
+  final AuthResponseModel userModel;
 
   @override
   Widget build(BuildContext context) {

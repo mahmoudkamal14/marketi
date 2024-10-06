@@ -8,26 +8,32 @@ import 'package:marketi/core/widgets/app_text_button.dart';
 import 'package:marketi/core/widgets/app_text_form_field.dart';
 import 'package:marketi/core/widgets/icon_navigate_pop.dart';
 import 'package:marketi/features/auth/data/models/auth_response_model.dart';
+import 'package:marketi/features/profile/data/models/update_request_body.dart';
 import 'package:marketi/features/profile/presentation/logic/profile_cubit.dart';
 import 'package:marketi/features/profile/presentation/logic/profile_state.dart';
 import 'package:marketi/features/profile/presentation/widgets/image_personal_info.dart';
 
-class PersonalInfoScreen extends StatelessWidget {
+class PersonalInfoScreen extends StatefulWidget {
   const PersonalInfoScreen({super.key, required this.userModel});
 
   final AuthResponseModel userModel;
 
+  @override
+  State<PersonalInfoScreen> createState() => _PersonalInfoScreenState();
+}
+
+class _PersonalInfoScreenState extends State<PersonalInfoScreen> {
   @override
   Widget build(BuildContext context) {
     TextEditingController nameController = TextEditingController();
     TextEditingController phoneController = TextEditingController();
     TextEditingController emailController = TextEditingController();
 
-    nameController.text = userModel.data!.name!;
-    phoneController.text = userModel.data!.phone!;
-    emailController.text = userModel.data!.email!;
+    nameController.text = widget.userModel.data!.name!;
+    phoneController.text = widget.userModel.data!.phone!;
+    emailController.text = widget.userModel.data!.email!;
 
-    GlobalKey<FormState> profileFormKey = GlobalKey();
+    final GlobalKey<FormState> profileFormKey = GlobalKey();
 
     return BlocProvider(
       create: (context) => getIt<ProfileCubit>(),
@@ -38,8 +44,10 @@ class PersonalInfoScreen extends StatelessWidget {
             child: Scaffold(
               body: SafeArea(
                 child: Padding(
-                  padding:
-                      EdgeInsets.symmetric(horizontal: 14.w, vertical: 40.h),
+                  padding: EdgeInsets.symmetric(
+                    horizontal: 14.w,
+                    vertical: 40.h,
+                  ),
                   child: SingleChildScrollView(
                     child: Column(
                       children: [
@@ -47,13 +55,15 @@ class PersonalInfoScreen extends StatelessWidget {
                           children: [
                             const IconNavigatePop(),
                             const Spacer(),
-                            Text('المعلومات الشخصية',
-                                style: AppStyles.style24Medium),
+                            Text(
+                              'المعلومات الشخصية',
+                              style: AppStyles.style24Medium,
+                            ),
                             const Spacer(),
                           ],
                         ),
                         verticalSpace(30),
-                        const ImagePersonalInfo(),
+                        ImagePersonalInfo(userModel: widget.userModel),
                         verticalSpace(30),
                         Form(
                           key: profileFormKey,
@@ -106,7 +116,20 @@ class PersonalInfoScreen extends StatelessWidget {
                               verticalSpace(50),
                               AppTextButton(
                                 textButton: 'تحديث',
-                                onPressed: () {},
+                                onPressed: () {
+                                  if (profileFormKey.currentState!.validate()) {
+                                    FocusScope.of(context).unfocus();
+
+                                    ProfileCubit.get(context).updateProfile(
+                                      UpdateRequestBody(
+                                        name: nameController.text,
+                                        phone: phoneController.text,
+                                        email: emailController.text,
+                                        image: widget.userModel.data!.image!,
+                                      ),
+                                    );
+                                  }
+                                },
                               ),
                             ],
                           ),

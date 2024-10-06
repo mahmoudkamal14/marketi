@@ -2,6 +2,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:marketi/core/networking/api_result.dart';
 import 'package:marketi/features/auth/data/models/auth_response_model.dart';
 import 'package:marketi/features/profile/data/models/logout_response_model.dart';
+import 'package:marketi/features/profile/data/models/update_request_body.dart';
 import 'package:marketi/features/profile/data/repo/profile_repository.dart';
 import 'package:marketi/features/profile/presentation/logic/profile_state.dart';
 
@@ -25,6 +26,20 @@ class ProfileCubit extends Cubit<ProfileState> {
       emit(GetProfileSuccessState(authResponseModel: userModel!));
     } else {
       emit(GetProfileErrorState(message: 'Your Info is not found'));
+    }
+  }
+
+  void updateProfile(UpdateRequestBody updateRequestBody) async {
+    emit(UpdateProfileLoadingState());
+
+    final response = await _profileRepository.updateProfile(updateRequestBody);
+    if (response is Success<AuthResponseModel> &&
+        response.data.status == true) {
+      userModel = response.data;
+
+      emit(UpdateProfileSuccessState(authResponseModel: userModel!));
+    } else {
+      emit(UpdateProfileErrorState(message: 'Your Info is not found'));
     }
   }
 

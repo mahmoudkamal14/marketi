@@ -1,8 +1,8 @@
 import 'package:marketi/core/cache/shared_pref_keys.dart';
 import 'package:marketi/core/networking/api_result.dart';
 import 'package:marketi/features/auth/data/models/auth_response_model.dart';
-import 'package:marketi/features/auth/data/models/register_request_body.dart';
 import 'package:marketi/features/profile/data/models/logout_response_model.dart';
+import 'package:marketi/features/profile/data/models/update_request_body.dart';
 import 'package:marketi/features/profile/data/services/profile_services.dart';
 
 class ProfileRepository {
@@ -20,11 +20,11 @@ class ProfileRepository {
   }
 
   Future<ApiResult<AuthResponseModel>> updateProfile(
-      RegisterRequestBody registerRequestBody) async {
+      UpdateRequestBody updateRequestBody) async {
     try {
       final result = await _profileServices.updateProfileData(
         userToken,
-        registerRequestBody,
+        updateRequestBody,
       );
 
       return ApiResult.success(result);

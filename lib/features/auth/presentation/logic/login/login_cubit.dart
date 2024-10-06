@@ -40,8 +40,11 @@ class LoginCubit extends Cubit<LoginState> {
       //  saveUserToken(response.data.data!.token!);
 
       emit(LoginSuccessState(authResponseModel: userModel!));
-    } else {
-      emit(LoginErrorState(message: userModel!.message!));
+    } else if (response is Success<AuthResponseModel> &&
+        response.data.status == false) {
+      userModel = response.data;
+
+      emit(LoginErrorState(message: response.data.message!));
     }
   }
 

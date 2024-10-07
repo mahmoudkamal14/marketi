@@ -1,11 +1,11 @@
 
-# User App Market
+# Market App
 
 [![Flutter](https://img.shields.io/badge/Flutter-v3.0-blue)](https://flutter.dev) [![Build Status](https://img.shields.io/badge/build-passing-brightgreen)](https://github.com/username/repo) [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 ## 📝 Description
 
-The **User App Market** is a cross-platform mobile application built using Flutter, allowing users to explore, download, and rate various mobile apps. Developers can upload their apps, track user feedback, and manage their apps through a dedicated dashboard.
+The **Market App** is a cross-platform mobile application built using Flutter, allowing users to explore, download, and rate various mobile apps. Developers can upload their apps, track user feedback, and manage their apps through a dedicated dashboard.
 
 ---
 
@@ -27,8 +27,8 @@ The **User App Market** is a cross-platform mobile application built using Flutt
 To get started with the project, clone the repository and follow these instructions:
 
 ```bash
-git clone https://github.com/username/UserAppMarket.git
-cd UserAppMarket
+git clone https://github.com/mahmoudkamalx14/markti.git
+cd markti
 ```
 
 ### Prerequisites

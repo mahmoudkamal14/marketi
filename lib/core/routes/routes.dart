@@ -4,5 +4,24 @@ class Routes {
   static const signupScreen = '/signupScreen';
 
   static const loginScreen = '/loginScreen';
+
+  static const resetPasswordScreen = '/resetPasswordScreen';
+
+  static const verificationCodeScreen = '/verificationCodeScreen';
+
+  static const newPasswordScreen = '/newPasswordScreen';
+
+  static const congratulations = '/congratulations';
+
+  static const navBarLayout = '/navBarLayout';
+
   static const homeScreen = '/homeScreen';
+
+  static const categoryProductsScreen = '/categoryProductsScreen';
+
+  static const productDetailsScreen = '/productDetailsScreen';
+
+  static const profileScreen = '/profileScreen';
+
+  static const personalInfoScreen = '/personalInfoScreen';
 }

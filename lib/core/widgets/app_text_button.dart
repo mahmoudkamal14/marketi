@@ -28,31 +28,23 @@ class AppTextButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TextButton(
-      onPressed: onPressed,
-      style: ButtonStyle(
-        backgroundColor: MaterialStateProperty.all(
-          backgroundColor ?? const Color(0xFF3F80FF),
+    return GestureDetector(
+      onTap: onPressed,
+      child: Container(
+        width: buttonWidth ?? double.infinity,
+        padding: EdgeInsets.symmetric(
+          vertical: verticalPadding ?? 14.h,
+          horizontal: horizontalPadding ?? 12.w,
         ),
-        padding: MaterialStateProperty.all(
-          EdgeInsets.symmetric(
-            vertical: verticalPadding ?? 14.h,
-            horizontal: horizontalPadding ?? 12.w,
-          ),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(borderRadius ?? 16),
+          color: backgroundColor ?? const Color(0xFF3F80FF),
         ),
-        tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-        shape: MaterialStateProperty.all(RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(borderRadius ?? 16))),
-        fixedSize: MaterialStateProperty.all(
-          Size(
-            buttonWidth ?? double.maxFinite,
-            buttonHeight ?? 50.h,
-          ),
+        child: Text(
+          textAlign: TextAlign.center,
+          textButton,
+          style: textStyle ?? AppStyles.style18Medium,
         ),
-      ),
-      child: Text(
-        textButton,
-        style: textStyle ?? AppStyles.style18Medium,
       ),
     );
   }

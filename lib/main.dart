@@ -21,9 +21,8 @@ checkIfLoggedInUser() async {
   dynamic onboarding =
       await SharedPrefHelper.getBool(SharedPrefKeys.onboarding);
 
-  String? userToken =
-      await SharedPrefHelper.getSecuredString(SharedPrefKeys.userToken);
-  if (!userToken.isNullOrEmpty()) {
+  String? token = await SharedPrefHelper.getString(SharedPrefKeys.userToken);
+  if (!token.isNullOrEmpty()) {
     isLoggedInUser = true;
   } else {
     isLoggedInUser = false;

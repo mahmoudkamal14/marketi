@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:marketi/core/theme/app_styles.dart';
 
 class AppTextFormField extends StatelessWidget {
-  final String hintText;
+  final String? hintText;
   final Widget? suffixIcon;
   final Widget? prefixIcon;
   final bool? isObscureText;
@@ -20,7 +20,7 @@ class AppTextFormField extends StatelessWidget {
 
   const AppTextFormField({
     super.key,
-    required this.hintText,
+    this.hintText,
     this.suffixIcon,
     this.prefixIcon,
     this.isObscureText,
@@ -41,13 +41,14 @@ class AppTextFormField extends StatelessWidget {
     return Directionality(
       textDirection: TextDirection.rtl,
       child: TextFormField(
+        style: inputTextStyle ?? AppStyles.style20Medium,
         controller: controller,
         keyboardType: textInputType,
         onChanged: onChanged,
         decoration: InputDecoration(
           isDense: true,
           contentPadding: contentPadding ??
-              EdgeInsets.symmetric(horizontal: 20.w, vertical: 18.h),
+              EdgeInsets.symmetric(horizontal: 20.w, vertical: 16.h),
           focusedBorder: focusedBorder ??
               OutlineInputBorder(
                 borderSide: const BorderSide(

@@ -24,6 +24,14 @@ class ApiConstants {
   static const String favorites = "favorites";
 
   static const String primaryKey = 'primaryKey';
+
+  // Profile
+
+  static const String getProfile = "profile";
+
+  static const String updateProfile = "update-profile";
+
+  static const String logout = "logout";
 }
 
 class ApiErrors {

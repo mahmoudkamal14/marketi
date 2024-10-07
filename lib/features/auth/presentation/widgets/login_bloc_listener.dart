@@ -34,11 +34,12 @@ class LoginBlocListener extends StatelessWidget {
             if (user!.status == true) {
               showToast(msg: user.message!, color: Colors.green);
               context.navigateToReplacement(Routes.navBarLayout);
-            } else {
-              setupErrorState(context, user.message!);
             }
-          default:
+          case LoginErrorState():
             setupErrorState(context, user!.message!);
+
+          default:
+            setupErrorState(context, 'معندناش نت');
         }
       },
     );

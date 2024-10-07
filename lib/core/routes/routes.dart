@@ -21,5 +21,7 @@ class Routes {
 
   static const productDetailsScreen = '/productDetailsScreen';
 
+  static const profileScreen = '/profileScreen';
+
   static const personalInfoScreen = '/personalInfoScreen';
 }

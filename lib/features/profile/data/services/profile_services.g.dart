@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'favorite_services.dart';
+part of 'profile_services.dart';
 
 // **************************************************************************
 // RetrofitGenerator
@@ -8,8 +8,8 @@ part of 'favorite_services.dart';
 
 // ignore_for_file: unnecessary_brace_in_string_interps,no_leading_underscores_for_local_identifiers,unused_element
 
-class _FavoriteServices implements FavoriteServices {
-  _FavoriteServices(
+class _ProfileServices implements ProfileServices {
+  _ProfileServices(
     this._dio, {
     this.baseUrl,
     this.errorLogger,
@@ -24,20 +24,20 @@ class _FavoriteServices implements FavoriteServices {
   final ParseErrorLogger? errorLogger;
 
   @override
-  Future<FavoriteResponseModel> getFavorites(String userToken) async {
+  Future<AuthResponseModel> getProfileData(String token) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
-    final _headers = <String, dynamic>{r'Authorization': userToken};
+    final _headers = <String, dynamic>{r'Authorization': token};
     _headers.removeWhere((k, v) => v == null);
     const Map<String, dynamic>? _data = null;
-    final _options = _setStreamType<FavoriteResponseModel>(Options(
+    final _options = _setStreamType<AuthResponseModel>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
     )
         .compose(
           _dio.options,
-          'favorites',
+          'profile',
           queryParameters: queryParameters,
           data: _data,
         )
@@ -47,9 +47,9 @@ class _FavoriteServices implements FavoriteServices {
           baseUrl,
         )));
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late FavoriteResponseModel _value;
+    late AuthResponseModel _value;
     try {
-      _value = FavoriteResponseModel.fromJson(_result.data!);
+      _value = AuthResponseModel.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;
@@ -58,23 +58,24 @@ class _FavoriteServices implements FavoriteServices {
   }
 
   @override
-  Future<FavoriteResponseModel> addProductFavorites(
+  Future<AuthResponseModel> updateProfileData(
     String userToken,
-    int id,
+    UpdateRequestBody updateRequestBody,
   ) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{r'Authorization': userToken};
     _headers.removeWhere((k, v) => v == null);
-    const Map<String, dynamic>? _data = null;
-    final _options = _setStreamType<FavoriteResponseModel>(Options(
-      method: 'POST',
+    final _data = <String, dynamic>{};
+    _data.addAll(updateRequestBody.toJson());
+    final _options = _setStreamType<AuthResponseModel>(Options(
+      method: 'PUT',
       headers: _headers,
       extra: _extra,
     )
         .compose(
           _dio.options,
-          'favorites',
+          'update-profile',
           queryParameters: queryParameters,
           data: _data,
         )
@@ -84,9 +85,43 @@ class _FavoriteServices implements FavoriteServices {
           baseUrl,
         )));
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late FavoriteResponseModel _value;
+    late AuthResponseModel _value;
     try {
-      _value = FavoriteResponseModel.fromJson(_result.data!);
+      _value = AuthResponseModel.fromJson(_result.data!);
+    } on Object catch (e, s) {
+      errorLogger?.logError(e, s, _options);
+      rethrow;
+    }
+    return _value;
+  }
+
+  @override
+  Future<LogoutResponseModel> logoutUser(String userToken) async {
+    final _extra = <String, dynamic>{};
+    final queryParameters = <String, dynamic>{};
+    final _headers = <String, dynamic>{r'Authorization': userToken};
+    _headers.removeWhere((k, v) => v == null);
+    const Map<String, dynamic>? _data = null;
+    final _options = _setStreamType<LogoutResponseModel>(Options(
+      method: 'POST',
+      headers: _headers,
+      extra: _extra,
+    )
+        .compose(
+          _dio.options,
+          'logout',
+          queryParameters: queryParameters,
+          data: _data,
+        )
+        .copyWith(
+            baseUrl: _combineBaseUrls(
+          _dio.options.baseUrl,
+          baseUrl,
+        )));
+    final _result = await _dio.fetch<Map<String, dynamic>>(_options);
+    late LogoutResponseModel _value;
+    try {
+      _value = LogoutResponseModel.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;

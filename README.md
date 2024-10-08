@@ -5,7 +5,7 @@
 
 ## 📝 Description
 
-The **Market App** is a cross-platform mobile application built using Flutter, allowing users to explore, download, and rate various mobile apps. Developers can upload their apps, track user feedback, and manage their apps through a dedicated dashboard.
+"Marketi" is a user-friendly app that allows users to create an account and explore a wide range of available products. With the ability to search for specific items, add them to their shopping cart or wishlist, and update their personal information.
 
 ---
 

@@ -1,4 +1,4 @@
-import 'package:marketi/features/Favorites/data/models/favorite_response_model.dart';
+import 'package:marketi/features/Favorites/data/models/get_favorite_response_model.dart';
 
 abstract class FavoriteState {}
 

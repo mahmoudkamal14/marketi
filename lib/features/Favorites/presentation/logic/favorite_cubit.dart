@@ -1,6 +1,8 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:marketi/core/networking/api_result.dart';
+import 'package:marketi/features/Favorites/data/models/favorite_request_model.dart';
 import 'package:marketi/features/Favorites/data/models/favorite_response_model.dart';
+import 'package:marketi/features/Favorites/data/models/get_favorite_response_model.dart';
 
 import 'package:marketi/features/Favorites/data/repository/favorite_repository.dart';
 
@@ -19,7 +21,7 @@ class FavoriteCubit extends Cubit<FavoriteState> {
 
     final response = await _favoriteRepository.getFavorites();
 
-    if (response is Success<FavoriteResponseModel>) {
+    if (response is Success<GetFavoriteResponseModel>) {
       favoriteList = response.data.data!.data;
       emit(GetFavoriteSuccessState(favoriteDataList: favoriteList!));
     } else {
@@ -30,9 +32,12 @@ class FavoriteCubit extends Cubit<FavoriteState> {
   void addProductFavorites(int id) async {
     emit(GetFavoriteLoadingState());
 
-    final response = await _favoriteRepository.addProductFavorites(id);
+    final response = await _favoriteRepository
+        .addProductFavorites(FavoriteRequestModel(productId: id));
 
     if (response is Success<FavoriteResponseModel>) {
+      getFavorites();
+
       emit(ChangeFavoriteSuccessState());
     } else {
       emit(GetFavoriteErrorState(message: 'Not found products'));

@@ -70,7 +70,7 @@ class AppRouter {
                 create: (context) => getIt<ProfileCubit>()..getProfileDate(),
               ),
               BlocProvider(
-                create: (context) => getIt<FavoriteCubit>(),
+                create: (context) => getIt<FavoriteCubit>()..getFavorites(),
               ),
               BlocProvider(
                 create: (context) => getIt<HomeCubit>()

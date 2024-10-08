@@ -24,13 +24,13 @@ class _FavoriteServices implements FavoriteServices {
   final ParseErrorLogger? errorLogger;
 
   @override
-  Future<FavoriteResponseModel> getFavorites(String userToken) async {
+  Future<GetFavoriteResponseModel> getFavorites(String userToken) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{r'Authorization': userToken};
     _headers.removeWhere((k, v) => v == null);
     const Map<String, dynamic>? _data = null;
-    final _options = _setStreamType<FavoriteResponseModel>(Options(
+    final _options = _setStreamType<GetFavoriteResponseModel>(Options(
       method: 'GET',
       headers: _headers,
       extra: _extra,
@@ -47,9 +47,9 @@ class _FavoriteServices implements FavoriteServices {
           baseUrl,
         )));
     final _result = await _dio.fetch<Map<String, dynamic>>(_options);
-    late FavoriteResponseModel _value;
+    late GetFavoriteResponseModel _value;
     try {
-      _value = FavoriteResponseModel.fromJson(_result.data!);
+      _value = GetFavoriteResponseModel.fromJson(_result.data!);
     } on Object catch (e, s) {
       errorLogger?.logError(e, s, _options);
       rethrow;
@@ -60,13 +60,14 @@ class _FavoriteServices implements FavoriteServices {
   @override
   Future<FavoriteResponseModel> addProductFavorites(
     String userToken,
-    int id,
+    FavoriteRequestModel id,
   ) async {
     final _extra = <String, dynamic>{};
     final queryParameters = <String, dynamic>{};
     final _headers = <String, dynamic>{r'Authorization': userToken};
     _headers.removeWhere((k, v) => v == null);
-    const Map<String, dynamic>? _data = null;
+    final _data = <String, dynamic>{};
+    _data.addAll(id.toJson());
     final _options = _setStreamType<FavoriteResponseModel>(Options(
       method: 'POST',
       headers: _headers,

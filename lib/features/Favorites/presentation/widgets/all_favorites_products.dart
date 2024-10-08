@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:marketi/features/Favorites/presentation/logic/favorite_cubit.dart';
+import 'package:marketi/features/Favorites/presentation/logic/favorite_state.dart';
 import 'package:marketi/features/Favorites/presentation/widgets/item_favorite_product.dart';
 
 class AllFavoritesProducts extends StatelessWidget {
@@ -7,18 +10,25 @@ class AllFavoritesProducts extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SizedBox(
-      height: 700.h,
-      width: double.infinity,
-      child: ListView.builder(
-        physics: const BouncingScrollPhysics(),
-        itemCount: 1,
-        itemBuilder: (context, index) => const Padding(
-          padding: EdgeInsets.only(bottom: 12.0),
-          child: ItemFavoriteProduct(),
-        ),
-        primary: true,
-      ),
+    return BlocBuilder<FavoriteCubit, FavoriteState>(
+      builder: (context, state) {
+        var favoriteList = FavoriteCubit.get(context).favoriteList;
+        return SizedBox(
+          height: 700.h,
+          width: double.infinity,
+          child: ListView.builder(
+            physics: const BouncingScrollPhysics(),
+            itemCount: favoriteList!.length,
+            itemBuilder: (context, index) => Padding(
+              padding: const EdgeInsets.only(bottom: 12.0),
+              child: ItemFavoriteProduct(
+                favoriteitem: favoriteList[index],
+              ),
+            ),
+            primary: true,
+          ),
+        );
+      },
     );
   }
 }

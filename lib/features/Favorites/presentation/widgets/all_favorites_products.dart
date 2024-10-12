@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:marketi/features/Favorites/presentation/logic/favorite_cubit.dart';
 import 'package:marketi/features/Favorites/presentation/logic/favorite_state.dart';
 import 'package:marketi/features/Favorites/presentation/widgets/item_favorite_product.dart';
@@ -14,7 +13,7 @@ class AllFavoritesProducts extends StatelessWidget {
       builder: (context, state) {
         var favoriteList = FavoriteCubit.get(context).favoriteList;
         return SizedBox(
-          height: 700.h,
+          height: MediaQuery.sizeOf(context).height * 0.9,
           width: double.infinity,
           child: ListView.builder(
             physics: const BouncingScrollPhysics(),

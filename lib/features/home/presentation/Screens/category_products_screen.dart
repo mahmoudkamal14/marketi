@@ -5,6 +5,7 @@ import 'package:marketi/core/di/dependency_injection.dart';
 import 'package:marketi/core/theme/app_styles.dart';
 import 'package:marketi/core/theme/spaces.dart';
 import 'package:marketi/core/widgets/icon_navigate_pop.dart';
+import 'package:marketi/features/Favorites/presentation/logic/favorite_cubit.dart';
 import 'package:marketi/features/home/presentation/logic/home_cubit.dart';
 import 'package:marketi/features/home/presentation/logic/home_state.dart';
 import 'package:marketi/features/home/presentation/widgets/categories/category_product_bloc_builder.dart';
@@ -18,8 +19,15 @@ class CategoryProductsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => getIt<HomeCubit>()..getCategoryById(id),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(
+          create: (context) => getIt<HomeCubit>()..getCategoryById(id),
+        ),
+        BlocProvider(
+          create: (context) => getIt<FavoriteCubit>(),
+        ),
+      ],
       child: BlocBuilder<HomeCubit, HomeState>(
         builder: (context, state) {
           return Directionality(

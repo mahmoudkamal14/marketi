@@ -51,7 +51,14 @@ class _BuildItemOnBoardingState extends State<BuildItemOnBoarding> {
                 ),
               ),
               verticalSpace(24),
-              SmoothPageIndicatorWidget(index: widget.index!),
+              animationText(
+                widget.index!,
+                700,
+                SmoothPageIndicatorWidget(
+                  length: onBoardingList.length,
+                  controller: onBoardingController,
+                ),
+              ),
               verticalSpace(24),
               TextOnBoarding(widget: widget),
               const Spacer(),

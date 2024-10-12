@@ -8,29 +8,27 @@ class CustomAppBar extends StatelessWidget {
     super.key,
     required this.title,
     this.image,
+    this.count,
   });
 
   final String title;
+  final int? count;
+
   final String? image;
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.only(top: 40.h),
+      padding: EdgeInsets.only(top: 30.h),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
           const IconNavigatePop(),
           Text(title, style: AppStyles.style20SemiBold),
-          Padding(
-            padding: const EdgeInsets.only(right: 14),
-            child: Container(
-              width: 48.w,
-              height: 48.h,
-              decoration: const ShapeDecoration(
-                color: Color(0xFF3F80FF),
-                shape: OvalBorder(),
-              ),
-              child: Image.asset(image ?? 'assets/images/Pic.png'),
+          Badge.count(
+            count: count ?? 0,
+            child: Image.asset(
+              image ?? 'assets/images/Pic.png',
+              height: 30,
             ),
           ),
         ],

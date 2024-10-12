@@ -11,11 +11,10 @@ class FaviorteScreen extends StatelessWidget {
       body: SingleChildScrollView(
         child: SafeArea(
           child: Container(
-            margin: EdgeInsets.symmetric(horizontal: 14.w, vertical: 30.w),
+            margin: EdgeInsets.symmetric(horizontal: 14.w),
             child: const Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                //   FavouriteAppbarWidget(),
                 AllFavoritesProducts(),
               ],
             ),

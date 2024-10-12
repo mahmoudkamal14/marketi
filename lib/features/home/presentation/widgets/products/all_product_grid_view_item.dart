@@ -7,13 +7,11 @@ import 'package:marketi/core/theme/spaces.dart';
 import 'package:marketi/features/Favorites/presentation/logic/favorite_cubit.dart';
 import 'package:marketi/features/Favorites/presentation/logic/favorite_state.dart';
 import 'package:marketi/features/home/data/models/product_response_model.dart';
+import 'package:marketi/features/home/presentation/Screens/product_details_screen.dart';
 import 'package:shimmer/shimmer.dart';
 
 class AllProductGridViewItem extends StatelessWidget {
-  const AllProductGridViewItem({
-    super.key,
-    required this.model,
-  });
+  const AllProductGridViewItem({super.key, required this.model});
 
   final ProductDetailsModel model;
 
@@ -21,11 +19,11 @@ class AllProductGridViewItem extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        // Navigator.push(context, MaterialPageRoute(
-        //   builder: (context) {
-        //     return ProductDetailsScreen(model: model);
-        //   },
-        // ));
+        Navigator.push(context, MaterialPageRoute(
+          builder: (context) {
+            return ProductDetailsScreen(model: model);
+          },
+        ));
       },
       child: Container(
         padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 4.h),

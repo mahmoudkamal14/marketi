@@ -29,7 +29,10 @@ class ImageProfileWidget extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          const Image(image: AssetImage('assets/images/Pic.png')),
+          const CircleAvatar(
+            radius: 60,
+            backgroundImage: AssetImage('assets/images/my photo.jpg'),
+          ),
           verticalSpace(8),
           Text(
             '${ProfileCubit.get(context).userModel!.data!.name}',

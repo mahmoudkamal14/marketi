@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:marketi/core/cache/shared_pref_helper.dart';
-import 'package:marketi/core/cache/shared_pref_keys.dart';
 import 'package:marketi/core/theme/app_styles.dart';
 import 'package:marketi/features/auth/data/models/auth_response_model.dart';
 import 'package:marketi/features/profile/presentation/logic/profile_cubit.dart';
@@ -17,8 +15,6 @@ class AppBarHome extends StatelessWidget {
     return BlocBuilder<ProfileCubit, ProfileState>(
       builder: (context, state) {
         var userModel = ProfileCubit.get(context).userModel;
-
-        print('Token => ${SharedPrefHelper.getString(userToken)}');
 
         switch (state) {
           case GetProfileLoadingState _:
@@ -64,14 +60,9 @@ class AppBarHome extends StatelessWidget {
         children: [
           Padding(
             padding: EdgeInsets.only(left: 14.w),
-            child: Container(
-              width: 48.w,
-              height: 48.h,
-              decoration: const ShapeDecoration(
-                color: Color(0xFF3F80FF),
-                shape: OvalBorder(),
-              ),
-              child: Image.asset('assets/images/Pic.png'),
+            child: const CircleAvatar(
+              radius: 32,
+              backgroundImage: AssetImage('assets/images/my photo.jpg'),
             ),
           ),
           Text(userModel!.data!.name!, style: AppStyles.style20SemiBold),

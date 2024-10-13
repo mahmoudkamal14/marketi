@@ -23,6 +23,8 @@ class ApiConstants {
 
   static const String favorites = "favorites";
 
+  static const String carts = "carts";
+
   static const String primaryKey = 'primaryKey';
 
   // Profile

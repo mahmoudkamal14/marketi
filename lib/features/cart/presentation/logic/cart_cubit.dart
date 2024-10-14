@@ -15,6 +15,7 @@ class CartCubit extends Cubit<CartState> {
 
   List<CartItem>? cartListItems = [];
   int? myCartTotal = 0;
+  GetCartResponseModel? getCartResponseModel;
 
   void getCarts() async {
     emit(GetCartLoadingState());
@@ -22,6 +23,7 @@ class CartCubit extends Cubit<CartState> {
     final response = await _cartRepository.getCartProducts();
 
     if (response is Success<GetCartResponseModel>) {
+      getCartResponseModel = response.data;
       cartListItems = response.data.data!.cartItems;
       myCartTotal = response.data.data!.total;
       emit(GetCartSuccessState(cartItems: cartListItems!));

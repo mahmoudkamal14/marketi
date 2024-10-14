@@ -1,65 +1,41 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:marketi/core/theme/spaces.dart';
-import 'package:marketi/core/theme/app_styles.dart';
-import 'package:marketi/core/widgets/app_text_button.dart';
-import 'package:marketi/core/widgets/custom_appbar.dart';
-import 'package:marketi/features/cart/data/models/item_product_cart_model.dart';
+import 'package:marketi/features/cart/presentation/logic/cart_cubit.dart';
 import 'package:marketi/features/cart/presentation/widgets/cart_empty.dart';
-import 'package:marketi/features/cart/presentation/widgets/items_cart_list_view.dart';
+import 'package:marketi/features/cart/presentation/widgets/cart_list_view.dart';
+import 'package:marketi/features/cart/presentation/widgets/checkout_cart_widget.dart';
+import 'package:marketi/features/cart/presentation/widgets/total_price_and_product_number.dart';
 
 class CartScreen extends StatelessWidget {
   const CartScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return (listItemsProductCart.isNotEmpty)
-        ? SafeArea(
+    return CartCubit.get(context).cartListItems!.isNotEmpty
+        ? Directionality(
+            textDirection: TextDirection.rtl,
             child: Scaffold(
-              body: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const CustomAppBar(title: 'Cart'),
-                  verticalSpace(14),
-                  Padding(
-                      padding: EdgeInsets.symmetric(
-                          horizontal: 14.w, vertical: 14.h),
-                      child: Text(
-                        'Products in Cart',
-                        style: AppStyles.style20SemiBold,
-                      )),
-                  ItemsCartListView(),
-                  verticalSpace(14),
-                  Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 14.w),
-                    child: Column(
-                      children: [
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              body: SafeArea(
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const CartListView(),
+                      verticalSpace(14),
+                      Padding(
+                        padding: EdgeInsets.symmetric(horizontal: 14.w),
+                        child: const Column(
                           children: [
-                            Text(
-                              'Suptotal (${listItemsProductCart.length} items)',
-                              style: AppStyles.style14SemiBold,
-                              textAlign: TextAlign.left,
-                            ),
-                            Text(
-                              'EGP 1,120,00',
-                              textAlign: TextAlign.right,
-                              style: AppStyles.style14SemiBold,
-                            )
+                            TotalPriceAndProductNumber(),
+                            CheckoutCartWidget(),
                           ],
                         ),
-                        Padding(
-                          padding: EdgeInsets.symmetric(vertical: 14.h),
-                          child: AppTextButton(
-                            textButton: 'Checkout',
-                            onPressed: () {},
-                          ),
-                        ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
-                ],
+                ),
               ),
             ),
           )

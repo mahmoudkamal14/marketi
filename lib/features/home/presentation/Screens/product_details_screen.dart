@@ -6,6 +6,7 @@ import 'package:marketi/core/theme/spaces.dart';
 import 'package:marketi/core/widgets/custom_appbar.dart';
 import 'package:marketi/features/Favorites/presentation/logic/favorite_cubit.dart';
 import 'package:marketi/features/Favorites/presentation/logic/favorite_state.dart';
+import 'package:marketi/features/cart/presentation/logic/cart_cubit.dart';
 import 'package:marketi/features/home/data/models/product_response_model.dart';
 import 'package:marketi/features/home/presentation/widgets/product%20details/product_details.dart';
 import 'package:marketi/features/home/presentation/widgets/product%20details/product_image.dart';
@@ -17,8 +18,11 @@ class ProductDetailsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return BlocProvider(
-      create: (context) => getIt<FavoriteCubit>(),
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider(create: (context) => getIt<FavoriteCubit>()),
+        BlocProvider(create: (context) => getIt<CartCubit>()),
+      ],
       child: BlocBuilder<FavoriteCubit, FavoriteState>(
         builder: (context, state) {
           return Directionality(

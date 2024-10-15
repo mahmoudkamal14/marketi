@@ -13,7 +13,6 @@ class CartListView extends StatelessWidget {
     return BlocBuilder<CartCubit, CartState>(
       builder: (context, state) {
         var cartList = CartCubit.get(context).cartListItems;
-
         return Expanded(
           child: SizedBox(
             child: ListView.separated(

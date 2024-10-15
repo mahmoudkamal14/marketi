@@ -24,4 +24,8 @@ class Routes {
   static const profileScreen = '/profileScreen';
 
   static const personalInfoScreen = '/personalInfoScreen';
+
+  static const favoriteScreen = '/favoriteScreen';
+
+  static const cartScreen = '/cartScreen';
 }

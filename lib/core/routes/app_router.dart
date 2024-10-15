@@ -74,14 +74,14 @@ class AppRouter {
                 create: (context) => getIt<FavoriteCubit>()..getFavorites(),
               ),
               BlocProvider(
-                create: (context) => getIt<CartCubit>()..getCarts(),
-              ),
-              BlocProvider(
                 create: (context) => getIt<HomeCubit>()
                   ..emitStatesBanners()
                   ..emitStatesCategories()
                   ..emitStatesAllProducts(),
-              )
+              ),
+              BlocProvider(
+                create: (context) => getIt<CartCubit>()..getCarts(),
+              ),
             ],
             child: const NavBarLayout(),
           ),
@@ -99,6 +99,22 @@ class AppRouter {
         return fadePageRoute(
           BlocProvider(
             create: (context) => getIt<ProfileCubit>(),
+            child: const ProfileScreen(),
+          ),
+        );
+
+      case Routes.cartScreen:
+        return fadePageRoute(
+          BlocProvider(
+            create: (context) => getIt<CartCubit>(),
+            child: const ProfileScreen(),
+          ),
+        );
+
+      case Routes.favoriteScreen:
+        return fadePageRoute(
+          BlocProvider(
+            create: (context) => getIt<FavoriteCubit>(),
             child: const ProfileScreen(),
           ),
         );

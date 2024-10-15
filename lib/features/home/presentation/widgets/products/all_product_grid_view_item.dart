@@ -1,11 +1,9 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:marketi/core/theme/app_styles.dart';
 import 'package:marketi/core/theme/spaces.dart';
 import 'package:marketi/features/Favorites/presentation/logic/favorite_cubit.dart';
-import 'package:marketi/features/Favorites/presentation/logic/favorite_state.dart';
 import 'package:marketi/features/home/data/models/product_response_model.dart';
 import 'package:marketi/features/home/presentation/Screens/product_details_screen.dart';
 import 'package:shimmer/shimmer.dart';
@@ -55,16 +53,14 @@ class AllProductGridViewItem extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
                 Text('${model.price} جنيه', style: AppStyles.style14Medium),
-                BlocBuilder<FavoriteCubit, FavoriteState>(
-                  builder: (context, state) {
-                    return GestureDetector(
-                      onTap: () {
-                        FavoriteCubit.get(context)
-                            .addProductFavorites(model.id!);
-                      },
-                      child: const Icon(Icons.favorite_border, size: 30),
-                    );
+                GestureDetector(
+                  onTap: () {
+                    FavoriteCubit.get(context).addProductFavorites(model.id!);
                   },
+                  child: model.inFavorites == true
+                      ? const Icon(Icons.favorite_outlined,
+                          color: Colors.red, size: 30)
+                      : const Icon(Icons.favorite_border, size: 30),
                 ),
               ],
             ),

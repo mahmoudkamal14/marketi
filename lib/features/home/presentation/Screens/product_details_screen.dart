@@ -8,6 +8,7 @@ import 'package:marketi/features/Favorites/presentation/logic/favorite_cubit.dar
 import 'package:marketi/features/Favorites/presentation/logic/favorite_state.dart';
 import 'package:marketi/features/cart/presentation/logic/cart_cubit.dart';
 import 'package:marketi/features/home/data/models/product_response_model.dart';
+import 'package:marketi/features/home/presentation/logic/home_cubit.dart';
 import 'package:marketi/features/home/presentation/widgets/product%20details/product_details.dart';
 import 'package:marketi/features/home/presentation/widgets/product%20details/product_image.dart';
 
@@ -21,6 +22,7 @@ class ProductDetailsScreen extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(create: (context) => getIt<FavoriteCubit>()),
+        BlocProvider(create: (context) => getIt<HomeCubit>()),
         BlocProvider(create: (context) => getIt<CartCubit>()),
       ],
       child: BlocBuilder<FavoriteCubit, FavoriteState>(
@@ -34,10 +36,10 @@ class ProductDetailsScreen extends StatelessWidget {
                   children: [
                     Padding(
                       padding: EdgeInsets.symmetric(horizontal: 14.w),
-                      child: const CustomAppBar(
+                      child: CustomAppBar(
                         title: 'تفاصيل المنتج',
                         image: 'assets/images/Group 5621.png',
-                        count: 6,
+                        count: CartCubit.get(context).cartListItems!.length,
                       ),
                     ),
                     verticalSpace(20),

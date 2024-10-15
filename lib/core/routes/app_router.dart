@@ -5,6 +5,7 @@ import 'package:marketi/core/function/build_animate_page_route.dart';
 import 'package:marketi/core/routes/routes.dart';
 import 'package:marketi/features/Favorites/presentation/logic/favorite_cubit.dart';
 import 'package:marketi/features/auth/presentation/logic/login/login_cubit.dart';
+import 'package:marketi/features/cart/presentation/logic/cart_cubit.dart';
 import 'package:marketi/features/home/presentation/Screens/home_screen.dart';
 import 'package:marketi/features/home/presentation/Screens/nav_bar_layout.dart';
 import 'package:marketi/features/auth/presentation/screens/login_screen.dart';
@@ -77,7 +78,10 @@ class AppRouter {
                   ..emitStatesBanners()
                   ..emitStatesCategories()
                   ..emitStatesAllProducts(),
-              )
+              ),
+              BlocProvider(
+                create: (context) => getIt<CartCubit>()..getCarts(),
+              ),
             ],
             child: const NavBarLayout(),
           ),
@@ -95,6 +99,22 @@ class AppRouter {
         return fadePageRoute(
           BlocProvider(
             create: (context) => getIt<ProfileCubit>(),
+            child: const ProfileScreen(),
+          ),
+        );
+
+      case Routes.cartScreen:
+        return fadePageRoute(
+          BlocProvider(
+            create: (context) => getIt<CartCubit>(),
+            child: const ProfileScreen(),
+          ),
+        );
+
+      case Routes.favoriteScreen:
+        return fadePageRoute(
+          BlocProvider(
+            create: (context) => getIt<FavoriteCubit>(),
             child: const ProfileScreen(),
           ),
         );

@@ -32,6 +32,7 @@ class ProductDescription extends StatelessWidget {
         SizedBox(
           height: 200.h,
           child: ListView(
+            physics: const BouncingScrollPhysics(),
             children: [
               Text(
                 model.description!,

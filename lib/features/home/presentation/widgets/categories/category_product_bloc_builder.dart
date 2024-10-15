@@ -5,6 +5,7 @@ import 'package:marketi/features/home/presentation/logic/home_cubit.dart';
 import 'package:marketi/features/home/presentation/logic/home_state.dart';
 
 import 'category_product_list_view.dart';
+import 'category_product_shimmer_loading.dart';
 
 class CategoryProductBlocBuilder extends StatelessWidget {
   const CategoryProductBlocBuilder({super.key});
@@ -21,10 +22,11 @@ class CategoryProductBlocBuilder extends StatelessWidget {
 
         switch (state) {
           case HomeCategoryByIdLoadingState _:
-            return const CircularProgressIndicator();
-
+            return const CategoryProductShimmerLoading();
           case HomeCategoryByIdSuccessState _:
             return setupSuccess(categoryProductsList);
+          case HomeCategoryByIdErrorState _:
+            return const CategoryProductShimmerLoading();
           default:
             return setupSuccess(categoryProductsList);
         }

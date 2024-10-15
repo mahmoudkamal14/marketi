@@ -59,7 +59,7 @@ class ProductDetails extends StatelessWidget {
                 ],
               ),
               horizontalSpace(18),
-              const Expanded(child: AddToCart()),
+              Expanded(child: AddToCart(model: model)),
             ],
           ),
         ],

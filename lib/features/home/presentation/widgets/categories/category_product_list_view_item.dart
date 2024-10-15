@@ -62,7 +62,10 @@ class CategoryProductListViewItem extends StatelessWidget {
                           FavoriteCubit.get(context)
                               .addProductFavorites(model.id!);
                         },
-                        icon: const Icon(Icons.favorite_border),
+                        icon: model.inFavorites! == true
+                            ? const Icon(Icons.favorite_outlined,
+                                color: Colors.red, size: 30)
+                            : const Icon(Icons.favorite_border, size: 30),
                       ),
                     ],
                   ),

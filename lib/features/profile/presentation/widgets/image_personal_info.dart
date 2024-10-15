@@ -24,7 +24,15 @@ class ImagePersonalInfo extends StatelessWidget {
           image: AssetImage('assets/images/Shapes.png'),
         ),
       ),
-      child: const Image(image: AssetImage('assets/images/Pic.png')),
+      child: const Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          CircleAvatar(
+            radius: 76,
+            backgroundImage: AssetImage('assets/images/my photo.jpg'),
+          ),
+        ],
+      ),
     );
   }
 }

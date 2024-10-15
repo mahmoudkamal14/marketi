@@ -13,19 +13,19 @@ class CategoriesBlocBuilder extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocBuilder<HomeCubit, HomeState>(
       buildWhen: (previous, current) =>
-          current is HomeAllProductsLoadingState ||
-          current is HomeAllProductsSuccessState ||
-          current is HomeAllProductsErrorState,
+          current is HomeCategoriesLoadingState ||
+          current is HomeCategoriesSuccessState ||
+          current is HomeCategoriesErrorState,
       builder: (context, state) {
         var categoriesList = HomeCubit.get(context).categoriesList;
         switch (state) {
-          case HomeAllProductsLoadingState _:
+          case HomeCategoriesLoadingState _:
             return const CategoriesShimmerLoading();
 
-          case HomeAllProductsSuccessState _:
+          case HomeCategoriesSuccessState _:
             return setupSuccess(categoriesList);
 
-          case HomeAllProductsErrorState _:
+          case HomeCategoriesErrorState _:
             return const SizedBox.shrink();
 
           default:

@@ -81,22 +81,30 @@ We welcome contributions from the community! To contribute, follow these steps:
 Here are some screenshots showcasing the **User App Market** application:
 
 ### Splash And Onboarding Screens
-![Home Screen](path_to_home_screen_image)
+
 
 ### Auth Screens
-![Home Screen](path_to_home_screen_image)
+
 
 ### Home Screen
-![Home Screen](path_to_home_screen_image)
+<img src="https://github.com/user-attachments/assets/6c4d8a6b-3582-4341-a6d4-eb04c122740f" alt="Home Screen" width="290"/>
+<img src="https://github.com/user-attachments/assets/f71779d8-28da-436a-ba6b-52d81148ed1d" alt="Home Screen" width="290"/>
 
-### Product Search
-![Product Search](path_to_search_image)
+### Category Screen
+<img src="https://github.com/user-attachments/assets/1f9b0425-699c-4785-b7d7-df114a239d38" alt="Category Screen Screen" width="290"/>
+<img src="https://github.com/user-attachments/assets/0c73972f-a093-4fad-9adc-58f1fb9fd669" alt="Category Screen Screen" width="290"/>
+
+### Product Details
+<img src="https://github.com/user-attachments/assets/49343f91-951e-4c20-812f-78270008fc47" alt="Product Details" width="290"/>
+<img src="https://github.com/user-attachments/assets/4df6bf74-c76d-45c7-a7c7-518eb7a4afe5" alt="Product Details" width="290"/>
 
 ### Favorites & Cart
-![Favorites & Cart](path_to_favorites_cart_image)
+<img src="https://github.com/user-attachments/assets/e6ad4b92-a4e8-46c0-abee-9469ef0ed0b3" alt="Favorites & Cart Screen" width="290"/>
+<img src="https://github.com/user-attachments/assets/49485725-7cc4-4234-99ef-3c31ccd0dc8a" alt="Favorites & Cart Screen" width="290"/>
 
 ### User Profile Management
-![Profile Management](path_to_profile_image)
+<img src="https://github.com/user-attachments/assets/9e1985c8-45fc-4959-9ff4-15cbdb6676f3" alt="User Profile Screen" width="290"/>
+<img src="https://github.com/user-attachments/assets/93ae4ff4-dac1-4030-bfb8-04ae836e1b11" alt="User Profile Screen" width="290"/>
 
 ---
 

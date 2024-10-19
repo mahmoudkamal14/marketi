@@ -33,6 +33,8 @@ class ApiConstants {
 
   static const String updateProfile = "update-profile";
 
+  static const String changePassword = "change-password";
+
   static const String logout = "logout";
 }
 

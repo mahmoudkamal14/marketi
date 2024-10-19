@@ -10,9 +10,9 @@ import 'package:marketi/features/cart/presentation/logic/cart_cubit.dart';
 import 'package:marketi/features/home/presentation/Screens/home_screen.dart';
 import 'package:marketi/features/home/presentation/Screens/nav_bar_layout.dart';
 import 'package:marketi/features/auth/presentation/screens/login_screen.dart';
-import 'package:marketi/features/auth/presentation/screens/reset_password.dart';
+import 'package:marketi/features/auth/presentation/screens/forget_password_screen.dart';
 import 'package:marketi/features/auth/presentation/widgets/congratulations.dart';
-import 'package:marketi/features/auth/presentation/widgets/new_password_screen.dart';
+import 'package:marketi/features/profile/presentation/screens/change_password_screen.dart';
 import 'package:marketi/features/auth/presentation/widgets/verificatin_code.dart';
 import 'package:marketi/features/home/presentation/logic/home_cubit.dart';
 import 'package:marketi/features/onboarding/screens/onboarding_screen.dart';
@@ -49,7 +49,7 @@ class AppRouter {
 
       case Routes.resetPasswordScreen:
         return MaterialPageRoute(
-          builder: (_) => const ResetPasswordScreen(),
+          builder: (_) => const ForgetPasswordScreen(),
         );
 
       case Routes.verificationCodeScreen:
@@ -57,9 +57,12 @@ class AppRouter {
           builder: (_) => const VerificationCode(),
         );
 
-      case Routes.newPasswordScreen:
+      case Routes.changePasswordScreen:
         return MaterialPageRoute(
-          builder: (_) => const NewPasswordScreen(),
+          builder: (_) => BlocProvider(
+            create: (context) => getIt<ProfileCubit>(),
+            child: const ChangePasswordScreen(),
+          ),
         );
 
       case Routes.congratulations:

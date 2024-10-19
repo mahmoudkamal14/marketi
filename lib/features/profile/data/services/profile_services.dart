@@ -1,4 +1,6 @@
 import 'package:dio/dio.dart';
+import 'package:marketi/features/profile/data/models/change_password_request_model.dart';
+import 'package:marketi/features/profile/data/models/change_password_response_model.dart';
 import 'package:marketi/features/profile/data/models/logout_response_model.dart';
 import 'package:marketi/features/profile/data/models/update_request_body.dart';
 import 'package:retrofit/retrofit.dart';
@@ -26,5 +28,11 @@ abstract class ProfileServices {
   @POST(ApiConstants.logout)
   Future<LogoutResponseModel> logoutUser(
     @Header('Authorization') String userToken,
+  );
+
+  @POST(ApiConstants.changePassword)
+  Future<ChangePasswordResponseModel> changePassword(
+    @Header('Authorization') String userToken,
+    @Body() ChangePasswordRequestModel changePasswordRequestModel,
   );
 }

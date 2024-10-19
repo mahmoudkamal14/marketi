@@ -62,7 +62,7 @@ class _PinCodeVerificationState extends State<PinCodeVerification> {
           AppTextButton(
             textButton: 'التحقق من الكود',
             onPressed: () {
-              context.navigateTo(Routes.newPasswordScreen);
+              context.navigateTo(Routes.changePasswordScreen);
             },
           ),
           Padding(

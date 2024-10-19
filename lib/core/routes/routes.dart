@@ -9,7 +9,7 @@ class Routes {
 
   static const verificationCodeScreen = '/verificationCodeScreen';
 
-  static const newPasswordScreen = '/newPasswordScreen';
+  static const changePasswordScreen = '/changePasswordScreen';
 
   static const congratulations = '/congratulations';
 

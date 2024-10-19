@@ -1,4 +1,5 @@
 import 'package:marketi/features/auth/data/models/auth_response_model.dart';
+import 'package:marketi/features/profile/data/models/change_password_response_model.dart';
 import 'package:marketi/features/profile/data/models/logout_response_model.dart';
 
 abstract class ProfileState {}
@@ -35,6 +36,22 @@ final class UpdateProfileErrorState extends ProfileState {
   final String message;
 
   UpdateProfileErrorState({required this.message});
+}
+
+/// CHANGE PASSWORD
+
+final class ChangePasswordLoadingState extends ProfileState {}
+
+final class ChangePasswordSuccessState extends ProfileState {
+  final ChangePasswordResponseModel changePasswordResponseModel;
+
+  ChangePasswordSuccessState({required this.changePasswordResponseModel});
+}
+
+final class ChangePasswordErrorState extends ProfileState {
+  final String message;
+
+  ChangePasswordErrorState({required this.message});
 }
 
 /// LOGOUT PROFILE DATA

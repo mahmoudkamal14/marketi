@@ -9,8 +9,8 @@ import 'package:marketi/core/widgets/app_text_button.dart';
 import 'package:marketi/core/widgets/app_text_form_field.dart';
 import 'package:marketi/core/widgets/icon_navigate_pop.dart';
 
-class ResetPasswordScreen extends StatelessWidget {
-  const ResetPasswordScreen({super.key});
+class ForgetPasswordScreen extends StatelessWidget {
+  const ForgetPasswordScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

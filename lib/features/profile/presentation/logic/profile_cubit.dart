@@ -1,6 +1,9 @@
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:marketi/core/networking/api_result.dart';
 import 'package:marketi/features/auth/data/models/auth_response_model.dart';
+import 'package:marketi/features/profile/data/models/change_password_request_model.dart';
+import 'package:marketi/features/profile/data/models/change_password_response_model.dart';
 import 'package:marketi/features/profile/data/models/logout_response_model.dart';
 import 'package:marketi/features/profile/data/models/update_request_body.dart';
 import 'package:marketi/features/profile/data/repo/profile_repository.dart';
@@ -12,8 +15,14 @@ class ProfileCubit extends Cubit<ProfileState> {
 
   static ProfileCubit get(context) => BlocProvider.of(context);
 
+  TextEditingController currentPasswordController = TextEditingController();
+  TextEditingController newPasswordController = TextEditingController();
+
   AuthResponseModel? userModel;
   LogoutResponseModel? logoutModel;
+  ChangePasswordResponseModel? changePasswordResponseModel;
+
+  // Get Profile Data
 
   void getProfileDate() async {
     emit(GetProfileLoadingState());
@@ -29,6 +38,8 @@ class ProfileCubit extends Cubit<ProfileState> {
     }
   }
 
+  // Update Profile
+
   void updateProfile(UpdateRequestBody updateRequestBody) async {
     emit(UpdateProfileLoadingState());
 
@@ -40,6 +51,26 @@ class ProfileCubit extends Cubit<ProfileState> {
       emit(UpdateProfileSuccessState(authResponseModel: userModel!));
     } else {
       emit(UpdateProfileErrorState(message: 'Your Info is not found'));
+    }
+  }
+
+  // Change Password
+
+  void changePassword() async {
+    emit(ChangePasswordLoadingState());
+
+    final response =
+        await _profileRepository.changePassword(ChangePasswordRequestModel(
+      currentPassword: currentPasswordController.text,
+      newPassword: newPasswordController.text,
+    ));
+
+    if (response is Success<ChangePasswordResponseModel>) {
+      changePasswordResponseModel = response.data;
+      emit(ChangePasswordSuccessState(
+          changePasswordResponseModel: response.data));
+    } else {
+      emit(ChangePasswordErrorState(message: 'Can not Change Password'));
     }
   }
 

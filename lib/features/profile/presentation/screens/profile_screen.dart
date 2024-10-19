@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:marketi/core/theme/spaces.dart';
+import 'package:marketi/features/profile/presentation/widgets/change_password_widget.dart';
 import 'package:marketi/features/profile/presentation/widgets/change_theme_mode.dart';
 import 'package:marketi/features/profile/presentation/widgets/check_notifications_widget.dart';
 import 'package:marketi/features/profile/presentation/widgets/image_profile_widget.dart';
@@ -25,6 +26,7 @@ class ProfileScreen extends StatelessWidget {
                 const ImageProfileWidget(),
                 verticalSpace(30),
                 const PersonalInfoWidget(),
+                const ChangePasswordWidget(),
                 const CheckNotificationsWidget(),
                 const ChangeThemeMode(),
                 const RateUsWidget(),

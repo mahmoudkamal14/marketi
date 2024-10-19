@@ -1,3 +1,4 @@
+import 'package:marketi/core/cache/shared_pref_helper.dart';
 import 'package:marketi/core/cache/shared_pref_keys.dart';
 import 'package:marketi/core/networking/api_result.dart';
 import 'package:marketi/features/auth/data/models/auth_response_model.dart';
@@ -13,7 +14,8 @@ class ProfileRepository {
 
   Future<ApiResult<AuthResponseModel>> getProfile() async {
     try {
-      final result = await _profileServices.getProfileData(userToken);
+      final result = await _profileServices
+          .getProfileData(CacheHelper.getData(key: userToken));
 
       return ApiResult.success(result);
     } catch (error) {
@@ -25,7 +27,7 @@ class ProfileRepository {
       UpdateRequestBody updateRequestBody) async {
     try {
       final result = await _profileServices.updateProfileData(
-        userToken,
+        CacheHelper.getData(key: userToken),
         updateRequestBody,
       );
 
@@ -37,7 +39,8 @@ class ProfileRepository {
 
   Future<ApiResult<LogoutResponseModel>> logoutUser() async {
     try {
-      final result = await _profileServices.logoutUser(userToken);
+      final result = await _profileServices
+          .logoutUser(CacheHelper.getData(key: userToken));
 
       return ApiResult.success(result);
     } catch (error) {
@@ -49,7 +52,7 @@ class ProfileRepository {
       ChangePasswordRequestModel changePasswordRequestModel) async {
     try {
       final result = await _profileServices.changePassword(
-        userToken,
+        CacheHelper.getData(key: userToken),
         changePasswordRequestModel,
       );
 

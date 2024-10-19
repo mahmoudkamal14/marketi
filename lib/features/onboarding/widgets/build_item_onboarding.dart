@@ -1,5 +1,3 @@
-// ignore_for_file: must_be_immutable
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -17,6 +15,7 @@ import 'package:marketi/features/onboarding/widgets/text_onboarding.dart';
 
 import 'smooth_page_indicator_widget.dart';
 
+// ignore: must_be_immutable
 class BuildItemOnBoarding extends StatefulWidget {
   BuildItemOnBoarding({super.key, this.index});
   int? index;
@@ -96,5 +95,5 @@ class _BuildItemOnBoardingState extends State<BuildItemOnBoarding> {
 void submitOnBoarding(BuildContext context) {
   context.navigateToReplacement(Routes.loginScreen);
 
-  SharedPrefHelper.setData(SharedPrefKeys.onboarding, true);
+  CacheHelper.saveData(key: SharedPrefKeys.onboarding, value: true);
 }

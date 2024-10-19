@@ -1,3 +1,4 @@
+import 'package:marketi/core/cache/shared_pref_helper.dart';
 import 'package:marketi/core/cache/shared_pref_keys.dart';
 import 'package:marketi/core/networking/api_result.dart';
 import 'package:marketi/features/cart/data/models/cart_request_model.dart';
@@ -12,7 +13,8 @@ class CartRepository {
 
   Future<ApiResult<GetCartResponseModel>> getCartProducts() async {
     try {
-      final response = await _cartServices.getCartProducts(userToken);
+      final response = await _cartServices
+          .getCartProducts(CacheHelper.getData(key: userToken));
 
       return ApiResult.success(response);
     } catch (error) {
@@ -24,7 +26,7 @@ class CartRepository {
       CartRequestModel cartRequestModel) async {
     try {
       final response = await _cartServices.addProductCart(
-        userToken,
+        CacheHelper.getData(key: userToken),
         cartRequestModel,
       );
 

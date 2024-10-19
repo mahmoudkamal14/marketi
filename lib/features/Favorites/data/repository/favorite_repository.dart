@@ -1,3 +1,4 @@
+import 'package:marketi/core/cache/shared_pref_helper.dart';
 import 'package:marketi/core/cache/shared_pref_keys.dart';
 import 'package:marketi/core/networking/api_result.dart';
 import 'package:marketi/features/Favorites/data/models/favorite_request_model.dart';
@@ -12,7 +13,8 @@ class FavoriteRepository {
 
   Future<ApiResult<GetFavoriteResponseModel>> getFavorites() async {
     try {
-      final response = await _favoriteServices.getFavorites(userToken);
+      final response = await _favoriteServices
+          .getFavorites(CacheHelper.getData(key: userToken));
 
       return ApiResult.success(response);
     } catch (error) {
@@ -24,7 +26,7 @@ class FavoriteRepository {
       FavoriteRequestModel favoriteRequestModel) async {
     try {
       final response = await _favoriteServices.addProductFavorites(
-        userToken,
+        CacheHelper.getData(key: userToken),
         favoriteRequestModel,
       );
 

@@ -42,7 +42,7 @@ class RegisterCubit extends Cubit<RegisterState> {
     if (response is Success<AuthResponseModel>) {
       userModel = response.data;
 
-      userToken = userModel!.data!.token!;
+      //  userToken = userModel!.data!.token!;
 
       emit(RegisterSuccessState(authResponseModel: userModel!));
     } else {
@@ -69,6 +69,6 @@ class RegisterCubit extends Cubit<RegisterState> {
   }
 
   saveUserToken(String token) {
-    SharedPrefHelper.setData(userToken, token);
+    CacheHelper.saveData(key: userToken, value: token);
   }
 }

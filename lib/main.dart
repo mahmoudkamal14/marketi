@@ -11,7 +11,7 @@ import 'package:marketi/marketi_app.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   setupGetIt();
-
+  await CacheHelper.init();
   await checkIfLoggedInUser();
   await ScreenUtil.ensureScreenSize();
   runApp(MarketiApp(appRouter: AppRouter()));
@@ -19,9 +19,9 @@ void main() async {
 
 checkIfLoggedInUser() async {
   dynamic onboarding =
-      await SharedPrefHelper.getBool(SharedPrefKeys.onboarding);
+      await CacheHelper.getData(key: SharedPrefKeys.onboarding);
 
-  String? token = await SharedPrefHelper.getString(SharedPrefKeys.userToken);
+  String? token = await CacheHelper.getData(key: SharedPrefKeys.userToken);
   if (!token.isNullOrEmpty()) {
     isLoggedInUser = true;
   } else {

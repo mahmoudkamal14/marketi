@@ -1,4 +1,3 @@
-
 # Market App
 
 [![Flutter](https://img.shields.io/badge/Flutter-v3.0-blue)](https://flutter.dev) [![Build Status](https://img.shields.io/badge/build-passing-brightgreen)](https://github.com/username/repo) [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
@@ -81,10 +80,16 @@ We welcome contributions from the community! To contribute, follow these steps:
 Here are some screenshots showcasing the **User App Market** application:
 
 ### Splash And Onboarding Screens
-
+<img src="https://github.com/user-attachments/assets/7c1ed801-4c38-4e87-bf4a-68e92a0177b5" alt="Splash Screen" width="290"/>
+<img src="https://github.com/user-attachments/assets/8b101124-4b66-4063-94d3-e8876aaa3092" alt="Onboarding 1 Screen" width="290"/>
+<img src="https://github.com/user-attachments/assets/46a1882e-69b7-4ecf-9ef4-e236ea4162bc" alt="Onboarding 2 Screen" width="290"/>
+<img src="https://github.com/user-attachments/assets/9006fcb3-6e20-4fe1-89a2-38ae2720b7a1" alt="Onboarding 3 Screen" width="290"/>
 
 ### Auth Screens
-
+<img src="https://github.com/user-attachments/assets/7c1ed801-4c38-4e87-bf4a-68e92a0177b5" alt="Login Screen" width="290"/>
+<img src="https://github.com/user-attachments/assets/d595a7be-bbe5-42f9-822d-95af3a53fd2b" alt="Register Screen" width="290"/>
+<img src="https://github.com/user-attachments/assets/cb7c099a-7354-4c72-ab91-8786030182a3" alt="Forget Password Screen" width="290"/>
+<img src="https://github.com/user-attachments/assets/f64a4dbc-c7af-462a-965b-9c0fccdf2a3b" alt="Verifcation Code Screen" width="290"/>
 
 ### Home Screen
 <img src="https://github.com/user-attachments/assets/6c4d8a6b-3582-4341-a6d4-eb04c122740f" alt="Home Screen" width="290"/>

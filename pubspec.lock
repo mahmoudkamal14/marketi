@@ -420,10 +420,9 @@ packages:
     dependency: "direct main"
     description:
       name: flutter_native_splash
-      sha256: edf39bcf4d74aca1eb2c1e43c3e445fd9f494013df7f0da752fefe72020eedc0
+      sha256: aa06fec78de2190f3db4319dd60fdc8d12b2626e93ef9828633928c2dcaea840
       url: "https://pub.dev"
     source: hosted
- auth
     version: "2.4.1"
   flutter_plugin_android_lifecycle:
     dependency: transitive
@@ -433,8 +432,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.0.23"
-    version: "2.4.0"
-  main
   flutter_screenutil:
     dependency: "direct main"
     description:
@@ -553,10 +550,9 @@ packages:
     dependency: transitive
     description:
       name: image
-      sha256: "4c68bfd5ae83e700b5204c1e74451e7bf3cf750e6843c6e158289cf56bda018e"
+      sha256: "2237616a36c0d69aef7549ab439b833fb7f9fb9fc861af2cc9ac3eedddd69ca8"
       url: "https://pub.dev"
     source: hosted
- auth
     version: "4.2.0"
   image_picker:
     dependency: "direct main"
@@ -578,10 +574,10 @@ packages:
     dependency: transitive
     description:
       name: image_picker_for_web
-      sha256: "65d94623e15372c5c51bebbcb820848d7bcb323836e12dfdba60b5d3a8b39e50"
+      sha256: "717eb042ab08c40767684327be06a5d8dbb341fe791d514e4b92c7bbe1b7bb83"
       url: "https://pub.dev"
     source: hosted
-    version: "3.0.5"
+    version: "3.0.6"
   image_picker_ios:
     dependency: transitive
     description:
@@ -622,8 +618,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "0.2.1+1"
-    version: "4.1.7"
- main
   intl:
     dependency: "direct main"
     description:

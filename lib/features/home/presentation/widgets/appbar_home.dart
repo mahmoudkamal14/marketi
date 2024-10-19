@@ -62,7 +62,8 @@ class AppBarHome extends StatelessWidget {
             padding: EdgeInsets.only(left: 14.w),
             child: const CircleAvatar(
               radius: 32,
-              backgroundImage: AssetImage('assets/images/my photo.jpg'),
+              backgroundImage: NetworkImage(
+                  'https://image.lexica.art/full_jpg/c9537cf5-4e95-4394-86d4-85155b4e938e'),
             ),
           ),
           Text(userModel!.data!.name!, style: AppStyles.style20SemiBold),

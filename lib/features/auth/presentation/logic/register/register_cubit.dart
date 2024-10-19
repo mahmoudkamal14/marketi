@@ -1,4 +1,9 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
+import 'package:image_picker/image_picker.dart';
+import 'package:marketi/core/cache/shared_pref_helper.dart';
+import 'package:marketi/core/cache/shared_pref_keys.dart';
 import 'package:marketi/core/networking/api_result.dart';
 import 'package:marketi/features/auth/data/models/auth_response_model.dart';
 import 'package:marketi/features/auth/data/models/register_request_body.dart';
@@ -13,6 +18,7 @@ class RegisterCubit extends Cubit<RegisterState> {
 
   static RegisterCubit get(context) => BlocProvider.of(context);
 
+  GlobalKey<FormState> formKey = GlobalKey();
   TextEditingController emailController = TextEditingController();
   TextEditingController passwordController = TextEditingController();
   TextEditingController nameController = TextEditingController();
@@ -28,15 +34,41 @@ class RegisterCubit extends Cubit<RegisterState> {
         password: passwordController.text,
         name: nameController.text,
         phone: phoneController.text,
-        image: 'https://wallpapercave.com/wp/wp5502061.jpg',
+        image:
+            'https://image.lexica.art/full_jpg/c9537cf5-4e95-4394-86d4-85155b4e938e',
       ),
     );
 
     if (response is Success<AuthResponseModel>) {
       userModel = response.data;
+
+      userToken = userModel!.data!.token!;
+
       emit(RegisterSuccessState(authResponseModel: userModel!));
     } else {
       emit(RegisterErrorState(message: userModel!.message!));
     }
+  }
+
+  // Pick an image
+  File? profileImageFile;
+  ImagePicker picker = ImagePicker();
+  Future<void> getProfileImage(String imageSource) async {
+    XFile? pickedFile;
+    if (imageSource == 'gallery') {
+      pickedFile = await picker.pickImage(source: ImageSource.gallery);
+    } else if (imageSource == 'camera') {
+      pickedFile = await picker.pickImage(source: ImageSource.camera);
+    }
+    if (pickedFile != null) {
+      profileImageFile = File(pickedFile.path);
+      emit(ProfileImagePickerSuccessState());
+    } else {
+      emit(ProfileImagePickerErrorState());
+    }
+  }
+
+  saveUserToken(String token) {
+    SharedPrefHelper.setData(userToken, token);
   }
 }

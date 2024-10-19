@@ -5,6 +5,7 @@ import 'package:marketi/core/function/build_animate_page_route.dart';
 import 'package:marketi/core/routes/routes.dart';
 import 'package:marketi/features/Favorites/presentation/logic/favorite_cubit.dart';
 import 'package:marketi/features/auth/presentation/logic/login/login_cubit.dart';
+import 'package:marketi/features/auth/presentation/logic/register/register_cubit.dart';
 import 'package:marketi/features/cart/presentation/logic/cart_cubit.dart';
 import 'package:marketi/features/home/presentation/Screens/home_screen.dart';
 import 'package:marketi/features/home/presentation/Screens/nav_bar_layout.dart';
@@ -32,7 +33,10 @@ class AppRouter {
 
       case Routes.signupScreen:
         return MaterialPageRoute(
-          builder: (_) => const RegisterScreen(),
+          builder: (_) => BlocProvider(
+            create: (context) => getIt<RegisterCubit>(),
+            child: const RegisterScreen(),
+          ),
         );
 
       case Routes.loginScreen:

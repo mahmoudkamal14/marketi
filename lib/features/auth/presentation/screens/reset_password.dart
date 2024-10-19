@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:marketi/core/function/validators.dart';
 import 'package:marketi/core/routes/extentions.dart';
 import 'package:marketi/core/theme/spaces.dart';
 import 'package:marketi/core/routes/routes.dart';
@@ -17,15 +19,15 @@ class ResetPasswordScreen extends StatelessWidget {
       child: Scaffold(
         body: SafeArea(
           child: SingleChildScrollView(
-            padding: const EdgeInsets.symmetric(vertical: 30),
+            padding: EdgeInsets.symmetric(vertical: 30.h, horizontal: 14.w),
             child: Form(
               child: Column(
                 children: [
                   Row(
                     children: [
                       const IconNavigatePop(),
-                      horizontalSpace(8),
-                      Text('Forgot Password', style: AppStyles.style16Medium),
+                      horizontalSpace(20),
+                      Text('نسيت كلمة السر', style: AppStyles.style16Medium),
                     ],
                   ),
                   verticalSpace(57),
@@ -37,41 +39,35 @@ class ResetPasswordScreen extends StatelessWidget {
                       Padding(
                         padding: const EdgeInsets.symmetric(vertical: 22),
                         child: Text(
-                          'Please enter your email address to\nreceive a verification code',
+                          'الرجاء إدخال عنوان بريدك الإلكتروني لتلقي رمز التحقق',
                           textAlign: TextAlign.center,
                           style: AppStyles.style16Medium,
                         ),
                       ),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 16),
-                        child: Column(
-                          children: [
-                            Align(
-                              alignment: Alignment.topLeft,
-                              child:
-                                  Text('Email', style: AppStyles.style14Medium),
-                            ),
-                            verticalSpace(4),
-                            AppTextFormField(
-                              hintText: 'You@gmail.com',
-                              textInputType: TextInputType.emailAddress,
-                              prefixIcon: const Icon(Icons.email_outlined),
-                              validator: (p0) {
-                                if (p0!.isEmpty) {
-                                  return 'Email must not be empty';
-                                }
-                              },
-                            ),
-                            verticalSpace(22),
-                            AppTextButton(
-                              textButton: 'Send Code',
-                              onPressed: () {
-                                context
-                                    .navigateTo(Routes.verificationCodeScreen);
-                              },
-                            ),
-                          ],
-                        ),
+                      Column(
+                        children: [
+                          Align(
+                            alignment: Alignment.topRight,
+                            child:
+                                Text('الإيميل', style: AppStyles.style14Medium),
+                          ),
+                          verticalSpace(4),
+                          AppTextFormField(
+                            hintText: 'You@gmail.com',
+                            textInputType: TextInputType.emailAddress,
+                            prefixIcon: const Icon(Icons.email_outlined),
+                            validator: (value) {
+                              return emailValidator(value);
+                            },
+                          ),
+                          verticalSpace(22),
+                          AppTextButton(
+                            textButton: 'إرسال الرمز',
+                            onPressed: () {
+                              context.navigateTo(Routes.verificationCodeScreen);
+                            },
+                          ),
+                        ],
                       ),
                     ],
                   ),

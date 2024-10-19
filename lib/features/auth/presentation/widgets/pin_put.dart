@@ -60,7 +60,7 @@ class _PinCodeVerificationState extends State<PinCodeVerification> {
             },
           ),
           AppTextButton(
-            textButton: 'Verify Code',
+            textButton: 'التحقق من الكود',
             onPressed: () {
               context.navigateTo(Routes.newPasswordScreen);
             },
@@ -75,7 +75,7 @@ class _PinCodeVerificationState extends State<PinCodeVerification> {
           GestureDetector(
             onTap: () {},
             child: Text(
-              'Resend Code',
+              'إعادة إرسال الرمز',
               style: AppStyles.style16SemiBold,
             ),
           ),

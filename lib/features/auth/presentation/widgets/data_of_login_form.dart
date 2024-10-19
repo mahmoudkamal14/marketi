@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:marketi/core/function/validators.dart';
 import 'package:marketi/core/theme/spaces.dart';
 import 'package:marketi/core/theme/app_styles.dart';
 import 'package:marketi/core/widgets/app_text_button.dart';
@@ -6,8 +7,17 @@ import 'package:marketi/core/widgets/app_text_form_field.dart';
 import 'package:marketi/features/auth/presentation/logic/login/login_cubit.dart';
 import 'package:marketi/features/auth/presentation/widgets/checkbox_and_forgot_password.dart';
 
-class DataOfLoginForm extends StatelessWidget {
+class DataOfLoginForm extends StatefulWidget {
   const DataOfLoginForm({super.key});
+
+  @override
+  State<DataOfLoginForm> createState() => _DataOfLoginFormState();
+}
+
+class _DataOfLoginFormState extends State<DataOfLoginForm> {
+  bool isObscureText = true;
+
+  IconData visibility = Icons.visibility_off_rounded;
 
   @override
   Widget build(BuildContext context) {
@@ -24,9 +34,7 @@ class DataOfLoginForm extends StatelessWidget {
             controller: LoginCubit.get(context).emailController,
             prefixIcon: const Icon(Icons.email_outlined),
             validator: (value) {
-              if (value!.isEmpty) {
-                return 'Please enter your email';
-              }
+              return emailValidator(value);
             },
           ),
           verticalSpace(14),
@@ -36,11 +44,20 @@ class DataOfLoginForm extends StatelessWidget {
             hintText: '*********',
             textInputType: TextInputType.visiblePassword,
             controller: LoginCubit.get(context).passwordController,
+            isObscureText: isObscureText,
             prefixIcon: const Icon(Icons.lock_clock_outlined),
+            suffixIcon: GestureDetector(
+              onTap: () {
+                setState(() {
+                  isObscureText = !isObscureText;
+                });
+              },
+              child: Icon(
+                isObscureText == true ? visibility : Icons.visibility,
+              ),
+            ),
             validator: (value) {
-              if (value!.isEmpty) {
-                return 'Please enter your password';
-              }
+              return passwordValidator(value);
             },
           ),
           verticalSpace(7),

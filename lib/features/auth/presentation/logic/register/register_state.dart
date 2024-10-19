@@ -17,3 +17,7 @@ final class RegisterSuccessState extends RegisterState {
 
   RegisterSuccessState({required this.authResponseModel});
 }
+
+final class ProfileImagePickerSuccessState extends RegisterState {}
+
+final class ProfileImagePickerErrorState extends RegisterState {}

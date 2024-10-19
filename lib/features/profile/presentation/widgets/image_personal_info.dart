@@ -29,7 +29,8 @@ class ImagePersonalInfo extends StatelessWidget {
         children: [
           CircleAvatar(
             radius: 76,
-            backgroundImage: AssetImage('assets/images/my photo.jpg'),
+            backgroundImage: NetworkImage(
+                'https://image.lexica.art/full_jpg/c9537cf5-4e95-4394-86d4-85155b4e938e'),
           ),
         ],
       ),

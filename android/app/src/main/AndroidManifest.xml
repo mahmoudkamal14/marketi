@@ -6,8 +6,7 @@
         android:label="marketi"
         android:name="${applicationName}"
         android:icon="@mipmap/launcher_icon"
-        android:usesCleartextTraffic="true" <!-- Allow HTTP (Optional, use only if needed) -->
-        >
+        android:usesCleartextTraffic="true">
         <activity
             android:name=".MainActivity"
             android:exported="true"

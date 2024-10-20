@@ -45,12 +45,11 @@ class PersonalInfoScreen extends StatelessWidget {
                         Row(
                           children: [
                             const IconNavigatePop(),
-                            const Spacer(),
+                            horizontalSpace(20),
                             Text(
                               'المعلومات الشخصية',
                               style: AppStyles.style24Medium,
                             ),
-                            const Spacer(),
                           ],
                         ),
                         verticalSpace(30),

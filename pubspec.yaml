@@ -59,7 +59,7 @@ dependencies:
   shared_preferences: ^2.2.3
   shimmer: ^3.0.0
   smooth_page_indicator: ^1.1.0
-
+  
 dev_dependencies:
   flutter_lints: ^4.0.0
   flutter_test:
@@ -72,7 +72,10 @@ dev_dependencies:
 flutter_launcher_icons:
   android: "launcher_icon"
   ios: true
+  remove_alpha_ios: true
   image_path: "assets/icons/Logo_Log_In.png"
+  adaptive_icon_background: "#ffffff"
+  adaptive_icon_foreground: "assets/icons/Logo_Log_In.png"
   min_sdk_android: 21 # android min sdk min:16, default 21
 
 

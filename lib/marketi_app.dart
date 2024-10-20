@@ -4,10 +4,9 @@ import 'package:marketi/core/cache/shared_pref_keys.dart';
 import 'package:marketi/core/routes/app_router.dart';
 import 'package:marketi/core/routes/routes.dart';
 
-// ignore: must_be_immutable
 class MarketiApp extends StatelessWidget {
-  MarketiApp({super.key, required this.appRouter});
-  AppRouter appRouter;
+  const MarketiApp({super.key, required this.appRouter});
+  final AppRouter appRouter;
 
   @override
   Widget build(BuildContext context) {

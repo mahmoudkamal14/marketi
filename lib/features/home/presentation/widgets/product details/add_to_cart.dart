@@ -20,7 +20,7 @@ class AddToCart extends StatelessWidget {
             CartCubit.get(context).addProductCarts(model.id!);
           },
           child: Container(
-            padding: const EdgeInsets.all(10),
+            padding: const EdgeInsets.all(4),
             decoration: ShapeDecoration(
               color: Colors.white,
               shape: RoundedRectangleBorder(
@@ -31,7 +31,9 @@ class AddToCart extends StatelessWidget {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Image.asset('assets/images/Cart_Icon_UIA.png'),
+                Image.asset(
+                  'assets/images/Cart_Icon_UIA.png',
+                ),
                 horizontalSpace(14),
                 Text(
                   'اضافة إلي السلة',

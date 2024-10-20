@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:marketi/core/theme/spaces.dart';
 import 'package:marketi/features/home/data/models/product_response_model.dart';
 import 'package:marketi/features/onboarding/widgets/smooth_page_indicator_widget.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ProductImage extends StatefulWidget {
   const ProductImage({
@@ -26,6 +27,7 @@ class _ProductImageState extends State<ProductImage> {
     return Container(
       color: const Color(0xFFFFFFFF),
       child: PageView.builder(
+        physics: const BouncingScrollPhysics(),
         itemBuilder: (context, index) => buildImagePageView(
           widget.model.images![index],
         ),
@@ -37,12 +39,15 @@ class _ProductImageState extends State<ProductImage> {
 
   Widget buildImagePageView(String image) {
     return Column(
+      mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
-        Container(
-          color: Colors.white,
-          child: CachedNetworkImage(
-            imageUrl: image,
-            height: 270,
+        Expanded(
+          child: Container(
+            color: Colors.white,
+            height: 270.h,
+            child: CachedNetworkImage(
+              imageUrl: image,
+            ),
           ),
         ),
         verticalSpace(20),

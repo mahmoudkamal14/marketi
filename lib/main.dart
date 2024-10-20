@@ -33,7 +33,3 @@ checkIfLoggedInUser() async {
     isOnboardingApp = false;
   }
 }
-
-//? dart run build_runner build --delete-conflicting-outputs
-
-//! dart run flutter_native_splash:create --path=flutter_native_splash.yaml

@@ -41,8 +41,8 @@ class ProductDetails extends StatelessWidget {
         children: [
           AddToFavorite(model: model),
           verticalSpace(14),
-          ProductDescription(model: model),
-          const Spacer(),
+          Expanded(child: ProductDescription(model: model)),
+          verticalSpace(4),
           Row(
             children: [
               Column(
@@ -52,10 +52,7 @@ class ProductDetails extends StatelessWidget {
                     style: AppStyles.style20SemiBold
                         .copyWith(color: const Color(0xFF3F80FF)),
                   ),
-                  Text(
-                    '${model.price!.toInt()} جنيه',
-                    style: AppStyles.style20Medium,
-                  ),
+                  Text('${model.price!.toInt()} جنيه'),
                 ],
               ),
               horizontalSpace(18),

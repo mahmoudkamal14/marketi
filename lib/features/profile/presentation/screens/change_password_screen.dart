@@ -24,8 +24,10 @@ class ChangePasswordScreen extends StatelessWidget {
                   children: [
                     const IconNavigatePop(),
                     horizontalSpace(20),
-                    Text('إنشاء كلمة مرور جديدة',
-                        style: AppStyles.style16Medium),
+                    Text(
+                      'إنشاء كلمة مرور جديدة',
+                      style: AppStyles.style24Medium,
+                    ),
                   ],
                 ),
                 verticalSpace(57),
@@ -36,6 +38,7 @@ class ChangePasswordScreen extends StatelessWidget {
                   child: Text(
                     'يجب أن تكون كلمة المرور الجديدة مختلفة عن كلمة المرور الأخيرة',
                     style: AppStyles.style16Medium,
+                    textAlign: TextAlign.center,
                   ),
                 ),
                 const ChangePasswordForm(),

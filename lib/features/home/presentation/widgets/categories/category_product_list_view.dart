@@ -13,6 +13,7 @@ class CategoryProductListView extends StatelessWidget {
     return Expanded(
       child: ListView.builder(
         itemCount: categoryProductList.length,
+        physics: const BouncingScrollPhysics(),
         itemBuilder: (context, index) => Padding(
           padding: EdgeInsets.only(bottom: 12.h),
           child: CategoryProductListViewItem(

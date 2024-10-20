@@ -92,7 +92,7 @@ Here are some screenshots showcasing the **User App Market** application:
 <img src="https://github.com/user-attachments/assets/f64a4dbc-c7af-462a-965b-9c0fccdf2a3b" alt="Verifcation Code Screen" width="290"/>
 
 ### Home Screen
-<img src="https://github.com/user-attachments/assets/6c4d8a6b-3582-4341-a6d4-eb04c122740f" alt="Home Screen" width="290"/>
+<img src="https://github.com/user-attachments/assets/70154c6c-ad62-493a-90b0-6a499abad333" alt="Home Screen" width="290"/>
 <img src="https://github.com/user-attachments/assets/f71779d8-28da-436a-ba6b-52d81148ed1d" alt="Home Screen" width="290"/>
 
 ### Category Screen
@@ -108,8 +108,10 @@ Here are some screenshots showcasing the **User App Market** application:
 <img src="https://github.com/user-attachments/assets/49485725-7cc4-4234-99ef-3c31ccd0dc8a" alt="Favorites & Cart Screen" width="290"/>
 
 ### User Profile Management
-<img src="https://github.com/user-attachments/assets/9e1985c8-45fc-4959-9ff4-15cbdb6676f3" alt="User Profile Screen" width="290"/>
-<img src="https://github.com/user-attachments/assets/93ae4ff4-dac1-4030-bfb8-04ae836e1b11" alt="User Profile Screen" width="290"/>
+<img src="https://github.com/user-attachments/assets/b8dd1025-a7fd-4722-8eb7-f45d9dba1e4c" alt="User Profile Screen" width="290"/>
+<img src="https://github.com/user-attachments/assets/3d5fee9f-42a6-4411-a04e-ae80d643488c" alt="User Profile Screen" width="290"/>
+<img src="https://github.com/user-attachments/assets/2adf9c44-6edc-4701-9885-9463978e268c" alt="Change Password Screen" width="290"/>
+
 
 ---
 

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:marketi/core/cache/shared_pref_helper.dart';
+import 'package:marketi/core/cache/shared_pref_keys.dart';
 import 'package:marketi/core/function/show_toast.dart';
 import 'package:marketi/core/routes/extentions.dart';
 import 'package:marketi/core/routes/routes.dart';
@@ -26,6 +28,7 @@ class LogOutWidget extends StatelessWidget {
               msg: ProfileCubit.get(context).logoutModel!.message,
               color: Colors.green,
             );
+            CacheHelper.removeData(key: userToken);
           default:
         }
       },

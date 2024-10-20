@@ -12,7 +12,7 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   setupGetIt();
   await CacheHelper.init();
-  await checkIfLoggedInUser();
+  checkIfLoggedInUser();
   await ScreenUtil.ensureScreenSize();
   runApp(MarketiApp(appRouter: AppRouter()));
 }
@@ -27,7 +27,7 @@ checkIfLoggedInUser() async {
   } else {
     isLoggedInUser = false;
   }
-  if (onboarding) {
+  if (onboarding == true) {
     isOnboardingApp = true;
   } else {
     isOnboardingApp = false;
